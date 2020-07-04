@@ -1,0 +1,207 @@
+---
+title: "Parental-Leave"
+author: "Sophie Hensgen"
+date: "7/3/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Packages, include=FALSE}
+
+library(tidyverse)
+library(dplyr)
+library(foreign)
+```
+
+
+
+
+```{r Loading Data Sets, include=FALSE}
+
+# $p (Mutterschutz variable, gender, employment, year of birth)
+p96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mp.dta")
+p97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/np.dta")
+p98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/op.dta")
+p99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/pp.dta")
+p00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qp.dta")
+p01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rp.dta")
+p02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/sp.dta")
+p03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tp.dta")
+p04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/up.dta")
+p05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vp.dta")
+p06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wp.dta")
+p07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xp.dta")
+p08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/yp.dta")
+p09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zp.dta")
+p10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bap.dta")
+p11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbp.dta")
+p12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bcp.dta")
+p13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdp.dta")
+p14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bep.dta")
+p15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfp.dta")
+p16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgp.dta")
+p17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhp.dta")
+p18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bip.dta")
+```
+
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (gender, eductaion, occupation, region, annual working hours, income, age, longitudinal weights)
+pequiv96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mpequiv.dta")
+pequiv97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/npequiv.dta")
+pequiv98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/opequiv.dta")
+pequiv99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ppequiv.dta")
+pequiv00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qpequiv.dta")
+pequiv01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rpequiv.dta")
+pequiv02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/spequiv.dta")
+pequiv03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tpequiv.dta")
+pequiv04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/upequiv.dta")
+pequiv05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vpequiv.dta")
+pequiv06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wpequiv.dta")
+pequiv07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xpequiv.dta")
+pequiv08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ypequiv.dta")
+pequiv09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zpequiv.dta")
+pequiv10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bapequiv.dta")
+pequiv11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbpequiv.dta")
+pequiv12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bcpequiv.dta")
+pequiv13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdpequiv.dta")
+pequiv14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bepequiv.dta")
+pequiv15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfpequiv.dta")
+pequiv16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgpequiv.dta")
+pequiv17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhpequiv.dta")
+pequiv18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bipequiv.dta")
+```
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (Number of Children in HH, Date of Birth (Child))
+pkind96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mkind.dta")
+pkind97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/nkind.dta")
+pkind98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/okind.dta")
+pkind99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/pkind.dta")
+pkind00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qkind.dta")
+pkind01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rkind.dta")
+pkind02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/skind.dta")
+pkind03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tkind.dta")
+pkind04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ukind.dta")
+pkind05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vkind.dta")
+pkind06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wkind.dta")
+pkind07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xkind.dta")
+pkind08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ykind.dta")
+pkind09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zkind.dta")
+pkind10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bakind.dta")
+pkind11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbkind.dta")
+pkind12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bckind.dta")
+pkind13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdkind.dta")
+pkind14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bekind.dta")
+pkind15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfkind.dta")
+pkind16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgkind.dta")
+pkind17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhkind.dta")
+pkind18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bikind.dta")
+```
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (Year of Birth)
+pp16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgp.dta")
+pp17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhp.dta")
+pp18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bip.dta")
+```
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (Education, employment, hours of work, partner)
+pgen96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mpgen.dta")
+pgen97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/npgen.dta")
+pgen98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/opgen.dta")
+pgen99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ppgen.dta")
+pgen00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qpgen.dta")
+pgen01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rpgen.dta")
+pgen02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/spgen.dta")
+pgen03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tpgen.dta")
+pgen04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/upgen.dta")
+pgen05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vpgen.dta")
+pgen06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wpgen.dta")
+pgen07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xpgen.dta")
+pgen08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ypgen.dta")
+pgen09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zpgen.dta")
+pgen10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bapgen.dta")
+pgen11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbpgen.dta")
+pgen12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bcpgen.dta")
+pgen13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdpgen.dta")
+pgen14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bepgen.dta")
+pgen15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfpgen.dta")
+pgen16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgpgen.dta")
+pgen17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhpgen.dta")
+pgen18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bipgen.dta")
+```
+
+
+
+
+```{r look into data, include=FALSE}
+
+head(p96)
+head(pequiv96)
+head(pkind96)
+head(pgen96)
+```
+
+
+```{r join data frames (96), include=FALSE}
+
+all96 <- p96 %>% 
+  full_join(pequiv96, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "mhhnr", "hid"))
+all96 <- all96 %>%
+  full_join(pkind96, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "mhhnr", "hid", "welle"))
+all96 <- all96 %>%
+  full_join(pgen96, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "mhhnr", "hid"))
+
+all96
+
+
+#"d1110896", "e1110196", "l1110296", "i1111096", "d1110196", "w1110896"
+```
+
+
+```{r join data frames (96), echo=FALSE}
+
+select96 <- all96 %>%
+  select(persnr, pid, hhnr, cid, welle, mp66f, mp15, d11102ll, d1110896, e1110196, l1110296, mkzahl, mkgjahr, mp10501, mp10502, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196, w1110896) %>%
+  rename(parleave = mp66f, employ = mp15, sex = d11102ll, education = d1110896, occup = e1110196,  region = l1110296, kinderzahl = mkzahl, kindbd = mkgjahr, sex2 = mp10501, birthyear = mp10502, edisced = isced97_96, partner= partz96, employ2 = lfs96, workhpw = merwzeit, workhpy = e1110196, income = i1111096, age = d1110196, longweight = w1110896)
+
+select96
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
