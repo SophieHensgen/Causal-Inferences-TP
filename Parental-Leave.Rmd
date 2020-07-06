@@ -165,7 +165,7 @@ all96 <- all96 %>%
 ```{r join data frames (96), echo=FALSE}
 
 select96 <- all96 %>%
-  select(persnr, pid, hhnr, cid, mp66f, d11102ll, d1110896, e1110196, l1110296, d1110796, mp10813, mp10502, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196, w1110896) %>%
+  select(persnr, welle, pid, hhnr, cid, mp66f, d11102ll, d1110896, e1110196, l1110296, d1110796, mp10813, mp10502, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196, w1110896) %>%
   rename(parleave = mp66f, sex = d11102ll, education = d1110896, occup = e1110196,  region = l1110296, kinderzahl =  d1110796, kindbd = mp10813, birthyear = mp10502, edisced = isced97_96, partner= partz96, employ = lfs96, workhpw = merwzeit, workhpy = e1110196, income = i1111096, age = d1110196, longweight = w1110896)
 
 select96
@@ -189,7 +189,7 @@ all97
 ```{r join data frames (97), echo=FALSE}
 
 select97 <- all97 %>%
-  select(persnr, pid, hhnr, cid, np660f, d11102ll, d1110897, e1110197, l1110297, d1110797, np11513, np11202, isced97_97, partz97, lfs97, nerwzeit, e1110197, i1111097, d1110197, w1110897) %>%
+  select(persnr, welle, pid, hhnr, cid, np660f, d11102ll, d1110897, e1110197, l1110297, d1110797, np11513, np11202, isced97_97, partz97, lfs97, nerwzeit, e1110197, i1111097, d1110197, w1110897) %>%
   rename(parleave = np660f, sex = d11102ll, education = d1110897, occup = e1110197,  region = l1110297, kinderzahl = d1110797, kindbd = np11513, birthyear = np11202, edisced = isced97_97, partner= partz97, employ = lfs97, workhpw = nerwzeit, workhpy = e1110197, income = i1111097, age = d1110197, longweight = w1110897)
 
 select97
@@ -213,7 +213,7 @@ all98
 ```{r join data frames (98), echo=FALSE}
 
 select98 <- all98 %>%
-  select(persnr, pid, hhnr, cid, op5706, d11102ll, d1110898, e1110198, l1110298, d1110798, op12113, op11802, isced97_98, partz98, lfs98, oerwzeit, e1110198, i1111098, d1110198, w1110898) %>%
+  select(persnr, welle, pid, hhnr, cid, op5706, d11102ll, d1110898, e1110198, l1110298, d1110798, op12113, op11802, isced97_98, partz98, lfs98, oerwzeit, e1110198, i1111098, d1110198, w1110898) %>%
   rename(parleave = op5706, sex = d11102ll, education = d1110898, occup = e1110198,  region = l1110298, kinderzahl = d1110798, kindbd = op12113, birthyear = op11802, edisced = isced97_98, partner= partz98, employ = lfs98, workhpw = oerwzeit, workhpy = e1110198, income = i1111098, age = d1110198, longweight = w1110898)
 
 select98
@@ -239,7 +239,7 @@ all99
 ```{r join data frames (99), echo=FALSE}
 
 select99 <- all99 %>%
-  select(persnr, pid, hhnr, cid, pp7506, d11102ll, d1110899, e1110199, l1110299, d1110799, pp13320, pp13002, isced97_99, partz99, lfs99, perwzeit, e1110199, i1111099, d1110199, w1110899) %>%
+  select(persnr, welle, pid, hhnr, cid, pp7506, d11102ll, d1110899, e1110199, l1110299, d1110799, pp13320, pp13002, isced97_99, partz99, lfs99, perwzeit, e1110199, i1111099, d1110199, w1110899) %>%
   rename(parleave = pp7506, sex = d11102ll, education = d1110899, occup = e1110199,  region = l1110299, kinderzahl = d1110799, kindbd = pp13320, birthyear = pp13002, edisced = isced97_99, partner= partz99, employ = lfs99, workhpw = perwzeit, workhpy = e1110199, income = i1111099, age = d1110199, longweight = w1110899)
 
 select99
@@ -262,7 +262,7 @@ all00
 ```{r join data frames (00), echo=FALSE}
 
 select00 <- all00%>%
-  select(persnr, pid, hhnr, cid, qp7507, d11102ll, d1110800, e1110100, l1110200, d1110700, qp14220, qp13902, isced97_00, partz00, lfs00, qerwzeit, e1110100, i1111000, d1110100, w1110800) %>%
+  select(persnr, welle, pid, hhnr, cid, qp7507, d11102ll, d1110800, e1110100, l1110200, d1110700, qp14220, qp13902, isced97_00, partz00, lfs00, qerwzeit, e1110100, i1111000, d1110100, w1110800) %>%
   rename(parleave = qp7507, sex = d11102ll, education = d1110800, occup = e1110100,  region = l1110200, kinderzahl = d1110700, kindbd = qp14220, birthyear = qp13902, edisced = isced97_00, partner= partz00, employ = lfs00, workhpw = qerwzeit, workhpy = e1110100, income = i1111000, age = d1110100, longweight = w1110800)
 
 select00
@@ -286,7 +286,7 @@ all01
 ```{r join data frames (01), echo=FALSE}
 
 select01 <- all01 %>%
-  select(persnr, pid, hhnr, cid, rp7507, d11102ll, d1110801, e1110101, l1110201, d1110701, rp13320, rp13002, isced97_01, partz01, lfs01, rerwzeit, e1110101, i1111001, d1110101, w1110801) %>%
+  select(persnr, welle, pid, hhnr, cid, rp7507, d11102ll, d1110801, e1110101, l1110201, d1110701, rp13320, rp13002, isced97_01, partz01, lfs01, rerwzeit, e1110101, i1111001, d1110101, w1110801) %>%
   rename(parleave = rp7507, sex = d11102ll, education = d1110801, occup = e1110101,  region = l1110201, kinderzahl = d1110701, kindbd = rp13320, birthyear = rp13002, edisced = isced97_01, partner= partz01, employ = lfs01, workhpw = rerwzeit, workhpy = e1110101, income = i1111001, age = d1110101, longweight = w1110801)
 
 select01
@@ -309,7 +309,7 @@ all02
 ```{r join data frames (02), echo=FALSE}
 
 select02 <- all02 %>%
-  select(persnr, pid, hhnr, cid, sp7507, d11102ll, d1110802, e1110102, l1110202, d1110702, sp13320, sp13002, isced97_02, partz02, lfs02, serwzeit, e1110102, i1111002, d1110102, w1110802) %>%
+  select(persnr, welle, pid, hhnr, cid, sp7507, d11102ll, d1110802, e1110102, l1110202, d1110702, sp13320, sp13002, isced97_02, partz02, lfs02, serwzeit, e1110102, i1111002, d1110102, w1110802) %>%
   rename(parleave = sp7507, sex = d11102ll, education = d1110802, occup = e1110102,  region = l1110202, kinderzahl = d1110702, kindbd = sp13320, birthyear = sp13002, edisced = isced97_02, partner= partz02, employ = lfs02, workhpw = serwzeit, workhpy = e1110102, income = i1111002, age = d1110102, longweight = w1110802)
 
 select02
@@ -332,7 +332,7 @@ all03
 ```{r join data frames (03), echo=FALSE}
 
 select03 <- all03 %>%
-  select(persnr, pid, hhnr, cid, tp9307, d11102ll, d1110803, e1110103, l1110203, d1110703, tp14108, tp13602, isced97_03, partz03, lfs03, terwzeit, e1110103, i1111003, d1110103, w1110803) %>%
+  select(persnr, welle, pid, hhnr, cid, tp9307, d11102ll, d1110803, e1110103, l1110203, d1110703, tp14108, tp13602, isced97_03, partz03, lfs03, terwzeit, e1110103, i1111003, d1110103, w1110803) %>%
   rename(parleave = tp9307, sex = d11102ll, education = d1110803, occup = e1110103,  region = l1110203, kinderzahl = d1110703, kindbd = tp14108, birthyear = tp13602, edisced = isced97_03, partner= partz03, employ = lfs03, workhpw = terwzeit, workhpy = e1110103, income = i1111003, age = d1110103, longweight = w1110803)
 
 select03
@@ -356,7 +356,7 @@ all04
 ```{r join data frames (04), echo=FALSE}
 
 select04 <- all04 %>%
-  select(persnr, pid, hhnr, cid, up7807, d11102ll, d1110804, e1110104, l1110204, d1110704, up14408, up13902, isced97_04, partz04, lfs04, uerwzeit, e1110104, i1111004, d1110104, w1110804) %>%
+  select(persnr, , welle, pid, hhnr, cid, up7807, d11102ll, d1110804, e1110104, l1110204, d1110704, up14408, up13902, isced97_04, partz04, lfs04, uerwzeit, e1110104, i1111004, d1110104, w1110804) %>%
   rename(parleave = up7807, sex = d11102ll, education = d1110804, occup = e1110104,  region = l1110204, kinderzahl = d1110704, kindbd = up14408, birthyear = up13902, edisced = isced97_04, partner= partz04, employ = lfs04, workhpw = uerwzeit, workhpy = e1110104, income = i1111004, age = d1110104, longweight = w1110804)
 
 select04
@@ -379,7 +379,7 @@ all05
 ```{r join data frames (05), echo=FALSE}
 
 select05 <- all05 %>%
-  select(persnr, pid, hhnr, cid, vp9908, d11102ll, d1110805, e1110105, l1110205, d1110705, vp15308, vp14702, isced97_05, partz05, lfs05, verwzeit, e1110105, i1111005, d1110105, w1110805) %>%
+  select(persnr, welle, pid, hhnr, cid, vp9908, d11102ll, d1110805, e1110105, l1110205, d1110705, vp15308, vp14702, isced97_05, partz05, lfs05, verwzeit, e1110105, i1111005, d1110105, w1110805) %>%
   rename(parleave = vp9908, sex = d11102ll, education = d1110805, occup = e1110105,  region = l1110205, kinderzahl = d1110705, kindbd = vp15308, birthyear = vp14702, edisced = isced97_05, partner= partz05, employ = lfs05, workhpw = verwzeit, workhpy = e1110105, income = i1111005, age = d1110105, longweight = w1110805)
 
 select05
@@ -403,7 +403,7 @@ all06
 ```{r join data frames (06), echo=FALSE}
 
 select06 <- all06 %>%
-  select(persnr, pid, hhnr, cid, wp7608, d11102ll, d1110806, e1110106, l1110206, d1110706, wp14108, wp12402, isced97_06, partz06, lfs06, werwzeit, e1110106, i1111006, d1110106, w1110806) %>%
+  select(persnr, welle, pid, hhnr, cid, wp7608, d11102ll, d1110806, e1110106, l1110206, d1110706, wp14108, wp12402, isced97_06, partz06, lfs06, werwzeit, e1110106, i1111006, d1110106, w1110806) %>%
   rename(parleave = wp7608, sex = d11102ll, education = d1110806, occup = e1110106,  region = l1110206, kinderzahl = d1110706, kindbd = wp14108, birthyear = wp12402, edisced = isced97_06, partner= partz06, employ = lfs06, workhpw = werwzeit, workhpy = e1110106, income = i1111006, age = d1110106, longweight = w1110806)
 
 select06
@@ -427,7 +427,7 @@ all07
 ```{r join data frames (07), echo=FALSE}
 
 select07 <- all07 %>%
-  select(persnr, pid, hhnr, cid, xp9308, d11102ll, d1110807, e1110107, l1110207, d1110707, xp14808, xp13102, isced97_07, partz07, lfs07, xerwzeit, e1110107, i1111007, d1110107, w1110807) %>%
+  select(persnr, welle, pid, hhnr, cid, xp9308, d11102ll, d1110807, e1110107, l1110207, d1110707, xp14808, xp13102, isced97_07, partz07, lfs07, xerwzeit, e1110107, i1111007, d1110107, w1110807) %>%
   rename(parleave = xp9308, sex = d11102ll, education = d1110807, occup = e1110107,  region = l1110207, kinderzahl = d1110707, kindbd = xp14808, birthyear = xp13102, edisced = isced97_07, partner= partz07, employ = lfs07, workhpw = xerwzeit, workhpy = e1110107, income = i1111007, age = d1110107, longweight = w1110807)
 
 select07
@@ -451,7 +451,7 @@ all08
 ```{r join data frames (08), echo=FALSE}
 
 select08 <- all08 %>%
-  select(persnr, pid, hhnr, cid, yp9408, d11102ll, d1110808, e1110108, l1110208, d1110708, yp15408, yp14802, isced97_08, partz08, lfs08, yerwzeit, e1110108, i1111008, d1110108, w1110808) %>%
+  select(persnr, welle, pid, hhnr, cid, yp9408, d11102ll, d1110808, e1110108, l1110208, d1110708, yp15408, yp14802, isced97_08, partz08, lfs08, yerwzeit, e1110108, i1111008, d1110108, w1110808) %>%
   rename(parleave = yp9408, sex = d11102ll, education = d1110808, occup = e1110108,  region = l1110208, kinderzahl = d1110708, kindbd = yp15408, birthyear = yp14802, edisced = isced97_08, partner= partz08, employ = lfs08, workhpw = yerwzeit, workhpy = e1110108, income = i1111008, age = d1110108, longweight = w1110808)
 
 select08
@@ -475,7 +475,7 @@ all09
 ```{r join data frames (09), echo=FALSE}
 
 select09 <- all09 %>%
-  select(persnr, pid, hhnr, cid, zp9008, d11102ll, d1110809, e1110109, l1110209, d1110709, zp15608, zp12902 , isced97_09, partz09, lfs09, zerwzeit, e1110109, i1111009, d1110109, w1110809) %>%
+  select(persnr, welle, pid, hhnr, cid, zp9008, d11102ll, d1110809, e1110109, l1110209, d1110709, zp15608, zp12902 , isced97_09, partz09, lfs09, zerwzeit, e1110109, i1111009, d1110109, w1110809) %>%
   rename(parleave = zp9008, sex = d11102ll, education = d1110809, occup = e1110109,  region = l1110209, kinderzahl = d1110709, kindbd = zp15608, birthyear = zp12902 , edisced = isced97_09, partner= partz09, employ = lfs09, workhpw = zerwzeit, workhpy = e1110109, income = i1111009, age = d1110109, longweight = w1110809)
 
 select09
@@ -490,7 +490,7 @@ all10 <- all10 %>%
   full_join(pkind10, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bahhnr", "hid"), stringsAsFactors = FALSE)
 all10 <- all10 %>%
   full_join(pgen10, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bahhnr", "hid"), stringsAsFactors = FALSE)
-
+all10$welle <- 2010
 all10
 
 ```
@@ -513,7 +513,7 @@ all11 <- all11 %>%
   full_join(pkind11, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bbhhnr", "hid"), stringsAsFactors = FALSE)
 all11 <- all11 %>%
   full_join(pgen11, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bbhhnr", "hid"), stringsAsFactors = FALSE)
-
+all11$welle <- 2011
 all11
 
 ```
@@ -536,7 +536,7 @@ all12 <- all12 %>%
   full_join(pkind12, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bchhnr", "hid"), stringsAsFactors = FALSE)
 all12 <- all12 %>%
   full_join(pgen12, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bchhnr", "hid"), stringsAsFactors = FALSE)
-
+all12$welle <- 2012
 all12
 
 ```
@@ -559,7 +559,7 @@ all13 <- all13 %>%
   full_join(pkind13, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bdhhnr", "hid"), stringsAsFactors = FALSE)
 all13 <- all13 %>%
   full_join(pgen13, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bdhhnr", "hid"), stringsAsFactors = FALSE)
-
+all13$welle <- 2013
 all13
 
 ```
@@ -583,7 +583,7 @@ all14 <- all14 %>%
   full_join(pkind14, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "behhnr", "hid"), stringsAsFactors = FALSE)
 all14 <- all14 %>%
   full_join(pgen14, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "behhnr", "hid"), stringsAsFactors = FALSE)
-
+all14$welle <- 2014
 all14
 
 ```
@@ -607,7 +607,7 @@ all15 <- all15 %>%
   full_join(pkind15, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bfhhnr", "hid"), stringsAsFactors = FALSE)
 all15 <- all15 %>%
   full_join(pgen15, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bfhhnr", "hid"), stringsAsFactors = FALSE)
-
+all15$welle <- 2015
 all15$birt
 
 ```
@@ -633,7 +633,7 @@ all16 <- all16 %>%
   full_join(pgen16, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bghhnr", "hid"), stringsAsFactors = FALSE)
 all16 <- all16 %>%
   full_join(pp16, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bghhnr", "hid", "bgp10408", "bgpbirthy", "bgp17012"), stringsAsFactors = FALSE)
-
+all16$welle <- 2016
 all16
 
 ```
@@ -658,7 +658,7 @@ all17 <- all17 %>%
   full_join(pgen17, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
 all17 <- all17 %>%
   full_join(pp17, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid", "bhp_122_08", "bhpbirthy", "bhp_117_08"), stringsAsFactors = FALSE)
-
+all17$welle <- 2017
 all17
 
 ```
@@ -685,6 +685,7 @@ all18 <- all18 %>%
   full_join(pgen18, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
 all18 <- all18 %>%
   full_join(pp18, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid", "bip_123_08", "bipbirthy", "bip_201_12"), stringsAsFactors = FALSE)
+all18$welle <- 2018
 all18$bipbirthy
 
 ```
@@ -714,10 +715,12 @@ full
 ```
 
 
-
-
-
-
+```{r save Data Set , echo=FALSE}
+# Save an object to a file
+saveRDS(full, file = "soep_unedit.rds")
+# Restore the object
+soep.unedit <- readRDS(file = "soep_unedit.rds")
+```
 
 
 

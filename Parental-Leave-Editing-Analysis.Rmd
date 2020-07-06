@@ -1,0 +1,56 @@
+---
+title: "Parental-Leave-Editing-Analysis"
+author: "Sophie Hensgen"
+date: "7/6/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Restore Data Set , echo=FALSE}
+
+# Restore the object
+soep.unedit <- readRDS(file = "soep_unedit.rds")
+soep.unedit
+```
+
+```{r Create new Variables , echo=FALSE}
+
+
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
