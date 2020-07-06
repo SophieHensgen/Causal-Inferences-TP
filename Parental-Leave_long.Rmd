@@ -1,0 +1,778 @@
+---
+title: "Parental-Leave"
+author: "Sophie Hensgen"
+date: "7/3/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r Packages, include=FALSE}
+
+library(tidyverse)
+library(dplyr)
+library(foreign)
+```
+
+
+
+
+```{r Loading Data Sets, include=FALSE}
+
+# $p (Mutterschutz variable, gender, employment, year of birth)
+p96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mp.dta")
+p97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/np.dta")
+p98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/op.dta")
+p99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/pp.dta")
+p00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qp.dta")
+p01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rp.dta")
+p02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/sp.dta")
+p03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tp.dta")
+p04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/up.dta")
+p05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vp.dta")
+p06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wp.dta")
+p07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xp.dta")
+p08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/yp.dta")
+p09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zp.dta")
+p10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bap.dta")
+p11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbp.dta")
+p12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bcp.dta")
+p13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdp.dta")
+p14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bep.dta")
+p15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfp.dta")
+p16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgp.dta")
+p17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhp.dta")
+p18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bip.dta")
+```
+
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (gender, eductaion, occupation, region, annual working hours, income, age, longitudinal weights)
+pequiv96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mpequiv.dta")
+pequiv97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/npequiv.dta")
+pequiv98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/opequiv.dta")
+pequiv99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ppequiv.dta")
+pequiv00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qpequiv.dta")
+pequiv01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rpequiv.dta")
+pequiv02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/spequiv.dta")
+pequiv03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tpequiv.dta")
+pequiv04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/upequiv.dta")
+pequiv05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vpequiv.dta")
+pequiv06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wpequiv.dta")
+pequiv07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xpequiv.dta")
+pequiv08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ypequiv.dta")
+pequiv09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zpequiv.dta")
+pequiv10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bapequiv.dta")
+pequiv11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbpequiv.dta")
+pequiv12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bcpequiv.dta")
+pequiv13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdpequiv.dta")
+pequiv14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bepequiv.dta")
+pequiv15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfpequiv.dta")
+pequiv16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgpequiv.dta")
+pequiv17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhpequiv.dta")
+pequiv18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bipequiv.dta")
+```
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (Number of Children in HH, Date of Birth (Child))
+pkind96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mkind.dta")
+pkind97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/nkind.dta")
+pkind98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/okind.dta")
+pkind99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/pkind.dta")
+pkind00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qkind.dta")
+pkind01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rkind.dta")
+pkind02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/skind.dta")
+pkind03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tkind.dta")
+pkind04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ukind.dta")
+pkind05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vkind.dta")
+pkind06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wkind.dta")
+pkind07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xkind.dta")
+pkind08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ykind.dta")
+pkind09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zkind.dta")
+pkind10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bakind.dta")
+pkind11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbkind.dta")
+pkind12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bckind.dta")
+pkind13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdkind.dta")
+pkind14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bekind.dta")
+pkind15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfkind.dta")
+pkind16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgkind.dta")
+pkind17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhkind.dta")
+pkind18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bikind.dta")
+```
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (Year of Birth)
+pp16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgp.dta")
+pp17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhp.dta")
+pp18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bip.dta")
+```
+
+```{r Loading Data Sets, include=FALSE}
+
+# $pequiv (Education, employment, hours of work, partner)
+pgen96 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/mpgen.dta")
+pgen97 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/npgen.dta")
+pgen98 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/opgen.dta")
+pgen99 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ppgen.dta")
+pgen00 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/qpgen.dta")
+pgen01 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/rpgen.dta")
+pgen02 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/spgen.dta")
+pgen03 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/tpgen.dta")
+pgen04 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/upgen.dta")
+pgen05 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/vpgen.dta")
+pgen06 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/wpgen.dta")
+pgen07 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/xpgen.dta")
+pgen08 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/ypgen.dta")
+pgen09 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/zpgen.dta")
+pgen10 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bapgen.dta")
+pgen11 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bbpgen.dta")
+pgen12 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bcpgen.dta")
+pgen13 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bdpgen.dta")
+pgen14 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bepgen.dta")
+pgen15 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bfpgen.dta")
+pgen16 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bgpgen.dta")
+pgen17 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bhpgen.dta")
+pgen18 <- read.dta("/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/cs-transfer/Stata/raw/bipgen.dta")
+```
+
+
+```{r look into data, include=FALSE}
+
+head(p97)
+head(pequiv97)
+head(pkind97)
+head(pgen97)
+```
+
+
+```{r join data frames (96), echo=FALSE}
+
+all96 <- p96 %>% 
+  full_join(pequiv96, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "mhhnr", "hid"), stringsAsFactors = FALSE)
+all96 <- all96 %>%
+  full_join(pkind96, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "mhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all96 <- all96 %>%
+  full_join(pgen96, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "mhhnr", "hid"), stringsAsFactors = FALSE)
+
+```
+
+
+```{r join data frames (96), echo=FALSE}
+
+select96 <- all96 %>%
+  select(persnr, mp66f, d11102ll, e1110196, l1110296, d1110796, mp10813, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196) %>%
+  rename(parleave_96 = mp66f, sex = d11102ll, occup_96  = e1110196,  region  = l1110296, kinderzahl_96  =  d1110796, kindbd_96  = mp10813, education  = isced97_96, partner_96 = partz96, employ_96 = lfs96, workhpw_96  = merwzeit, income_96  = i1111096, age_96  = d1110196)
+
+select96
+```
+
+
+```{r join data frames (97), include=FALSE}
+
+all97 <- p97 %>% 
+  full_join(pequiv97, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "nhhnr", "hid"), stringsAsFactors = FALSE)
+all97 <- all97 %>%
+  full_join(pkind97, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "nhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all97 <- all97 %>%
+  full_join(pgen97, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "nhhnr", "hid"), stringsAsFactors = FALSE)
+
+all97
+
+```
+
+
+```{r join data frames (97), echo=FALSE}
+
+select97 <- all97 %>%
+  select(persnr, np660f, d11102ll, e1110197, l1110297, d1110797, np11513, isced97_97, partz97, lfs97, nerwzeit,  i1111097, d1110197) %>%
+  rename(parleave_97 = np660f, sex = d11102ll, occup_97 = e1110197,  region = l1110297, kinderzahl_97 = d1110797, kindbd_97 = np11513, education = isced97_97, partner_97 = partz97, employ_97 = lfs97, workhpw_97 = nerwzeit,  income_97 = i1111097, age_97 = d1110197)
+
+select97
+
+```
+
+
+```{r join data frames (98), include=FALSE}
+
+all98 <- p98 %>% 
+  full_join(pequiv98, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "ohhnr", "hid"), stringsAsFactors = FALSE)
+all98 <- all98 %>%
+  full_join(pkind98, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "ohhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all98 <- all98 %>%
+  full_join(pgen98, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "ohhnr", "hid"), stringsAsFactors = FALSE)
+
+all98
+
+```
+
+
+```{r join data frames (98), echo=FALSE}
+
+select98 <- all98 %>%
+  select(persnr, op5706, d11102ll, e1110198, l1110298, d1110798, op12113, isced97_98, partz98, lfs98, oerwzeit, i1111098, d1110198) %>%
+  rename(parleave_98 = op5706, sex = d11102ll,  occup_98 = e1110198,  region = l1110298, kinderzahl_98 = d1110798, kindbd_98 = op12113, education = isced97_98, partner_98 = partz98, employ_98 = lfs98, workhpw_98 = oerwzeit, income_98 = i1111098, age_98 = d1110198)
+
+select98
+```
+
+
+
+
+```{r join data frames (99), include=FALSE}
+
+all99 <- p99 %>% 
+  full_join(pequiv99, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "phhnr", "hid"), stringsAsFactors = FALSE)
+all99 <- all99 %>%
+  full_join(pkind99, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "phhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all99 <- all99 %>%
+  full_join(pgen99, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "phhnr", "hid"), stringsAsFactors = FALSE)
+
+all99
+
+```
+
+
+```{r join data frames (99), echo=FALSE}
+
+select99 <- all99 %>%
+  select(persnr, pp7506, d11102ll, e1110199, l1110299, d1110799, pp13320, isced97_99, partz99, lfs99, perwzeit, i1111099, d1110199) %>%
+  rename(parleave_99 = pp7506, sex = d11102ll, occup_99 = e1110199,  region = l1110299, kinderzahl_99 = d1110799, kindbd_99 = pp13320, education = isced97_99, partner_99 = partz99, employ_99 = lfs99, workhpw_99 = perwzeit, income_99 = i1111099, age_99 = d1110199)
+
+select99
+```
+
+```{r join data frames (00), include=FALSE}
+
+all00 <- p00 %>% 
+  full_join(pequiv00, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "qhhnr", "hid"), stringsAsFactors = FALSE)
+all00 <- all00 %>%
+  full_join(pkind00, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "qhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all00 <- all00 %>%
+  full_join(pgen00, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "qhhnr", "hid"), stringsAsFactors = FALSE)
+
+all00
+
+```
+
+
+```{r join data frames (00), echo=FALSE}
+
+select00 <- all00%>%
+  select(persnr, qp7507, d11102ll, e1110100, l1110200, d1110700, qp14220, isced97_00, partz00, lfs00, qerwzeit, i1111000, d1110100) %>%
+  rename(parleave_00 = qp7507, sex = d11102ll, occup_00 = e1110100, region = l1110200, kinderzahl_00 = d1110700, kindbd_00 = qp14220, education = isced97_00, partner_00 = partz00, employ_00 = lfs00, workhpw_00 = qerwzeit, income_00 = i1111000, age_00 = d1110100)
+
+select00
+select00$kindbd <- as.factor(select00$kindbd)
+```
+
+```{r join data frames (01), include=FALSE}
+
+all01 <- p01 %>% 
+  full_join(pequiv01, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "rhhnr", "hid"), stringsAsFactors = FALSE)
+all01 <- all01 %>%
+  full_join(pkind01, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "rhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all01 <- all01 %>%
+  full_join(pgen01, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "rhhnr", "hid"), stringsAsFactors = FALSE)
+
+all01
+
+```
+
+
+```{r join data frames (01), echo=FALSE}
+
+select01 <- all01 %>%
+  select(persnr, rp7507, d11102ll, e1110101, l1110201, d1110701, rp13320, isced97_01, partz01, lfs01, rerwzeit, i1111001, d1110101) %>%
+  rename(parleave_01 = rp7507, sex = d11102ll, occup_01 = e1110101,  region = l1110201, kinderzahl_01 = d1110701, kindbd_01 = rp13320, education = isced97_01, partner_01 = partz01, employ_01 = lfs01, workhpw_01 = rerwzeit, income_01 = i1111001, age_01 = d1110101)
+
+select01
+```
+
+```{r join data frames (02), include=FALSE}
+
+all02 <- p02 %>% 
+  full_join(pequiv02, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "shhnr", "hid"), stringsAsFactors = FALSE)
+all02 <- all02 %>%
+  full_join(pkind02, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "shhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all02 <- all02 %>%
+  full_join(pgen02, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "shhnr", "hid"), stringsAsFactors = FALSE)
+
+all02
+
+```
+
+
+```{r join data frames (02), echo=FALSE}
+
+select02 <- all02 %>%
+  select(persnr, sp7507, d11102ll,  e1110102, l1110202, d1110702, sp13320, isced97_02, partz02, lfs02, serwzeit, i1111002, d1110102) %>%
+  rename(parleave_02 = sp7507, sex = d11102ll, occup_02 = e1110102,  region = l1110202, kinderzahl_02 = d1110702, kindbd_02 = sp13320, education = isced97_02, partner_02 = partz02, employ_02 = lfs02, workhpw_02 = serwzeit, income_02 = i1111002, age_02 = d1110102)
+
+select02
+```
+
+```{r join data frames (03), include=FALSE}
+
+all03 <- p03 %>% 
+  full_join(pequiv03, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "thhnr", "hid"), stringsAsFactors = FALSE)
+all03 <- all03 %>%
+  full_join(pkind03, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "thhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all03 <- all03 %>%
+  full_join(pgen03, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "thhnr", "hid"), stringsAsFactors = FALSE)
+
+all03
+
+```
+
+
+```{r join data frames (03), echo=FALSE}
+
+select03 <- all03 %>%
+  select(persnr, tp9307, d11102ll, e1110103, l1110203, d1110703, tp14108, isced97_03, partz03, lfs03, terwzeit, i1111003, d1110103) %>%
+  rename(parleave_03 = tp9307, sex = d11102ll, occup_03 = e1110103,  region = l1110203, kinderzahl_03 = d1110703, kindbd_03 = tp14108, education = isced97_03, partner_03 = partz03, employ_03 = lfs03, workhpw_03 = terwzeit, income_03 = i1111003, age_03 = d1110103)
+
+select03
+```
+
+
+```{r join data frames (04), include=FALSE}
+
+all04 <- p04 %>% 
+  full_join(pequiv04, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "uhhnr", "hid"), stringsAsFactors = FALSE)
+all04 <- all04 %>%
+  full_join(pkind04, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "uhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all04 <- all04 %>%
+  full_join(pgen04, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "uhhnr", "hid"), stringsAsFactors = FALSE)
+
+all04
+
+```
+
+
+```{r join data frames (04), echo=FALSE}
+
+select04 <- all04 %>%
+  select(persnr, up7807, d11102ll, e1110104, l1110204, d1110704, up14408, isced97_04, partz04, lfs04, uerwzeit, i1111004, d1110104) %>%
+  rename(parleave_04 = up7807, sex = d11102ll, occup_04 = e1110104,  region = l1110204, kinderzahl_04 = d1110704, kindbd_04 = up14408, education = isced97_04, partner_04 = partz04, employ_04 = lfs04, workhpw_04 = uerwzeit, income_04 = i1111004, age_04 = d1110104)
+
+select04
+```
+
+```{r join data frames (05), include=FALSE}
+
+all05 <- p05 %>% 
+  full_join(pequiv05, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "vhhnr", "hid"), stringsAsFactors = FALSE)
+all05 <- all05 %>%
+  full_join(pkind05, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "vhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all05 <- all05 %>%
+  full_join(pgen05, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "vhhnr", "hid"), stringsAsFactors = FALSE)
+
+all05
+
+```
+
+
+```{r join data frames (05), echo=FALSE}
+
+select05 <- all05 %>%
+  select(persnr, vp9908, d11102ll, e1110105, l1110205, d1110705, vp15308, isced97_05, partz05, lfs05, verwzeit, i1111005, d1110105) %>%
+  rename(parleave_05 = vp9908, sex = d11102ll, occup_05 = e1110105,  region = l1110205, kinderzahl_05 = d1110705, kindbd_05 = vp15308, education = isced97_05, partner_05 = partz05, employ_05 = lfs05, workhpw_05 = verwzeit, income_05 = i1111005, age_05 = d1110105)
+
+select05
+```
+
+
+```{r join data frames (06), include=FALSE}
+
+all06 <- p06 %>% 
+  full_join(pequiv06, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "whhnr", "hid"), stringsAsFactors = FALSE)
+all06 <- all06 %>%
+  full_join(pkind06, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "whhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all06 <- all06 %>%
+  full_join(pgen06, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "whhnr", "hid"), stringsAsFactors = FALSE)
+
+all06
+
+```
+
+
+```{r join data frames (06), echo=FALSE}
+
+select06 <- all06 %>%
+  select(persnr, wp7608, d11102ll, e1110106, l1110206, d1110706, wp14108, isced97_06, partz06, lfs06, werwzeit, i1111006, d1110106) %>%
+  rename(parleave_06 = wp7608, sex = d11102ll, occup_06 = e1110106,  region = l1110206, kinderzahl_06 = d1110706, kindbd_06 = wp14108, education = isced97_06, partner_06 = partz06, employ_06 = lfs06, workhpw_06 = werwzeit, income_06 = i1111006, age_06 = d1110106)
+
+select06
+```
+
+
+```{r join data frames (07), include=FALSE}
+
+all07 <- p07 %>% 
+  full_join(pequiv07, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "xhhnr", "hid"), stringsAsFactors = FALSE)
+all07 <- all07 %>%
+  full_join(pkind07, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "xhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all07 <- all07 %>%
+  full_join(pgen07, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "xhhnr", "hid"), stringsAsFactors = FALSE)
+
+all07
+
+```
+
+
+```{r join data frames (07), echo=FALSE}
+
+select07 <- all07 %>%
+  select(persnr, xp9308, d11102ll, e1110107, l1110207, d1110707, xp14808, isced97_07, partz07, lfs07, xerwzeit, i1111007, d1110107) %>%
+  rename(parleave_07 = xp9308, sex = d11102ll, occup_07 = e1110107,  region = l1110207, kinderzahl_07 = d1110707, kindbd_07 = xp14808, education = isced97_07, partner_07 = partz07, employ_07 = lfs07, workhpw_07 = xerwzeit, income_07 = i1111007, age_07 = d1110107)
+
+select07
+```
+
+
+```{r join data frames (08), include=FALSE}
+
+all08 <- p08 %>% 
+  full_join(pequiv08, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "yhhnr", "hid"), stringsAsFactors = FALSE)
+all08 <- all08 %>%
+  full_join(pkind08, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "yhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all08 <- all08 %>%
+  full_join(pgen08, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "yhhnr", "hid"), stringsAsFactors = FALSE)
+
+all08
+
+```
+
+
+```{r join data frames (08), echo=FALSE}
+
+select08 <- all08 %>%
+  select(persnr, yp9408, d11102ll, e1110108, l1110208, d1110708, yp15408, isced97_08, partz08, lfs08, yerwzeit, i1111008, d1110108) %>%
+  rename(parleave_08 = yp9408, sex = d11102ll, occup = e1110108,  region = l1110208, kinderzahl_08 = d1110708, kindbd_08 = yp15408, education = isced97_08, partner_08 = partz08, employ_08 = lfs08, workhpw_08 = yerwzeit, income_08 = i1111008, age_08 = d1110108)
+
+select08
+```
+
+
+```{r join data frames (09), include=FALSE}
+
+all09 <- p09 %>% 
+  full_join(pequiv09, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "zhhnr", "hid"), stringsAsFactors = FALSE)
+all09 <- all09 %>%
+  full_join(pkind09, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "zhhnr", "hid", "welle"), stringsAsFactors = FALSE)
+all09 <- all09 %>%
+  full_join(pgen09, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "zhhnr", "hid"), stringsAsFactors = FALSE)
+
+all09
+
+```
+
+
+```{r join data frames (09), echo=FALSE}
+
+select09 <- all09 %>%
+  select(persnr, zp9008, d11102ll, e1110109, l1110209, d1110709, zp15608, isced97_09, partz09, lfs09, zerwzeit, i1111009, d1110109) %>%
+  rename(parleave_09 = zp9008, sex = d11102ll, occup_09 = e1110109,  region = l1110209, kinderzahl_09 = d1110709, kindbd_09 = zp15608, education = isced97_09, partner_09 = partz09, employ_09 = lfs09, workhpw_09 = zerwzeit, income_09 = i1111009, age_09 = d1110109)
+
+select09
+```
+
+
+```{r join data frames (10), include=FALSE}
+
+all10 <- p10 %>% 
+  full_join(pequiv10, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bahhnr", "hid"), stringsAsFactors = FALSE)
+all10 <- all10 %>%
+  full_join(pkind10, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bahhnr", "hid"), stringsAsFactors = FALSE)
+all10 <- all10 %>%
+  full_join(pgen10, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bahhnr", "hid"), stringsAsFactors = FALSE)
+all10$welle <- 2010
+all10
+
+```
+
+
+```{r join data frames (10), echo=FALSE}
+
+select10 <- all10 %>%
+  select(persnr, bap8108, d11102ll, e1110110, l1110210, d1110710, bap15909, isced97_10, partz10, lfs10, baerwzeit, i1111010, d1110110) %>%
+  rename(parleave_10 = bap8108, sex = d11102ll, occup_10 = e1110110,  region = l1110210, kinderzahl_10 = d1110710, kindbd_10 = bap15909, education = isced97_10, partner_10 = partz10, employ_10 = lfs10, workhpw_10 = baerwzeit, income_10 = i1111010, age_10 = d1110110)
+
+select10
+```
+
+```{r join data frames (11), include=FALSE}
+
+all11 <- p11 %>% 
+  full_join(pequiv11, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bbhhnr", "hid"), stringsAsFactors = FALSE)
+all11 <- all11 %>%
+  full_join(pkind11, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bbhhnr", "hid"), stringsAsFactors = FALSE)
+all11 <- all11 %>%
+  full_join(pgen11, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bbhhnr", "hid"), stringsAsFactors = FALSE)
+all11$welle <- 2011
+all11
+
+```
+
+
+```{r join data frames (11), echo=FALSE}
+
+select11 <- all11 %>%
+  select(persnr, bbp9109, d11102ll, e1110111, l1110211, d1110711, bbp15112, isced97_11, partz11, lfs11, bberwzeit, i1111011, d1110111) %>%
+  rename(parleave_11 = bbp9109, sex = d11102ll, occup_11 = e1110111,  region = l1110211, kinderzahl_11 = d1110711, kindbd_11 = bbp15112, education = isced97_11, partner_11 = partz11, employ_11 = lfs11, workhpw_11 = bberwzeit, income_11 = i1111011, age_11 = d1110111)
+
+select11
+```
+
+```{r join data frames (12), include=FALSE}
+
+all12 <- p12 %>% 
+  full_join(pequiv12, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bchhnr", "hid"), stringsAsFactors = FALSE)
+all12 <- all12 %>%
+  full_join(pkind12, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bchhnr", "hid"), stringsAsFactors = FALSE)
+all12 <- all12 %>%
+  full_join(pgen12, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bchhnr", "hid"), stringsAsFactors = FALSE)
+all12$welle <- 2012
+all12
+
+```
+
+
+```{r join data frames (12), echo=FALSE}
+
+select12 <- all12 %>%
+  select(persnr, bcp7907, d11102ll, e1110112, l1110212, d1110712, bcp15012, isced97_12, partz12, lfs12, bcerwzeit, i1111012, d1110112) %>%
+  rename(parleave_12 = bcp7907, sex = d11102ll, occup_12 = e1110112,  region = l1110212, kinderzahl_12 = d1110712, kindbd_12 = bcp15012, education = isced97_12, partner_12 = partz12, employ_12 = lfs12, workhpw_12 = bcerwzeit, income_12 = i1111012, age_12 = d1110112)
+
+select12
+```
+
+```{r join data frames (13), include=FALSE}
+
+all13 <- p13 %>% 
+  full_join(pequiv13, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bdhhnr", "hid"), stringsAsFactors = FALSE)
+all13 <- all13 %>%
+  full_join(pkind13, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bdhhnr", "hid"), stringsAsFactors = FALSE)
+all13 <- all13 %>%
+  full_join(pgen13, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bdhhnr", "hid"), stringsAsFactors = FALSE)
+all13$welle <- 2013
+all13
+
+```
+
+
+```{r join data frames (13), echo=FALSE}
+
+select13 <- all13 %>%
+  select(persnr, bdp9709, d11102ll, e1110113, l1110213, d1110713, bdp15712, isced97_13, partz13, lfs13, bderwzeit, i1111013, d1110113) %>%
+  rename(parleave_13 = bdp9709, sex = d11102ll, occup_13 = e1110113,  region = l1110213, kinderzahl_13 = d1110713, kindbd_13 = bdp15712,  education = isced97_13, partner_13 = partz13, employ_13 = lfs13, workhpw_13 = bderwzeit, income_13 = i1111013, age_13 = d1110113)
+
+select13
+```
+
+
+```{r join data frames (14), include=FALSE}
+
+all14 <- p14 %>% 
+  full_join(pequiv14, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "behhnr", "hid"), stringsAsFactors = FALSE)
+all14 <- all14 %>%
+  full_join(pkind14, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "behhnr", "hid"), stringsAsFactors = FALSE)
+all14 <- all14 %>%
+  full_join(pgen14, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "behhnr", "hid"), stringsAsFactors = FALSE)
+all14$welle <- 2014
+all14
+
+```
+
+
+```{r join data frames (14), echo=FALSE}
+
+select14 <- all14 %>%
+  select(persnr, bep8409, d11102ll, e1110114, l1110214, d1110714, bep15012, isced97_14, partz14, lfs14, beerwzeit, i1111014, d1110114) %>%
+  rename(parleave_14 = bep8409, sex = d11102ll, occup_14 = e1110114,  region = l1110214, kinderzahl_14 =d1110714, kindbd_14 = bep15012, education = isced97_14, partner_14 = partz14, employ_14 = lfs14, workhpw_14 = beerwzeit, income_14 = i1111014, age_14 = d1110114)
+
+select14
+```
+
+
+```{r join data frames (15), include=FALSE}
+
+all15 <- p15 %>% 
+  full_join(pequiv15, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bfhhnr", "hid"), stringsAsFactors = FALSE)
+all15 <- all15 %>%
+  full_join(pkind15, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bfhhnr", "hid"), stringsAsFactors = FALSE)
+all15 <- all15 %>%
+  full_join(pgen15, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bfhhnr", "hid"), stringsAsFactors = FALSE)
+all15$welle <- 2015
+all15$birt
+
+```
+
+
+```{r join data frames (15), echo=FALSE}
+
+select15 <- all15 %>%
+  select(persnr, bfp11808, d11102ll, e1110115, l1110215, d1110715, bfp17312, isced97_15, partz15, lfs15, bferwzeit, i1111015, d1110115) %>%
+  rename(parleave_15 = bfp11808, sex = d11102ll, occup_15 = e1110115,  region = l1110215, kinderzahl_15 = d1110715, kindbd_15 = bfp17312, education = isced97_15, partner_15 = partz15, employ_15 = lfs15, workhpw_15 = bferwzeit, income_15 = i1111015, age_15 = d1110115)
+
+select15
+```
+
+
+```{r join data frames (16), include=FALSE}
+
+all16 <- p16 %>% 
+  full_join(pequiv16, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bghhnr", "hid"), stringsAsFactors = FALSE)
+all16 <- all16 %>%
+  full_join(pkind16, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bghhnr", "hid"), stringsAsFactors = FALSE)
+all16 <- all16 %>%
+  full_join(pgen16, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bghhnr", "hid"), stringsAsFactors = FALSE)
+all16 <- all16 %>%
+  full_join(pp16, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "bghhnr", "hid", "bgp10408", "bgpbirthy", "bgp17012"), stringsAsFactors = FALSE)
+all16$welle <- 2016
+all16
+
+```
+
+
+```{r join data frames (16), echo=FALSE}
+
+select16 <- all16 %>%
+  select(persnr, bgp10408, d11102ll, e1110116, l1110216, d1110716, bgp17012, isced97_16, partz16, lfs16, bgerwzeit,i1111016, d1110116) %>%
+  rename(parleave_16 = bgp10408, sex = d11102ll, occup_16 = e1110116,  region = l1110216, kinderzahl_16 = d1110716, kindbd_16 = bgp17012, education = isced97_16, partner_16 = partz16, employ_16 = lfs16, workhpw_16 = bgerwzeit, workhpy_16 = e1110116, income_16 = i1111016, age_16 = d1110116)
+
+select16 #no welle variable
+```
+
+```{r join data frames (17), include=FALSE}
+
+all17 <- p17 %>% 
+  full_join(pequiv17, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
+all17 <- all17 %>%
+  full_join(pkind17, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
+all17 <- all17 %>%
+  full_join(pgen17, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
+all17 <- all17 %>%
+  full_join(pp17, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid", "bhp_122_08", "bhpbirthy", "bhp_117_08"), stringsAsFactors = FALSE)
+all17$welle <- 2017
+all17
+
+```
+
+
+```{r join data frames (17), echo=FALSE}
+
+select17 <- all17 %>%
+  select(persnr, bhp_122_08, d11102ll, e1110117, l1110217, d1110717, bhp_117_08, isced97_17, partz17, lfs17, bherwzeit, i1111017, d1110117) %>%
+  rename(parleave_17 = bhp_122_08, sex = d11102ll, occup_17 = e1110117,  region = l1110217, kinderzahl_17 = d1110717,  kindbd_17 = bhp_117_08, education = isced97_17, partner_17 = partz17, employ_17 = lfs17, workhpw_17 = bherwzeit, income_17 = i1111017, age_17 = d1110117)
+
+select17 #no welle variable
+select17$kindbd <- as.factor(select17$kindbd)
+```
+
+
+```{r join data frames (18), include=FALSE}
+
+all18 <- p18 %>% 
+  full_join(pequiv18, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
+all18 <- all18 %>%
+  full_join(pkind18, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
+all18 <- all18 %>%
+  full_join(pgen18, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid"), stringsAsFactors = FALSE)
+all18 <- all18 %>%
+  full_join(pp18, by = c("persnr", "hhnr", "hhnrakt", "cid", "pid", "syear", "hid", "bip_123_08", "bipbirthy", "bip_201_12"), stringsAsFactors = FALSE)
+all18$welle <- 2018
+all18$bipbirthy
+
+```
+
+
+```{r join data frames (18), echo=FALSE}
+
+select18 <- all18 %>%
+  select(persnr, bip_123_08, d11102ll, e1110118, l1110218, d1110718, bip_201_12, isced97_18, partz18, lfs18, bierwzeit, i1111018, d1110118) %>%
+  rename(parleave_18 = bip_123_08, sex = d11102ll, occup_18 = e1110118,  region = l1110218, kinderzahl_18 = d1110718, kindbd_18 = bip_201_12, education = isced97_18, partner_18 = partz18, employ_18 = lfs18, workhpw_18 = bierwzeit, income_18 = i1111018, age_18= d1110118)
+
+
+select18 #no welle variable
+```
+
+
+
+```{r join data frames together , echo=FALSE}
+
+middle <- select96 %>%
+  left_join(select97, by = c("persnr", "sex", "region", "education"))
+
+middle <- middle %>%
+  left_join(select98, by = c("persnr", "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select99, by = c("persnr", "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select01, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select02, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select03, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select04, by = c("persnr", "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select05, by = c("persnr", "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select06, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select07, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select08, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select09, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select10, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select11, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select12, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select13, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select14, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select15, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select16, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select17, by = c("persnr",  "sex", "region", "education"))
+middle <- middle %>%
+  left_join(select18, by = c("persnr",  "sex", "region", "education"))
+
+middle
+```
+
+```{r save Data Set , echo=FALSE}
+
+# Save an object to a file
+saveRDS(middle, file = "soep_wide_unedit.rds")
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

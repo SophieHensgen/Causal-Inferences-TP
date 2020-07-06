@@ -5,25 +5,42 @@ date: "7/6/2020"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+```{r Packages, include=FALSE}
+library(tidyverse)
+library(dplyr)
+library(foreign)
+library(panelr)
 ```
 
 ```{r Restore Data Set , echo=FALSE}
 
 # Restore the object
-soep.unedit <- readRDS(file = "soep_unedit.rds")
+soep.unedit <- readRDS(file = "soep_wide_unedit.rds")
 soep.unedit
+soep.un <- readRDS(file = "soep_unedit.rds")
+soep.un
 ```
 
-```{r Create new Variables , echo=FALSE}
+```{r even smaller data set, echo=FALSE}
+
+soep.long <- soep.unedit %>% 
+  arrange(persnr, welle) # arrange the table
 
 
 
 ```
 
+```{r long to wide format, echo=FALSE}
+soep.long <- as_tibble(soep.long)
 
+soep.l <- soep.unedit %>% 
+  select(persnr, welle, parleave)
 
+data_wide <- spread(soep.l, welle, parleave)
+data_wide
+
+widen_panel(soep.l, separator = "_")
+```
 
 
 
