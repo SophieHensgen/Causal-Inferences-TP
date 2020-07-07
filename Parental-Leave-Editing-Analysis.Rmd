@@ -17,29 +17,216 @@ library(panelr)
 # Restore the object
 soep.unedit <- readRDS(file = "soep_wide_unedit.rds")
 soep.unedit
-soep.un <- readRDS(file = "soep_unedit.rds")
-soep.un
+
+soep.unedit[soep.unedit==""]<-NA
 ```
 
-```{r even smaller data set, echo=FALSE}
-
-soep.long <- soep.unedit %>% 
-  arrange(persnr, welle) # arrange the table
+```{r editing parental leave, echo=FALSE}
 
 
+n <- c("12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "0")
+l <- c("010101010101010101010101", "0101010101010101010101", "01010101010101010101", "010101010101010101", "0101010101010101", "01010101010101", "010101010101", "0101010101", "01010101", "010101", "0101", "01", "-2", "-1")
+
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_96 <- gsub(x, y, soep.unedit$parleave_96)
+  }
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_97 <- gsub(x, y, soep.unedit$parleave_97)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_98 <- gsub(x, y, soep.unedit$parleave_98)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_99 <- gsub(x, y, soep.unedit$parleave_99)
+  }
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_00 <- gsub(x, y, soep.unedit$parleave_00)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_01 <- gsub(x, y, soep.unedit$parleave_01)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_02 <- gsub(x, y, soep.unedit$parleave_02)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_03 <- gsub(x, y, soep.unedit$parleave_03)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_04 <- gsub(x, y, soep.unedit$parleave_04)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_05 <- gsub(x, y, soep.unedit$parleave_05)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_06 <- gsub(x, y, soep.unedit$parleave_06)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_07 <- gsub(x, y, soep.unedit$parleave_07)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_08 <- gsub(x, y, soep.unedit$parleave_08)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_09 <- gsub(x, y, soep.unedit$parleave_09)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_10 <- gsub(x, y, soep.unedit$parleave_10)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_11 <- gsub(x, y, soep.unedit$parleave_11)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_12 <- gsub(x, y, soep.unedit$parleave_12)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_13 <- gsub(x, y, soep.unedit$parleave_13)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_14 <- gsub(x, y, soep.unedit$parleave_14)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_15 <- gsub(x, y, soep.unedit$parleave_15)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_16 <- gsub(x, y, soep.unedit$parleave_16)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_17 <- gsub(x, y, soep.unedit$parleave_17)
+}
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_18 <- gsub(x, y, soep.unedit$parleave_18)
+}
+
+```
+
+```{r editing sex, echo=FALSE}
+
+soep.unedit$sex <- gsub("\\[2]", "", soep.unedit$sex, ignore.case=T)
+soep.unedit$sex <- gsub("Female", "", soep.unedit$sex, ignore.case=T)
+soep.unedit$sex <- gsub("\\[1]", "", soep.unedit$sex, ignore.case=T)
+soep.unedit$sex <- gsub("Male", "", soep.unedit$sex, ignore.case=T)
+soep.unedit$sex <- gsub("2", "0", soep.unedit$sex, ignore.case=T)
+
+```
+
+```{r editing region, echo=FALSE}
+
+soep.unedit$region <- gsub("\\[2]", "", soep.unedit$region, ignore.case=T)
+soep.unedit$region <- gsub("West-Germany", "", soep.unedit$region, ignore.case=T)
+soep.unedit$region <- gsub("\\[1]", "", soep.unedit$region, ignore.case=T)
+soep.unedit$region <- gsub("East-Germany", "", soep.unedit$region, ignore.case=T)
+soep.unedit$region <- gsub("2", "0", soep.unedit$region, ignore.case=T)
+
+```
+
+```{r editing education, echo=FALSE}
+
+soep.unedit$education <- gsub("\\[", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("\\]", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("middle vocational", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("higher education", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("general elementary", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("higher vocational", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("vocational \\+ Abi", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("in school", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("inadequately", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("keine Angabe", "", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("0", "99", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("1", "0", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("2", "0", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("3", "0", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("4", "1", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("5", "1", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("6", "1", soep.unedit$education, ignore.case=T)
+soep.unedit$education <- gsub("-0", "NA", soep.unedit$education, ignore.case=T)
+soep.unedit
+
+```
+
+```{r editing parental leave, echo=FALSE}
+
+soep.unedit$parleave_97[is.na(soep.unedit$parleave_97)] <- 0
+soep.unedit$parleave_98[is.na(soep.unedit$parleave_98)] <- 0
+soep.unedit$parleave_99[is.na(soep.unedit$parleave_99)] <- 0
+soep.unedit$parleave_00[is.na(soep.unedit$parleave_00)] <- 0
+soep.unedit$parleave_01[is.na(soep.unedit$parleave_01)] <- 0
+soep.unedit$parleave_02[is.na(soep.unedit$parleave_02)] <- 0
+soep.unedit$parleave_03[is.na(soep.unedit$parleave_03)] <- 0
+soep.unedit$parleave_04[is.na(soep.unedit$parleave_04)] <- 0
+soep.unedit$parleave_05[is.na(soep.unedit$parleave_05)] <- 0
+soep.unedit$parleave_06[is.na(soep.unedit$parleave_06)] <- 0
+soep.unedit$parleave_07[is.na(soep.unedit$parleave_07)] <- 0
+soep.unedit$parleave_08[is.na(soep.unedit$parleave_08)] <- 0
+soep.unedit$parleave_09[is.na(soep.unedit$parleave_09)] <- 0
+soep.unedit$parleave_10[is.na(soep.unedit$parleave_10)] <- 0
+soep.unedit$parleave_11[is.na(soep.unedit$parleave_11)] <- 0
+soep.unedit$parleave_12[is.na(soep.unedit$parleave_12)] <- 0
+soep.unedit$parleave_13[is.na(soep.unedit$parleave_13)] <- 0
+soep.unedit$parleave_14[is.na(soep.unedit$parleave_14)] <- 0
+soep.unedit$parleave_15[is.na(soep.unedit$parleave_15)] <- 0
+soep.unedit$parleave_16[is.na(soep.unedit$parleave_16)] <- 0
+soep.unedit$parleave_17[is.na(soep.unedit$parleave_17)] <- 0
+soep.unedit$parleave_18[is.na(soep.unedit$parleave_18)] <- 0
 
 ```
 
 ```{r long to wide format, echo=FALSE}
-soep.long <- as_tibble(soep.long)
 
-soep.l <- soep.unedit %>% 
-  select(persnr, welle, parleave)
+for (i in 1:14){
+   x <- l[i]
+   y <- n[i]
+   soep.unedit$parleave_96 <- gsub(x, y, soep.unedit$parleave_96)
+}
 
-data_wide <- spread(soep.l, welle, parleave)
-data_wide
+n <- c("12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "0")
+l <- c("010101010101010101010101", "0101010101010101010101", "01010101010101010101", "010101010101010101", "0101010101010101", "01010101010101", "010101010101", "0101010101", "01010101", "010101", "0101", "01", "-2", "-1")
 
-widen_panel(soep.l, separator = "_")
 ```
 
 

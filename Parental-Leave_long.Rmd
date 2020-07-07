@@ -714,6 +714,8 @@ middle <- middle %>%
 middle <- middle %>%
   left_join(select99, by = c("persnr", "sex", "region", "education"))
 middle <- middle %>%
+  left_join(select00, by = c("persnr", "sex", "region", "education"))
+middle <- middle %>%
   left_join(select01, by = c("persnr",  "sex", "region", "education"))
 middle <- middle %>%
   left_join(select02, by = c("persnr",  "sex", "region", "education"))
