@@ -165,7 +165,7 @@ all96 <- all96 %>%
 ```{r join data frames (96), echo=FALSE}
 
 select96 <- all96 %>%
-  select(persnr, mp66f, d11102ll, e1110696, l1110296, d1110796, mp10813, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196) %>%
+  select(persnr, mp66f, d11102ll, e1110696, l1110296, d1110796, mp10813, isced97_96, partz96, lfs96, merwzeit, i1111096, d1110196) %>%
   rename(parleave_96 = mp66f, sex = d11102ll, occup_96  = e1110696,  region  = l1110296, kinderzahl_96  =  d1110796, kindbd_96  = mp10813, education  = isced97_96, partner_96 = partz96, employ_96 = lfs96, workhpw_96  = merwzeit, income_96  = i1111096, age_96  = d1110196)
 
 select96

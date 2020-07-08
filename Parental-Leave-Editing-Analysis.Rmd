@@ -144,6 +144,9 @@ soep.unedit$parleave_do_18 <- soep.unedit$parleave_18
 
 ```{r editing parental leave - dummy-ob, echo=FALSE}
 
+soep.unedit$parleave_do_96 <- gsub("0", NA, soep.unedit$parleave_do_96)
+soep.unedit$parleave_do_97 <- gsub("0", NA, soep.unedit$parleave_do_97)
+
 l <- c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
 
 soep.unedit$parleave_do_96 <- soep.unedit$parleave_96
@@ -216,7 +219,7 @@ soep.unedit$parleave_dt_18 <- soep.unedit$parleave_18
 l <- c("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
 n <- c("NA", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1")
 
-soep.unedit$parleave_do_96 <- soep.unedit$parleave_96
+
 for (i in 1:13){
   x <- l[i]
   y <- n[i] 
@@ -297,172 +300,39 @@ soep.unedit
 ```
 
 ```{r editing partner - dummy-taken, echo=FALSE}
-
-soep.unedit$partner_96 <- gsub("\\[", "", soep.unedit$partner_96, ignore.case=T)
-soep.unedit$partner_96 <- gsub("\\]", "", soep.unedit$partner_96, ignore.case=T)
-soep.unedit$partner_96 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_96, ignore.case=T)
-soep.unedit$partner_96 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_96, ignore.case=T)
-soep.unedit$partner_96 <- gsub("Lebenspartner", "", soep.unedit$partner_96, ignore.case=T)
-soep.unedit$partner_96 <- gsub("2", "1", soep.unedit$partner_96, ignore.case=T)
-
-soep.unedit$partner_97 <- gsub("\\[", "", soep.unedit$partner_97, ignore.case=T)
-soep.unedit$partner_97 <- gsub("\\]", "", soep.unedit$partner_97, ignore.case=T)
-soep.unedit$partner_97 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_97, ignore.case=T)
-soep.unedit$partner_97 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_97, ignore.case=T)
-soep.unedit$partner_97 <- gsub("Lebenspartner", "", soep.unedit$partner_97, ignore.case=T)
-soep.unedit$partner_97 <- gsub("2", "1", soep.unedit$partner_97, ignore.case=T)
-
-soep.unedit$partner_98 <- gsub("\\[", "", soep.unedit$partner_98, ignore.case=T)
-soep.unedit$partner_98 <- gsub("\\]", "", soep.unedit$partner_98, ignore.case=T)
-soep.unedit$partner_98 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_98, ignore.case=T)
-soep.unedit$partner_98 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_98, ignore.case=T)
-soep.unedit$partner_98 <- gsub("Lebenspartner", "", soep.unedit$partner_98, ignore.case=T)
-soep.unedit$partner_98 <- gsub("2", "1", soep.unedit$partner_98, ignore.case=T)
-
-soep.unedit$partner_99 <- gsub("\\[", "", soep.unedit$partner_99, ignore.case=T)
-soep.unedit$partner_99 <- gsub("\\]", "", soep.unedit$partner_99, ignore.case=T)
-soep.unedit$partner_99 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_99, ignore.case=T)
-soep.unedit$partner_99 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_99, ignore.case=T)
-soep.unedit$partner_99 <- gsub("Lebenspartner", "", soep.unedit$partner_99, ignore.case=T)
-soep.unedit$partner_99 <- gsub("2", "1", soep.unedit$partner_99, ignore.case=T)
-
-soep.unedit$partner_00 <- gsub("\\[", "", soep.unedit$partner_00, ignore.case=T)
-soep.unedit$partner_00 <- gsub("\\]", "", soep.unedit$partner_00, ignore.case=T)
-soep.unedit$partner_00 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_00, ignore.case=T)
-soep.unedit$partner_00 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_00, ignore.case=T)
-soep.unedit$partner_00 <- gsub("Lebenspartner", "", soep.unedit$partner_00, ignore.case=T)
-soep.unedit$partner_00 <- gsub("2", "1", soep.unedit$partner_00, ignore.case=T)
-
-soep.unedit$partner_01 <- gsub("\\[", "", soep.unedit$partner_01, ignore.case=T)
-soep.unedit$partner_01 <- gsub("\\]", "", soep.unedit$partner_01, ignore.case=T)
-soep.unedit$partner_01 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_01, ignore.case=T)
-soep.unedit$partner_01 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_01, ignore.case=T)
-soep.unedit$partner_01 <- gsub("Lebenspartner", "", soep.unedit$partner_01, ignore.case=T)
-soep.unedit$partner_01 <- gsub("2", "1", soep.unedit$partner_01, ignore.case=T)
-
-soep.unedit$partner_02 <- gsub("\\[", "", soep.unedit$partner_02, ignore.case=T)
-soep.unedit$partner_02 <- gsub("\\]", "", soep.unedit$partner_02, ignore.case=T)
-soep.unedit$partner_02 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_02, ignore.case=T)
-soep.unedit$partner_02 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_02, ignore.case=T)
-soep.unedit$partner_02 <- gsub("Lebenspartner", "", soep.unedit$partner_02, ignore.case=T)
-soep.unedit$partner_02 <- gsub("2", "1", soep.unedit$partner_02, ignore.case=T)
-
-soep.unedit$partner_03 <- gsub("\\[", "", soep.unedit$partner_03, ignore.case=T)
-soep.unedit$partner_03 <- gsub("\\]", "", soep.unedit$partner_03, ignore.case=T)
-soep.unedit$partner_03 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_03, ignore.case=T)
-soep.unedit$partner_03 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_03, ignore.case=T)
-soep.unedit$partner_03 <- gsub("Lebenspartner", "", soep.unedit$partner_03, ignore.case=T)
-soep.unedit$partner_03 <- gsub("2", "1", soep.unedit$partner_03, ignore.case=T)
-
-soep.unedit$partner_04 <- gsub("\\[", "", soep.unedit$partner_04, ignore.case=T)
-soep.unedit$partner_04 <- gsub("\\]", "", soep.unedit$partner_04, ignore.case=T)
-soep.unedit$partner_04 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_04, ignore.case=T)
-soep.unedit$partner_04 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_04, ignore.case=T)
-soep.unedit$partner_04 <- gsub("Lebenspartner", "", soep.unedit$partner_04, ignore.case=T)
-soep.unedit$partner_04 <- gsub("2", "1", soep.unedit$partner_04, ignore.case=T)
-
-soep.unedit$partner_05 <- gsub("\\[", "", soep.unedit$partner_05, ignore.case=T)
-soep.unedit$partner_05 <- gsub("\\]", "", soep.unedit$partner_05, ignore.case=T)
-soep.unedit$partner_05 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_05, ignore.case=T)
-soep.unedit$partner_05 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_05, ignore.case=T)
-soep.unedit$partner_05 <- gsub("Lebenspartner", "", soep.unedit$partner_05, ignore.case=T)
-soep.unedit$partner_05 <- gsub("2", "1", soep.unedit$partner_05, ignore.case=T)
-
-soep.unedit$partner_06 <- gsub("\\[", "", soep.unedit$partner_06, ignore.case=T)
-soep.unedit$partner_06 <- gsub("\\]", "", soep.unedit$partner_06, ignore.case=T)
-soep.unedit$partner_06 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_06, ignore.case=T)
-soep.unedit$partner_06 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_06, ignore.case=T)
-soep.unedit$partner_06 <- gsub("Lebenspartner", "", soep.unedit$partner_06, ignore.case=T)
-soep.unedit$partner_06 <- gsub("2", "1", soep.unedit$partner_06, ignore.case=T)
-
-soep.unedit$partner_07 <- gsub("\\[", "", soep.unedit$partner_07, ignore.case=T)
-soep.unedit$partner_07 <- gsub("\\]", "", soep.unedit$partner_07, ignore.case=T)
-soep.unedit$partner_07 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_07, ignore.case=T)
-soep.unedit$partner_07 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_07, ignore.case=T)
-soep.unedit$partner_07 <- gsub("Lebenspartner", "", soep.unedit$partner_07, ignore.case=T)
-soep.unedit$partner_07 <- gsub("2", "1", soep.unedit$partner_07, ignore.case=T)
-
-soep.unedit$partner_08 <- gsub("\\[", "", soep.unedit$partner_08, ignore.case=T)
-soep.unedit$partner_08 <- gsub("\\]", "", soep.unedit$partner_08, ignore.case=T)
-soep.unedit$partner_08 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_08, ignore.case=T)
-soep.unedit$partner_08 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_08, ignore.case=T)
-soep.unedit$partner_08 <- gsub("Lebenspartner", "", soep.unedit$partner_08, ignore.case=T)
-soep.unedit$partner_08 <- gsub("2", "1", soep.unedit$partner_08, ignore.case=T)
-
-soep.unedit$partner_09 <- gsub("\\[", "", soep.unedit$partner_09, ignore.case=T)
-soep.unedit$partner_09 <- gsub("\\]", "", soep.unedit$partner_09, ignore.case=T)
-soep.unedit$partner_09 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_09, ignore.case=T)
-soep.unedit$partner_09 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_09, ignore.case=T)
-soep.unedit$partner_09 <- gsub("Lebenspartner", "", soep.unedit$partner_09, ignore.case=T)
-soep.unedit$partner_09 <- gsub("2", "1", soep.unedit$partner_09, ignore.case=T)
+l <- c("\\[", "\\]", "kein Partner im Haushalt", "Ehepartner \\/ eingetragener Partner",  "Ehepartner \\/ eingetragen", "Lebenspartner", "unklar", "wahrscheinlich", "wahrscheinlich Ehepartner / eingetragen", "2", "3", "4", "5")
+n <- c("", "", "", "", "", "", "", "", "", "1", "1", "1", NA)
 
 
-soep.unedit$partner_10 <- gsub("\\[", "", soep.unedit$partner_10, ignore.case=T)
-soep.unedit$partner_10 <- gsub("\\]", "", soep.unedit$partner_10, ignore.case=T)
-soep.unedit$partner_10 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_10, ignore.case=T)
-soep.unedit$partner_10 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_10, ignore.case=T)
-soep.unedit$partner_10 <- gsub("Lebenspartner", "", soep.unedit$partner_10, ignore.case=T)
-soep.unedit$partner_10 <- gsub("2", "1", soep.unedit$partner_10, ignore.case=T)
+for (i in 1:13){
+  x <- l[i]
+  y <- n[i] 
+soep.unedit$partner_96 <- gsub(x, y, soep.unedit$partner_96, ignore.case=T)
+soep.unedit$partner_97 <- gsub(x, y, soep.unedit$partner_97, ignore.case=T)
+soep.unedit$partner_98 <- gsub(x, y, soep.unedit$partner_98, ignore.case=T)
+soep.unedit$partner_99 <- gsub(x, y, soep.unedit$partner_99, ignore.case=T)
+soep.unedit$partner_00 <- gsub(x, y, soep.unedit$partner_00, ignore.case=T)
+soep.unedit$partner_01 <- gsub(x, y, soep.unedit$partner_01, ignore.case=T)
+soep.unedit$partner_02 <- gsub(x, y, soep.unedit$partner_02, ignore.case=T)
+soep.unedit$partner_03 <- gsub(x, y, soep.unedit$partner_03, ignore.case=T)
+soep.unedit$partner_04 <- gsub(x, y, soep.unedit$partner_04, ignore.case=T)
+soep.unedit$partner_05 <- gsub(x, y, soep.unedit$partner_05, ignore.case=T)
+soep.unedit$partner_06 <- gsub(x, y, soep.unedit$partner_06, ignore.case=T)
+soep.unedit$partner_07 <- gsub(x, y, soep.unedit$partner_07, ignore.case=T)
+soep.unedit$partner_08 <- gsub(x, y, soep.unedit$partner_08, ignore.case=T)
+soep.unedit$partner_09 <- gsub(x, y, soep.unedit$partner_09, ignore.case=T)
+soep.unedit$partner_10 <- gsub(x, y, soep.unedit$partner_10, ignore.case=T)
+soep.unedit$partner_11 <- gsub(x, y, soep.unedit$partner_11, ignore.case=T)
+soep.unedit$partner_12 <- gsub(x, y, soep.unedit$partner_12, ignore.case=T)
+soep.unedit$partner_13 <- gsub(x, y, soep.unedit$partner_13, ignore.case=T)
+soep.unedit$partner_14 <- gsub(x, y, soep.unedit$partner_14, ignore.case=T)
+soep.unedit$partner_15 <- gsub(x, y, soep.unedit$partner_15, ignore.case=T)
+soep.unedit$partner_16 <- gsub(x, y, soep.unedit$partner_16, ignore.case=T)
+soep.unedit$partner_17 <- gsub(x, y, soep.unedit$partner_17, ignore.case=T)
+soep.unedit$partner_18 <- gsub(x, y, soep.unedit$partner_18, ignore.case=T)
+}
 
-soep.unedit$partner_11 <- gsub("\\[", "", soep.unedit$partner_11, ignore.case=T)
-soep.unedit$partner_11 <- gsub("\\]", "", soep.unedit$partner_11, ignore.case=T)
-soep.unedit$partner_11 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_11, ignore.case=T)
-soep.unedit$partner_11 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_11, ignore.case=T)
-soep.unedit$partner_11 <- gsub("Lebenspartner", "", soep.unedit$partner_11, ignore.case=T)
-soep.unedit$partner_11 <- gsub("2", "1", soep.unedit$partner_11, ignore.case=T)
-
-soep.unedit$partner_12 <- gsub("\\[", "", soep.unedit$partner_12, ignore.case=T)
-soep.unedit$partner_12 <- gsub("\\]", "", soep.unedit$partner_12, ignore.case=T)
-soep.unedit$partner_12 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_12, ignore.case=T)
-soep.unedit$partner_12 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_12, ignore.case=T)
-soep.unedit$partner_12 <- gsub("Lebenspartner", "", soep.unedit$partner_12, ignore.case=T)
-soep.unedit$partner_12 <- gsub("2", "1", soep.unedit$partner_12, ignore.case=T)
-
-soep.unedit$partner_13 <- gsub("\\[", "", soep.unedit$partner_13, ignore.case=T)
-soep.unedit$partner_13 <- gsub("\\]", "", soep.unedit$partner_13, ignore.case=T)
-soep.unedit$partner_13 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_13, ignore.case=T)
-soep.unedit$partner_13 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_13, ignore.case=T)
-soep.unedit$partner_13 <- gsub("Lebenspartner", "", soep.unedit$partner_13, ignore.case=T)
-soep.unedit$partner_13 <- gsub("2", "1", soep.unedit$partner_13, ignore.case=T)
-
-soep.unedit$partner_14 <- gsub("\\[", "", soep.unedit$partner_14, ignore.case=T)
-soep.unedit$partner_14 <- gsub("\\]", "", soep.unedit$partner_14, ignore.case=T)
-soep.unedit$partner_14 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_14, ignore.case=T)
-soep.unedit$partner_14 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_14, ignore.case=T)
-soep.unedit$partner_14 <- gsub("Lebenspartner", "", soep.unedit$partner_14, ignore.case=T)
-soep.unedit$partner_14 <- gsub("2", "1", soep.unedit$partner_14, ignore.case=T)
-
-soep.unedit$partner_15 <- gsub("\\[", "", soep.unedit$partner_15, ignore.case=T)
-soep.unedit$partner_15 <- gsub("\\]", "", soep.unedit$partner_15, ignore.case=T)
-soep.unedit$partner_15 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_15, ignore.case=T)
-soep.unedit$partner_15 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_15, ignore.case=T)
-soep.unedit$partner_15 <- gsub("Lebenspartner", "", soep.unedit$partner_15, ignore.case=T)
-soep.unedit$partner_15 <- gsub("2", "1", soep.unedit$partner_15, ignore.case=T)
-
-soep.unedit$partner_16 <- gsub("\\[", "", soep.unedit$partner_16, ignore.case=T)
-soep.unedit$partner_16 <- gsub("\\]", "", soep.unedit$partner_16, ignore.case=T)
-soep.unedit$partner_16 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_16, ignore.case=T)
-soep.unedit$partner_16 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_16, ignore.case=T)
-soep.unedit$partner_16 <- gsub("Lebenspartner", "", soep.unedit$partner_16, ignore.case=T)
-soep.unedit$partner_16 <- gsub("2", "1", soep.unedit$partner_16, ignore.case=T)
-
-soep.unedit$partner_17 <- gsub("\\[", "", soep.unedit$partner_17, ignore.case=T)
-soep.unedit$partner_17 <- gsub("\\]", "", soep.unedit$partner_17, ignore.case=T)
-soep.unedit$partner_17 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_17, ignore.case=T)
-soep.unedit$partner_17 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_17, ignore.case=T)
-soep.unedit$partner_17 <- gsub("Lebenspartner", "", soep.unedit$partner_17, ignore.case=T)
-soep.unedit$partner_17 <- gsub("2", "1", soep.unedit$partner_17, ignore.case=T)
-
-soep.unedit$partner_18 <- gsub("\\[", "", soep.unedit$partner_18, ignore.case=T)
-soep.unedit$partner_18 <- gsub("\\]", "", soep.unedit$partner_18, ignore.case=T)
-soep.unedit$partner_18 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_18, ignore.case=T)
-soep.unedit$partner_18 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_18, ignore.case=T)
-soep.unedit$partner_18 <- gsub("Lebenspartner", "", soep.unedit$partner_18, ignore.case=T)
-soep.unedit$partner_18 <- gsub("2", "1", soep.unedit$partner_18, ignore.case=T)
 soep.unedit
-
-#wahrscheinlich Ehepartner / eingetragen
-
 ```
 
 
@@ -1371,6 +1241,7 @@ soep.unedit$occup_16 <- str_replace_all(soep.unedit$occup_16, "\\s", "")
 soep.unedit$occup_17 <- str_replace_all(soep.unedit$occup_17, "\\s", "")
 soep.unedit$occup_18 <- str_replace_all(soep.unedit$occup_18, "\\s", "")
 ```
+
 ```{r occupation grob, echo=FALSE}
 
 
@@ -1688,9 +1559,54 @@ for (i in 1:6){
 soep.unedit
 ```
 
+```{r occupation grob, echo=FALSE}
 
+soep.unedit$workhpw_96 <- gsub("-2", NA, soep.unedit$workhpw_96, ignore.case=T)
+soep.unedit$workhpw_97 <- gsub("-2", NA, soep.unedit$workhpw_97, ignore.case=T)
+soep.unedit$workhpw_98 <- gsub("-2", NA, soep.unedit$workhpw_98, ignore.case=T)
+soep.unedit$workhpw_99 <- gsub("-2", NA, soep.unedit$workhpw_99, ignore.case=T)
+soep.unedit$workhpw_00 <- gsub("-2", NA, soep.unedit$workhpw_00, ignore.case=T)
+soep.unedit$workhpw_01 <- gsub("-2", NA, soep.unedit$workhpw_01, ignore.case=T)
+soep.unedit$workhpw_02 <- gsub("-2", NA, soep.unedit$workhpw_02, ignore.case=T)
+soep.unedit$workhpw_03 <- gsub("-2", NA, soep.unedit$workhpw_03, ignore.case=T)
+soep.unedit$workhpw_04 <- gsub("-2", NA, soep.unedit$workhpw_04, ignore.case=T)
+soep.unedit$workhpw_05 <- gsub("-2", NA, soep.unedit$workhpw_05, ignore.case=T)
+soep.unedit$workhpw_06 <- gsub("-2", NA, soep.unedit$workhpw_06, ignore.case=T)
+soep.unedit$workhpw_07 <- gsub("-2", NA, soep.unedit$workhpw_07, ignore.case=T)
+soep.unedit$workhpw_08 <- gsub("-2", NA, soep.unedit$workhpw_08, ignore.case=T)
+soep.unedit$workhpw_09 <- gsub("-2", NA, soep.unedit$workhpw_09, ignore.case=T)
+soep.unedit$workhpw_10 <- gsub("-2", NA, soep.unedit$workhpw_10, ignore.case=T)
+soep.unedit$workhpw_11 <- gsub("-2", NA, soep.unedit$workhpw_11, ignore.case=T)
+soep.unedit$workhpw_12 <- gsub("-2", NA, soep.unedit$workhpw_12, ignore.case=T)
+soep.unedit$workhpw_13 <- gsub("-2", NA, soep.unedit$workhpw_13, ignore.case=T)
+soep.unedit$workhpw_14 <- gsub("-2", NA, soep.unedit$workhpw_14, ignore.case=T)
+soep.unedit$workhpw_15 <- gsub("-2", NA, soep.unedit$workhpw_15, ignore.case=T)
+soep.unedit$workhpw_16 <- gsub("-2", NA, soep.unedit$workhpw_16, ignore.case=T)
+soep.unedit$workhpw_17 <- gsub("-2", NA, soep.unedit$workhpw_17, ignore.case=T)
+soep.unedit$workhpw_18 <- gsub("-2", NA, soep.unedit$workhpw_18, ignore.case=T)
+
+```
 
 ```{r occupation grob, echo=FALSE}
+
+
+```
+
+```{r occupation grob, echo=FALSE}
+
+soep.edit.s <- soep.unedit %>%
+  select(persnr, sex, region, education, parleave_96, parleave_do_96, parleave_dt_96, kinderzahl_96, partner_96, employ_96, occup_96, workhpw_96, income_96, age_96, employ_d_96, kindbd_d_96,  parleave_97, parleave_do_97, parleave_dt_97, kinderzahl_97, partner_97, employ_97, occup_97, workhpw_97, income_97, age_97, employ_d_97, kindbd_d_97)
+
+soep.edit.s
+
+a <- table(soep.edit.s$kindbd_d_97)
+a
+b <- table(soep.edit.s$parleave_do_96)
+b
+c <- table(soep.edit.s$parleave_96)
+c
+
+
 
 ```
 
