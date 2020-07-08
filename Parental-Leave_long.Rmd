@@ -165,8 +165,8 @@ all96 <- all96 %>%
 ```{r join data frames (96), echo=FALSE}
 
 select96 <- all96 %>%
-  select(persnr, mp66f, d11102ll, e1110196, l1110296, d1110796, mp10813, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196) %>%
-  rename(parleave_96 = mp66f, sex = d11102ll, occup_96  = e1110196,  region  = l1110296, kinderzahl_96  =  d1110796, kindbd_96  = mp10813, education  = isced97_96, partner_96 = partz96, employ_96 = lfs96, workhpw_96  = merwzeit, income_96  = i1111096, age_96  = d1110196)
+  select(persnr, mp66f, d11102ll, e1110696, l1110296, d1110796, mp10813, isced97_96, partz96, lfs96, merwzeit, e1110196, i1111096, d1110196) %>%
+  rename(parleave_96 = mp66f, sex = d11102ll, occup_96  = e1110696,  region  = l1110296, kinderzahl_96  =  d1110796, kindbd_96  = mp10813, education  = isced97_96, partner_96 = partz96, employ_96 = lfs96, workhpw_96  = merwzeit, income_96  = i1111096, age_96  = d1110196)
 
 select96
 ```
@@ -189,8 +189,8 @@ all97
 ```{r join data frames (97), echo=FALSE}
 
 select97 <- all97 %>%
-  select(persnr, np660f, d11102ll, e1110197, l1110297, d1110797, np11513, isced97_97, partz97, lfs97, nerwzeit,  i1111097, d1110197) %>%
-  rename(parleave_97 = np660f, sex = d11102ll, occup_97 = e1110197,  region = l1110297, kinderzahl_97 = d1110797, kindbd_97 = np11513, education = isced97_97, partner_97 = partz97, employ_97 = lfs97, workhpw_97 = nerwzeit,  income_97 = i1111097, age_97 = d1110197)
+  select(persnr, np660f, d11102ll, e1110697, l1110297, d1110797, np11513, isced97_97, partz97, lfs97, nerwzeit,  i1111097, d1110197) %>%
+  rename(parleave_97 = np660f, sex = d11102ll, occup_97 = e1110697,  region = l1110297, kinderzahl_97 = d1110797, kindbd_97 = np11513, education = isced97_97, partner_97 = partz97, employ_97 = lfs97, workhpw_97 = nerwzeit,  income_97 = i1111097, age_97 = d1110197)
 
 select97
 
@@ -214,8 +214,8 @@ all98
 ```{r join data frames (98), echo=FALSE}
 
 select98 <- all98 %>%
-  select(persnr, op5706, d11102ll, e1110198, l1110298, d1110798, op12113, isced97_98, partz98, lfs98, oerwzeit, i1111098, d1110198) %>%
-  rename(parleave_98 = op5706, sex = d11102ll,  occup_98 = e1110198,  region = l1110298, kinderzahl_98 = d1110798, kindbd_98 = op12113, education = isced97_98, partner_98 = partz98, employ_98 = lfs98, workhpw_98 = oerwzeit, income_98 = i1111098, age_98 = d1110198)
+  select(persnr, op5706, d11102ll, e1110698, l1110298, d1110798, op12113, isced97_98, partz98, lfs98, oerwzeit, i1111098, d1110198) %>%
+  rename(parleave_98 = op5706, sex = d11102ll,  occup_98 = e1110698,  region = l1110298, kinderzahl_98 = d1110798, kindbd_98 = op12113, education = isced97_98, partner_98 = partz98, employ_98 = lfs98, workhpw_98 = oerwzeit, income_98 = i1111098, age_98 = d1110198)
 
 select98
 ```
@@ -240,8 +240,8 @@ all99
 ```{r join data frames (99), echo=FALSE}
 
 select99 <- all99 %>%
-  select(persnr, pp7506, d11102ll, e1110199, l1110299, d1110799, pp13320, isced97_99, partz99, lfs99, perwzeit, i1111099, d1110199) %>%
-  rename(parleave_99 = pp7506, sex = d11102ll, occup_99 = e1110199,  region = l1110299, kinderzahl_99 = d1110799, kindbd_99 = pp13320, education = isced97_99, partner_99 = partz99, employ_99 = lfs99, workhpw_99 = perwzeit, income_99 = i1111099, age_99 = d1110199)
+  select(persnr, pp7506, d11102ll, e1110699, l1110299, d1110799, pp13320, isced97_99, partz99, lfs99, perwzeit, i1111099, d1110199) %>%
+  rename(parleave_99 = pp7506, sex = d11102ll, occup_99 = e1110699,  region = l1110299, kinderzahl_99 = d1110799, kindbd_99 = pp13320, education = isced97_99, partner_99 = partz99, employ_99 = lfs99, workhpw_99 = perwzeit, income_99 = i1111099, age_99 = d1110199)
 
 select99
 ```
@@ -263,8 +263,8 @@ all00
 ```{r join data frames (00), echo=FALSE}
 
 select00 <- all00%>%
-  select(persnr, qp7507, d11102ll, e1110100, l1110200, d1110700, qp14220, isced97_00, partz00, lfs00, qerwzeit, i1111000, d1110100) %>%
-  rename(parleave_00 = qp7507, sex = d11102ll, occup_00 = e1110100, region = l1110200, kinderzahl_00 = d1110700, kindbd_00 = qp14220, education = isced97_00, partner_00 = partz00, employ_00 = lfs00, workhpw_00 = qerwzeit, income_00 = i1111000, age_00 = d1110100)
+  select(persnr, qp7507, d11102ll, e1110600, l1110200, d1110700, qp14220, isced97_00, partz00, lfs00, qerwzeit, i1111000, d1110100) %>%
+  rename(parleave_00 = qp7507, sex = d11102ll, occup_00 = e1110600, region = l1110200, kinderzahl_00 = d1110700, kindbd_00 = qp14220, education = isced97_00, partner_00 = partz00, employ_00 = lfs00, workhpw_00 = qerwzeit, income_00 = i1111000, age_00 = d1110100)
 
 select00
 select00$kindbd <- as.factor(select00$kindbd)
@@ -287,8 +287,8 @@ all01
 ```{r join data frames (01), echo=FALSE}
 
 select01 <- all01 %>%
-  select(persnr, rp7507, d11102ll, e1110101, l1110201, d1110701, rp13320, isced97_01, partz01, lfs01, rerwzeit, i1111001, d1110101) %>%
-  rename(parleave_01 = rp7507, sex = d11102ll, occup_01 = e1110101,  region = l1110201, kinderzahl_01 = d1110701, kindbd_01 = rp13320, education = isced97_01, partner_01 = partz01, employ_01 = lfs01, workhpw_01 = rerwzeit, income_01 = i1111001, age_01 = d1110101)
+  select(persnr, rp7507, d11102ll, e1110601, l1110201, d1110701, rp13320, isced97_01, partz01, lfs01, rerwzeit, i1111001, d1110101) %>%
+  rename(parleave_01 = rp7507, sex = d11102ll, occup_01 = e1110601,  region = l1110201, kinderzahl_01 = d1110701, kindbd_01 = rp13320, education = isced97_01, partner_01 = partz01, employ_01 = lfs01, workhpw_01 = rerwzeit, income_01 = i1111001, age_01 = d1110101)
 
 select01
 ```
@@ -310,8 +310,8 @@ all02
 ```{r join data frames (02), echo=FALSE}
 
 select02 <- all02 %>%
-  select(persnr, sp7507, d11102ll,  e1110102, l1110202, d1110702, sp13320, isced97_02, partz02, lfs02, serwzeit, i1111002, d1110102) %>%
-  rename(parleave_02 = sp7507, sex = d11102ll, occup_02 = e1110102,  region = l1110202, kinderzahl_02 = d1110702, kindbd_02 = sp13320, education = isced97_02, partner_02 = partz02, employ_02 = lfs02, workhpw_02 = serwzeit, income_02 = i1111002, age_02 = d1110102)
+  select(persnr, sp7507, d11102ll,  e1110602, l1110202, d1110702, sp13320, isced97_02, partz02, lfs02, serwzeit, i1111002, d1110102) %>%
+  rename(parleave_02 = sp7507, sex = d11102ll, occup_02 = e1110602,  region = l1110202, kinderzahl_02 = d1110702, kindbd_02 = sp13320, education = isced97_02, partner_02 = partz02, employ_02 = lfs02, workhpw_02 = serwzeit, income_02 = i1111002, age_02 = d1110102)
 
 select02
 ```
@@ -333,8 +333,8 @@ all03
 ```{r join data frames (03), echo=FALSE}
 
 select03 <- all03 %>%
-  select(persnr, tp9307, d11102ll, e1110103, l1110203, d1110703, tp14108, isced97_03, partz03, lfs03, terwzeit, i1111003, d1110103) %>%
-  rename(parleave_03 = tp9307, sex = d11102ll, occup_03 = e1110103,  region = l1110203, kinderzahl_03 = d1110703, kindbd_03 = tp14108, education = isced97_03, partner_03 = partz03, employ_03 = lfs03, workhpw_03 = terwzeit, income_03 = i1111003, age_03 = d1110103)
+  select(persnr, tp9307, d11102ll, e1110603, l1110203, d1110703, tp14108, isced97_03, partz03, lfs03, terwzeit, i1111003, d1110103) %>%
+  rename(parleave_03 = tp9307, sex = d11102ll, occup_03 = e1110603,  region = l1110203, kinderzahl_03 = d1110703, kindbd_03 = tp14108, education = isced97_03, partner_03 = partz03, employ_03 = lfs03, workhpw_03 = terwzeit, income_03 = i1111003, age_03 = d1110103)
 
 select03
 ```
@@ -357,8 +357,8 @@ all04
 ```{r join data frames (04), echo=FALSE}
 
 select04 <- all04 %>%
-  select(persnr, up7807, d11102ll, e1110104, l1110204, d1110704, up14408, isced97_04, partz04, lfs04, uerwzeit, i1111004, d1110104) %>%
-  rename(parleave_04 = up7807, sex = d11102ll, occup_04 = e1110104,  region = l1110204, kinderzahl_04 = d1110704, kindbd_04 = up14408, education = isced97_04, partner_04 = partz04, employ_04 = lfs04, workhpw_04 = uerwzeit, income_04 = i1111004, age_04 = d1110104)
+  select(persnr, up7807, d11102ll, e1110604, l1110204, d1110704, up14408, isced97_04, partz04, lfs04, uerwzeit, i1111004, d1110104) %>%
+  rename(parleave_04 = up7807, sex = d11102ll, occup_04 = e1110604,  region = l1110204, kinderzahl_04 = d1110704, kindbd_04 = up14408, education = isced97_04, partner_04 = partz04, employ_04 = lfs04, workhpw_04 = uerwzeit, income_04 = i1111004, age_04 = d1110104)
 
 select04
 ```
@@ -380,8 +380,8 @@ all05
 ```{r join data frames (05), echo=FALSE}
 
 select05 <- all05 %>%
-  select(persnr, vp9908, d11102ll, e1110105, l1110205, d1110705, vp15308, isced97_05, partz05, lfs05, verwzeit, i1111005, d1110105) %>%
-  rename(parleave_05 = vp9908, sex = d11102ll, occup_05 = e1110105,  region = l1110205, kinderzahl_05 = d1110705, kindbd_05 = vp15308, education = isced97_05, partner_05 = partz05, employ_05 = lfs05, workhpw_05 = verwzeit, income_05 = i1111005, age_05 = d1110105)
+  select(persnr, vp9908, d11102ll, e1110605, l1110205, d1110705, vp15308, isced97_05, partz05, lfs05, verwzeit, i1111005, d1110105) %>%
+  rename(parleave_05 = vp9908, sex = d11102ll, occup_05 = e1110605,  region = l1110205, kinderzahl_05 = d1110705, kindbd_05 = vp15308, education = isced97_05, partner_05 = partz05, employ_05 = lfs05, workhpw_05 = verwzeit, income_05 = i1111005, age_05 = d1110105)
 
 select05
 ```
@@ -404,8 +404,8 @@ all06
 ```{r join data frames (06), echo=FALSE}
 
 select06 <- all06 %>%
-  select(persnr, wp7608, d11102ll, e1110106, l1110206, d1110706, wp14108, isced97_06, partz06, lfs06, werwzeit, i1111006, d1110106) %>%
-  rename(parleave_06 = wp7608, sex = d11102ll, occup_06 = e1110106,  region = l1110206, kinderzahl_06 = d1110706, kindbd_06 = wp14108, education = isced97_06, partner_06 = partz06, employ_06 = lfs06, workhpw_06 = werwzeit, income_06 = i1111006, age_06 = d1110106)
+  select(persnr, wp7608, d11102ll, e1110606, l1110206, d1110706, wp14108, isced97_06, partz06, lfs06, werwzeit, i1111006, d1110106) %>%
+  rename(parleave_06 = wp7608, sex = d11102ll, occup_06 = e1110606,  region = l1110206, kinderzahl_06 = d1110706, kindbd_06 = wp14108, education = isced97_06, partner_06 = partz06, employ_06 = lfs06, workhpw_06 = werwzeit, income_06 = i1111006, age_06 = d1110106)
 
 select06
 ```
@@ -428,8 +428,8 @@ all07
 ```{r join data frames (07), echo=FALSE}
 
 select07 <- all07 %>%
-  select(persnr, xp9308, d11102ll, e1110107, l1110207, d1110707, xp14808, isced97_07, partz07, lfs07, xerwzeit, i1111007, d1110107) %>%
-  rename(parleave_07 = xp9308, sex = d11102ll, occup_07 = e1110107,  region = l1110207, kinderzahl_07 = d1110707, kindbd_07 = xp14808, education = isced97_07, partner_07 = partz07, employ_07 = lfs07, workhpw_07 = xerwzeit, income_07 = i1111007, age_07 = d1110107)
+  select(persnr, xp9308, d11102ll, e1110607, l1110207, d1110707, xp14808, isced97_07, partz07, lfs07, xerwzeit, i1111007, d1110107) %>%
+  rename(parleave_07 = xp9308, sex = d11102ll, occup_07 = e1110607,  region = l1110207, kinderzahl_07 = d1110707, kindbd_07 = xp14808, education = isced97_07, partner_07 = partz07, employ_07 = lfs07, workhpw_07 = xerwzeit, income_07 = i1111007, age_07 = d1110107)
 
 select07
 ```
@@ -452,8 +452,8 @@ all08
 ```{r join data frames (08), echo=FALSE}
 
 select08 <- all08 %>%
-  select(persnr, yp9408, d11102ll, e1110108, l1110208, d1110708, yp15408, isced97_08, partz08, lfs08, yerwzeit, i1111008, d1110108) %>%
-  rename(parleave_08 = yp9408, sex = d11102ll, occup = e1110108,  region = l1110208, kinderzahl_08 = d1110708, kindbd_08 = yp15408, education = isced97_08, partner_08 = partz08, employ_08 = lfs08, workhpw_08 = yerwzeit, income_08 = i1111008, age_08 = d1110108)
+  select(persnr, yp9408, d11102ll, e1110608, l1110208, d1110708, yp15408, isced97_08, partz08, lfs08, yerwzeit, i1111008, d1110108) %>%
+  rename(parleave_08 = yp9408, sex = d11102ll, occup_08 = e1110608,  region = l1110208, kinderzahl_08 = d1110708, kindbd_08 = yp15408, education = isced97_08, partner_08 = partz08, employ_08 = lfs08, workhpw_08 = yerwzeit, income_08 = i1111008, age_08 = d1110108)
 
 select08
 ```
@@ -476,8 +476,8 @@ all09
 ```{r join data frames (09), echo=FALSE}
 
 select09 <- all09 %>%
-  select(persnr, zp9008, d11102ll, e1110109, l1110209, d1110709, zp15608, isced97_09, partz09, lfs09, zerwzeit, i1111009, d1110109) %>%
-  rename(parleave_09 = zp9008, sex = d11102ll, occup_09 = e1110109,  region = l1110209, kinderzahl_09 = d1110709, kindbd_09 = zp15608, education = isced97_09, partner_09 = partz09, employ_09 = lfs09, workhpw_09 = zerwzeit, income_09 = i1111009, age_09 = d1110109)
+  select(persnr, zp9008, d11102ll, e1110609, l1110209, d1110709, zp15608, isced97_09, partz09, lfs09, zerwzeit, i1111009, d1110109) %>%
+  rename(parleave_09 = zp9008, sex = d11102ll, occup_09 = e1110609,  region = l1110209, kinderzahl_09 = d1110709, kindbd_09 = zp15608, education = isced97_09, partner_09 = partz09, employ_09 = lfs09, workhpw_09 = zerwzeit, income_09 = i1111009, age_09 = d1110109)
 
 select09
 ```
@@ -500,8 +500,8 @@ all10
 ```{r join data frames (10), echo=FALSE}
 
 select10 <- all10 %>%
-  select(persnr, bap8108, d11102ll, e1110110, l1110210, d1110710, bap15909, isced97_10, partz10, lfs10, baerwzeit, i1111010, d1110110) %>%
-  rename(parleave_10 = bap8108, sex = d11102ll, occup_10 = e1110110,  region = l1110210, kinderzahl_10 = d1110710, kindbd_10 = bap15909, education = isced97_10, partner_10 = partz10, employ_10 = lfs10, workhpw_10 = baerwzeit, income_10 = i1111010, age_10 = d1110110)
+  select(persnr, bap8108, d11102ll, e1110610, l1110210, d1110710, bap15909, isced97_10, partz10, lfs10, baerwzeit, i1111010, d1110110) %>%
+  rename(parleave_10 = bap8108, sex = d11102ll, occup_10 = e1110610,  region = l1110210, kinderzahl_10 = d1110710, kindbd_10 = bap15909, education = isced97_10, partner_10 = partz10, employ_10 = lfs10, workhpw_10 = baerwzeit, income_10 = i1111010, age_10 = d1110110)
 
 select10
 ```
@@ -523,8 +523,8 @@ all11
 ```{r join data frames (11), echo=FALSE}
 
 select11 <- all11 %>%
-  select(persnr, bbp9109, d11102ll, e1110111, l1110211, d1110711, bbp15112, isced97_11, partz11, lfs11, bberwzeit, i1111011, d1110111) %>%
-  rename(parleave_11 = bbp9109, sex = d11102ll, occup_11 = e1110111,  region = l1110211, kinderzahl_11 = d1110711, kindbd_11 = bbp15112, education = isced97_11, partner_11 = partz11, employ_11 = lfs11, workhpw_11 = bberwzeit, income_11 = i1111011, age_11 = d1110111)
+  select(persnr, bbp9109, d11102ll, e1110611, l1110211, d1110711, bbp15112, isced97_11, partz11, lfs11, bberwzeit, i1111011, d1110111) %>%
+  rename(parleave_11 = bbp9109, sex = d11102ll, occup_11 = e1110611,  region = l1110211, kinderzahl_11 = d1110711, kindbd_11 = bbp15112, education = isced97_11, partner_11 = partz11, employ_11 = lfs11, workhpw_11 = bberwzeit, income_11 = i1111011, age_11 = d1110111)
 
 select11
 ```
@@ -546,8 +546,8 @@ all12
 ```{r join data frames (12), echo=FALSE}
 
 select12 <- all12 %>%
-  select(persnr, bcp7907, d11102ll, e1110112, l1110212, d1110712, bcp15012, isced97_12, partz12, lfs12, bcerwzeit, i1111012, d1110112) %>%
-  rename(parleave_12 = bcp7907, sex = d11102ll, occup_12 = e1110112,  region = l1110212, kinderzahl_12 = d1110712, kindbd_12 = bcp15012, education = isced97_12, partner_12 = partz12, employ_12 = lfs12, workhpw_12 = bcerwzeit, income_12 = i1111012, age_12 = d1110112)
+  select(persnr, bcp7907, d11102ll, e1110612, l1110212, d1110712, bcp15012, isced97_12, partz12, lfs12, bcerwzeit, i1111012, d1110112) %>%
+  rename(parleave_12 = bcp7907, sex = d11102ll, occup_12 = e1110612,  region = l1110212, kinderzahl_12 = d1110712, kindbd_12 = bcp15012, education = isced97_12, partner_12 = partz12, employ_12 = lfs12, workhpw_12 = bcerwzeit, income_12 = i1111012, age_12 = d1110112)
 
 select12
 ```
@@ -569,8 +569,8 @@ all13
 ```{r join data frames (13), echo=FALSE}
 
 select13 <- all13 %>%
-  select(persnr, bdp9709, d11102ll, e1110113, l1110213, d1110713, bdp15712, isced97_13, partz13, lfs13, bderwzeit, i1111013, d1110113) %>%
-  rename(parleave_13 = bdp9709, sex = d11102ll, occup_13 = e1110113,  region = l1110213, kinderzahl_13 = d1110713, kindbd_13 = bdp15712,  education = isced97_13, partner_13 = partz13, employ_13 = lfs13, workhpw_13 = bderwzeit, income_13 = i1111013, age_13 = d1110113)
+  select(persnr, bdp9709, d11102ll, e1110613, l1110213, d1110713, bdp15712, isced97_13, partz13, lfs13, bderwzeit, i1111013, d1110113) %>%
+  rename(parleave_13 = bdp9709, sex = d11102ll, occup_13 = e1110613,  region = l1110213, kinderzahl_13 = d1110713, kindbd_13 = bdp15712,  education = isced97_13, partner_13 = partz13, employ_13 = lfs13, workhpw_13 = bderwzeit, income_13 = i1111013, age_13 = d1110113)
 
 select13
 ```
@@ -593,8 +593,8 @@ all14
 ```{r join data frames (14), echo=FALSE}
 
 select14 <- all14 %>%
-  select(persnr, bep8409, d11102ll, e1110114, l1110214, d1110714, bep15012, isced97_14, partz14, lfs14, beerwzeit, i1111014, d1110114) %>%
-  rename(parleave_14 = bep8409, sex = d11102ll, occup_14 = e1110114,  region = l1110214, kinderzahl_14 =d1110714, kindbd_14 = bep15012, education = isced97_14, partner_14 = partz14, employ_14 = lfs14, workhpw_14 = beerwzeit, income_14 = i1111014, age_14 = d1110114)
+  select(persnr, bep8409, d11102ll, e1110614, l1110214, d1110714, bep15012, isced97_14, partz14, lfs14, beerwzeit, i1111014, d1110114) %>%
+  rename(parleave_14 = bep8409, sex = d11102ll, occup_14 = e1110614,  region = l1110214, kinderzahl_14 =d1110714, kindbd_14 = bep15012, education = isced97_14, partner_14 = partz14, employ_14 = lfs14, workhpw_14 = beerwzeit, income_14 = i1111014, age_14 = d1110114)
 
 select14
 ```
@@ -617,8 +617,8 @@ all15$birt
 ```{r join data frames (15), echo=FALSE}
 
 select15 <- all15 %>%
-  select(persnr, bfp11808, d11102ll, e1110115, l1110215, d1110715, bfp17312, isced97_15, partz15, lfs15, bferwzeit, i1111015, d1110115) %>%
-  rename(parleave_15 = bfp11808, sex = d11102ll, occup_15 = e1110115,  region = l1110215, kinderzahl_15 = d1110715, kindbd_15 = bfp17312, education = isced97_15, partner_15 = partz15, employ_15 = lfs15, workhpw_15 = bferwzeit, income_15 = i1111015, age_15 = d1110115)
+  select(persnr, bfp11808, d11102ll, e1110615, l1110215, d1110715, bfp17312, isced97_15, partz15, lfs15, bferwzeit, i1111015, d1110115) %>%
+  rename(parleave_15 = bfp11808, sex = d11102ll, occup_15 = e1110615,  region = l1110215, kinderzahl_15 = d1110715, kindbd_15 = bfp17312, education = isced97_15, partner_15 = partz15, employ_15 = lfs15, workhpw_15 = bferwzeit, income_15 = i1111015, age_15 = d1110115)
 
 select15
 ```
@@ -643,10 +643,10 @@ all16
 ```{r join data frames (16), echo=FALSE}
 
 select16 <- all16 %>%
-  select(persnr, bgp10408, d11102ll, e1110116, l1110216, d1110716, bgp17012, isced97_16, partz16, lfs16, bgerwzeit,i1111016, d1110116) %>%
-  rename(parleave_16 = bgp10408, sex = d11102ll, occup_16 = e1110116,  region = l1110216, kinderzahl_16 = d1110716, kindbd_16 = bgp17012, education = isced97_16, partner_16 = partz16, employ_16 = lfs16, workhpw_16 = bgerwzeit, workhpy_16 = e1110116, income_16 = i1111016, age_16 = d1110116)
+  select(persnr, bgp10408, d11102ll, e1110616, l1110216, d1110716, bgp17012, isced97_16, partz16, lfs16, bgerwzeit,i1111016, d1110116) %>%
+  rename(parleave_16 = bgp10408, sex = d11102ll, occup_16 = e1110616,  region = l1110216, kinderzahl_16 = d1110716, kindbd_16 = bgp17012, education = isced97_16, partner_16 = partz16, employ_16 = lfs16, workhpw_16 = bgerwzeit, income_16 = i1111016, age_16 = d1110116)
 
-select16 #no welle variable
+select16 
 ```
 
 ```{r join data frames (17), include=FALSE}
@@ -668,8 +668,8 @@ all17
 ```{r join data frames (17), echo=FALSE}
 
 select17 <- all17 %>%
-  select(persnr, bhp_122_08, d11102ll, e1110117, l1110217, d1110717, bhp_117_08, isced97_17, partz17, lfs17, bherwzeit, i1111017, d1110117) %>%
-  rename(parleave_17 = bhp_122_08, sex = d11102ll, occup_17 = e1110117,  region = l1110217, kinderzahl_17 = d1110717,  kindbd_17 = bhp_117_08, education = isced97_17, partner_17 = partz17, employ_17 = lfs17, workhpw_17 = bherwzeit, income_17 = i1111017, age_17 = d1110117)
+  select(persnr, bhp_122_08, d11102ll, e1110617, l1110217, d1110717, bhp_117_08, isced97_17, partz17, lfs17, bherwzeit, i1111017, d1110117) %>%
+  rename(parleave_17 = bhp_122_08, sex = d11102ll, occup_17 = e1110617,  region = l1110217, kinderzahl_17 = d1110717,  kindbd_17 = bhp_117_08, education = isced97_17, partner_17 = partz17, employ_17 = lfs17, workhpw_17 = bherwzeit, income_17 = i1111017, age_17 = d1110117)
 
 select17 #no welle variable
 select17$kindbd <- as.factor(select17$kindbd)
@@ -695,8 +695,8 @@ all18$bipbirthy
 ```{r join data frames (18), echo=FALSE}
 
 select18 <- all18 %>%
-  select(persnr, bip_123_08, d11102ll, e1110118, l1110218, d1110718, bip_201_12, isced97_18, partz18, lfs18, bierwzeit, i1111018, d1110118) %>%
-  rename(parleave_18 = bip_123_08, sex = d11102ll, occup_18 = e1110118,  region = l1110218, kinderzahl_18 = d1110718, kindbd_18 = bip_201_12, education = isced97_18, partner_18 = partz18, employ_18 = lfs18, workhpw_18 = bierwzeit, income_18 = i1111018, age_18= d1110118)
+  select(persnr, bip_123_08, d11102ll, e1110618, l1110218, d1110718, bip_201_12, isced97_18, partz18, lfs18, bierwzeit, i1111018, d1110118) %>%
+  rename(parleave_18 = bip_123_08, sex = d11102ll, occup_18 = e1110618,  region = l1110218, kinderzahl_18 = d1110718, kindbd_18 = bip_201_12, education = isced97_18, partner_18 = partz18, employ_18 = lfs18, workhpw_18 = bierwzeit, income_18 = i1111018, age_18= d1110118)
 
 
 select18 #no welle variable

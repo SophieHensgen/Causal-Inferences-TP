@@ -21,129 +21,236 @@ soep.unedit
 soep.unedit[soep.unedit==""]<-NA
 ```
 
-```{r editing parental leave, echo=FALSE}
+```{r editing parental leave - getting rid of white spaces, echo=FALSE}
 
-
-n <- c("12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "0")
-l <- c("010101010101010101010101", "0101010101010101010101", "01010101010101010101", "010101010101010101", "0101010101010101", "01010101010101", "010101010101", "0101010101", "01010101", "010101", "0101", "01", "-2", "-1")
-
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_96 <- gsub(x, y, soep.unedit$parleave_96)
-  }
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_97 <- gsub(x, y, soep.unedit$parleave_97)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_98 <- gsub(x, y, soep.unedit$parleave_98)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_99 <- gsub(x, y, soep.unedit$parleave_99)
-  }
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_00 <- gsub(x, y, soep.unedit$parleave_00)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_01 <- gsub(x, y, soep.unedit$parleave_01)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_02 <- gsub(x, y, soep.unedit$parleave_02)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_03 <- gsub(x, y, soep.unedit$parleave_03)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_04 <- gsub(x, y, soep.unedit$parleave_04)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_05 <- gsub(x, y, soep.unedit$parleave_05)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_06 <- gsub(x, y, soep.unedit$parleave_06)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_07 <- gsub(x, y, soep.unedit$parleave_07)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_08 <- gsub(x, y, soep.unedit$parleave_08)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_09 <- gsub(x, y, soep.unedit$parleave_09)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_10 <- gsub(x, y, soep.unedit$parleave_10)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_11 <- gsub(x, y, soep.unedit$parleave_11)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_12 <- gsub(x, y, soep.unedit$parleave_12)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_13 <- gsub(x, y, soep.unedit$parleave_13)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_14 <- gsub(x, y, soep.unedit$parleave_14)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_15 <- gsub(x, y, soep.unedit$parleave_15)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_16 <- gsub(x, y, soep.unedit$parleave_16)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_17 <- gsub(x, y, soep.unedit$parleave_17)
-}
-for (i in 1:14){
-   x <- l[i]
-   y <- n[i]
-   soep.unedit$parleave_18 <- gsub(x, y, soep.unedit$parleave_18)
-}
+soep.unedit$parleave_96 <- str_replace_all(soep.unedit$parleave_96, "\\s", "")
+soep.unedit$parleave_97 <- str_replace_all(soep.unedit$parleave_97, "\\s", "")
+soep.unedit$parleave_98 <- str_replace_all(soep.unedit$parleave_98, "\\s", "")
+soep.unedit$parleave_99 <- str_replace_all(soep.unedit$parleave_99, "\\s", "")
+soep.unedit$parleave_00 <- str_replace_all(soep.unedit$parleave_00, "\\s", "")
+soep.unedit$parleave_01 <- str_replace_all(soep.unedit$parleave_01, "\\s", "")
+soep.unedit$parleave_02 <- str_replace_all(soep.unedit$parleave_02, "\\s", "")
+soep.unedit$parleave_03 <- str_replace_all(soep.unedit$parleave_03, "\\s", "")
+soep.unedit$parleave_04 <- str_replace_all(soep.unedit$parleave_04, "\\s", "")
+soep.unedit$parleave_05 <- str_replace_all(soep.unedit$parleave_05, "\\s", "")
+soep.unedit$parleave_06 <- str_replace_all(soep.unedit$parleave_06, "\\s", "")
+soep.unedit$parleave_07 <- str_replace_all(soep.unedit$parleave_07, "\\s", "")
+soep.unedit$parleave_08 <- str_replace_all(soep.unedit$parleave_08, "\\s", "")
+soep.unedit$parleave_09 <- str_replace_all(soep.unedit$parleave_09, "\\s", "")
+soep.unedit$parleave_10 <- str_replace_all(soep.unedit$parleave_10, "\\s", "")
+soep.unedit$parleave_11 <- str_replace_all(soep.unedit$parleave_11, "\\s", "")
+soep.unedit$parleave_12 <- str_replace_all(soep.unedit$parleave_12, "\\s", "")
+soep.unedit$parleave_13 <- str_replace_all(soep.unedit$parleave_13, "\\s", "")
+soep.unedit$parleave_14 <- str_replace_all(soep.unedit$parleave_14, "\\s", "")
+soep.unedit$parleave_15 <- str_replace_all(soep.unedit$parleave_15, "\\s", "")
+soep.unedit$parleave_16 <- str_replace_all(soep.unedit$parleave_16, "\\s", "")
+soep.unedit$parleave_17 <- str_replace_all(soep.unedit$parleave_17, "\\s", "")
+soep.unedit$parleave_18 <- str_replace_all(soep.unedit$parleave_18, "\\s", "")
 
 ```
+
+```{r editing parental leave - delete 0, echo=FALSE}
+
+soep.unedit$parleave_18 <- gsub("0", "", soep.unedit$parleave_18, ignore.case=T)
+soep.unedit$parleave_17 <- gsub("0", "", soep.unedit$parleave_17, ignore.case=T)
+soep.unedit$parleave_16 <- gsub("0", "", soep.unedit$parleave_16, ignore.case=T)
+soep.unedit$parleave_15 <- gsub("0", "", soep.unedit$parleave_15, ignore.case=T)
+soep.unedit$parleave_14 <- gsub("0", "", soep.unedit$parleave_14, ignore.case=T)
+soep.unedit$parleave_13 <- gsub("0", "", soep.unedit$parleave_13, ignore.case=T)
+soep.unedit$parleave_12 <- gsub("0", "", soep.unedit$parleave_12, ignore.case=T)
+soep.unedit$parleave_11 <- gsub("0", "", soep.unedit$parleave_11, ignore.case=T)
+soep.unedit$parleave_10 <- gsub("0", "", soep.unedit$parleave_10, ignore.case=T)
+soep.unedit$parleave_09 <- gsub("0", "", soep.unedit$parleave_09, ignore.case=T)
+soep.unedit$parleave_08 <- gsub("0", "", soep.unedit$parleave_08, ignore.case=T)
+soep.unedit$parleave_07 <- gsub("0", "", soep.unedit$parleave_07, ignore.case=T)
+soep.unedit$parleave_06 <- gsub("0", "", soep.unedit$parleave_06, ignore.case=T)
+soep.unedit$parleave_05 <- gsub("0", "", soep.unedit$parleave_05, ignore.case=T)
+soep.unedit$parleave_04 <- gsub("0", "", soep.unedit$parleave_04, ignore.case=T)
+soep.unedit$parleave_03 <- gsub("0", "", soep.unedit$parleave_03, ignore.case=T)
+soep.unedit$parleave_02 <- gsub("0", "", soep.unedit$parleave_02, ignore.case=T)
+soep.unedit$parleave_01 <- gsub("0", "", soep.unedit$parleave_01, ignore.case=T)
+soep.unedit$parleave_00 <- gsub("0", "", soep.unedit$parleave_00, ignore.case=T)
+soep.unedit$parleave_99 <- gsub("0", "", soep.unedit$parleave_99, ignore.case=T)
+soep.unedit$parleave_98 <- gsub("0", "", soep.unedit$parleave_98, ignore.case=T)
+soep.unedit$parleave_97 <- gsub("0", "", soep.unedit$parleave_97, ignore.case=T)
+soep.unedit$parleave_96 <- gsub("0", "", soep.unedit$parleave_96, ignore.case=T)
+soep.unedit
+
+```
+```{r editing parental leave - contoinous, echo=FALSE}
+
+n <- c("12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "0")
+l <- c("111111111111", "11111111111", "1111111111", "111111111", "11111111", "1111111", "111111", "11111", "1111", "111", "11", "1", "-2", "-1")
+
+for (i in 1:14){
+  x <- l[i]
+  y <- n[i]
+  
+soep.unedit$parleave_96[soep.unedit$parleave_96==x] <- y
+soep.unedit$parleave_97[soep.unedit$parleave_97==x] <- y
+soep.unedit$parleave_98[soep.unedit$parleave_98==x] <- y
+soep.unedit$parleave_99[soep.unedit$parleave_99==x] <- y
+soep.unedit$parleave_00[soep.unedit$parleave_00==x] <- y
+soep.unedit$parleave_01[soep.unedit$parleave_01==x] <- y
+soep.unedit$parleave_02[soep.unedit$parleave_02==x] <- y
+soep.unedit$parleave_03[soep.unedit$parleave_03==x] <- y
+soep.unedit$parleave_04[soep.unedit$parleave_04==x] <- y
+soep.unedit$parleave_05[soep.unedit$parleave_05==x] <- y
+soep.unedit$parleave_06[soep.unedit$parleave_06==x] <- y
+soep.unedit$parleave_07[soep.unedit$parleave_07==x] <- y
+soep.unedit$parleave_08[soep.unedit$parleave_08==x] <- y
+soep.unedit$parleave_09[soep.unedit$parleave_09==x] <- y
+soep.unedit$parleave_10[soep.unedit$parleave_10==x] <- y
+soep.unedit$parleave_11[soep.unedit$parleave_11==x] <- y
+soep.unedit$parleave_12[soep.unedit$parleave_12==x] <- y
+soep.unedit$parleave_13[soep.unedit$parleave_13==x] <- y
+soep.unedit$parleave_14[soep.unedit$parleave_14==x] <- y
+soep.unedit$parleave_15[soep.unedit$parleave_15==x] <- y
+soep.unedit$parleave_16[soep.unedit$parleave_16==x] <- y
+soep.unedit$parleave_17[soep.unedit$parleave_17==x] <- y
+soep.unedit$parleave_18[soep.unedit$parleave_18==x] <- y
+}
+soep.unedit
+
+```
+
+```{r editing parental leave - dummy-ob, echo=FALSE}
+
+soep.unedit$parleave_do_96 <- soep.unedit$parleave_96
+soep.unedit$parleave_do_97 <- soep.unedit$parleave_97
+soep.unedit$parleave_do_98 <- soep.unedit$parleave_98
+soep.unedit$parleave_do_99 <- soep.unedit$parleave_99
+soep.unedit$parleave_do_00 <- soep.unedit$parleave_00
+soep.unedit$parleave_do_01 <- soep.unedit$parleave_01
+soep.unedit$parleave_do_02 <- soep.unedit$parleave_02
+soep.unedit$parleave_do_03 <- soep.unedit$parleave_03
+soep.unedit$parleave_do_04 <- soep.unedit$parleave_04
+soep.unedit$parleave_do_05 <- soep.unedit$parleave_05
+soep.unedit$parleave_do_06 <- soep.unedit$parleave_06
+soep.unedit$parleave_do_07 <- soep.unedit$parleave_07
+soep.unedit$parleave_do_08 <- soep.unedit$parleave_08
+soep.unedit$parleave_do_09 <- soep.unedit$parleave_09
+soep.unedit$parleave_do_10 <- soep.unedit$parleave_10
+soep.unedit$parleave_do_11 <- soep.unedit$parleave_11
+soep.unedit$parleave_do_12 <- soep.unedit$parleave_12
+soep.unedit$parleave_do_13 <- soep.unedit$parleave_13
+soep.unedit$parleave_do_14 <- soep.unedit$parleave_14
+soep.unedit$parleave_do_15 <- soep.unedit$parleave_15
+soep.unedit$parleave_do_16 <- soep.unedit$parleave_16
+soep.unedit$parleave_do_17 <- soep.unedit$parleave_17
+soep.unedit$parleave_do_18 <- soep.unedit$parleave_18
+
+```
+
+```{r editing parental leave - dummy-ob, echo=FALSE}
+
+l <- c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
+
+soep.unedit$parleave_do_96 <- soep.unedit$parleave_96
+for (x in 1:12){
+
+  
+soep.unedit$parleave_do_96[soep.unedit$parleave_do_96==x] <- 1
+soep.unedit$parleave_do_97[soep.unedit$parleave_do_97==x] <- 1
+soep.unedit$parleave_do_98[soep.unedit$parleave_do_98==x] <- 1
+soep.unedit$parleave_do_99[soep.unedit$parleave_do_99==x] <- 1
+soep.unedit$parleave_do_00[soep.unedit$parleave_do_00==x] <- 1
+soep.unedit$parleave_do_01[soep.unedit$parleave_do_01==x] <- 1
+soep.unedit$parleave_do_02[soep.unedit$parleave_do_02==x] <- 1
+soep.unedit$parleave_do_03[soep.unedit$parleave_do_03==x] <- 1
+soep.unedit$parleave_do_04[soep.unedit$parleave_do_04==x] <- 1
+soep.unedit$parleave_do_05[soep.unedit$parleave_do_05==x] <- 1
+soep.unedit$parleave_do_06[soep.unedit$parleave_do_06==x] <- 1
+soep.unedit$parleave_do_07[soep.unedit$parleave_do_07==x] <- 1
+soep.unedit$parleave_do_08[soep.unedit$parleave_do_08==x] <- 1
+soep.unedit$parleave_do_09[soep.unedit$parleave_do_09==x] <- 1
+soep.unedit$parleave_do_10[soep.unedit$parleave_do_10==x] <- 1
+soep.unedit$parleave_do_11[soep.unedit$parleave_do_11==x] <- 1
+soep.unedit$parleave_do_12[soep.unedit$parleave_do_12==x] <- 1
+soep.unedit$parleave_do_13[soep.unedit$parleave_do_13==x] <- 1
+soep.unedit$parleave_do_14[soep.unedit$parleave_do_14==x] <- 1
+soep.unedit$parleave_do_15[soep.unedit$parleave_do_15==x] <- 1
+soep.unedit$parleave_do_16[soep.unedit$parleave_do_16==x] <- 1
+soep.unedit$parleave_do_17[soep.unedit$parleave_do_17==x] <- 1
+soep.unedit$parleave_do_18[soep.unedit$parleave_do_18==x] <- 1
+}
+
+soep.unedit
+
+# how many parental leave people i have
+# length(which(soep.unedit$parleave_do_97 != 0))
+# length(which(soep.unedit$parleave_do_97 == 1))
+```
+
+```{r editing parental leave - dummy-taken, echo=FALSE}
+
+soep.unedit$parleave_dt_96 <- soep.unedit$parleave_96
+soep.unedit$parleave_dt_97 <- soep.unedit$parleave_97
+soep.unedit$parleave_dt_98 <- soep.unedit$parleave_98
+soep.unedit$parleave_dt_99 <- soep.unedit$parleave_99
+soep.unedit$parleave_dt_00 <- soep.unedit$parleave_00
+soep.unedit$parleave_dt_01 <- soep.unedit$parleave_01
+soep.unedit$parleave_dt_02 <- soep.unedit$parleave_02
+soep.unedit$parleave_dt_03 <- soep.unedit$parleave_03
+soep.unedit$parleave_dt_04 <- soep.unedit$parleave_04
+soep.unedit$parleave_dt_05 <- soep.unedit$parleave_05
+soep.unedit$parleave_dt_06 <- soep.unedit$parleave_06
+soep.unedit$parleave_dt_07 <- soep.unedit$parleave_07
+soep.unedit$parleave_dt_08 <- soep.unedit$parleave_08
+soep.unedit$parleave_dt_09 <- soep.unedit$parleave_09
+soep.unedit$parleave_dt_10 <- soep.unedit$parleave_10
+soep.unedit$parleave_dt_11 <- soep.unedit$parleave_11
+soep.unedit$parleave_dt_12 <- soep.unedit$parleave_12
+soep.unedit$parleave_dt_13 <- soep.unedit$parleave_13
+soep.unedit$parleave_dt_14 <- soep.unedit$parleave_14
+soep.unedit$parleave_dt_15 <- soep.unedit$parleave_15
+soep.unedit$parleave_dt_16 <- soep.unedit$parleave_16
+soep.unedit$parleave_dt_17 <- soep.unedit$parleave_17
+soep.unedit$parleave_dt_18 <- soep.unedit$parleave_18
+
+```
+
+
+```{r editing parental leave - dummy-time, echo=FALSE}
+
+l <- c("0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
+n <- c("NA", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1", "1")
+
+soep.unedit$parleave_do_96 <- soep.unedit$parleave_96
+for (i in 1:13){
+  x <- l[i]
+  y <- n[i] 
+  
+soep.unedit$parleave_dt_96[soep.unedit$parleave_dt_96==x] <- y
+soep.unedit$parleave_dt_97[soep.unedit$parleave_dt_97==x] <- y
+soep.unedit$parleave_dt_98[soep.unedit$parleave_dt_98==x] <- y
+soep.unedit$parleave_dt_99[soep.unedit$parleave_dt_99==x] <- y
+soep.unedit$parleave_dt_00[soep.unedit$parleave_dt_00==x] <- y
+soep.unedit$parleave_dt_01[soep.unedit$parleave_dt_01==x] <- y
+soep.unedit$parleave_dt_02[soep.unedit$parleave_dt_02==x] <- y
+soep.unedit$parleave_dt_03[soep.unedit$parleave_dt_03==x] <- y
+soep.unedit$parleave_dt_04[soep.unedit$parleave_dt_04==x] <- y
+soep.unedit$parleave_dt_05[soep.unedit$parleave_dt_05==x] <- y
+soep.unedit$parleave_dt_06[soep.unedit$parleave_dt_06==x] <- y
+soep.unedit$parleave_dt_07[soep.unedit$parleave_dt_07==x] <- y
+soep.unedit$parleave_dt_08[soep.unedit$parleave_dt_08==x] <- y
+soep.unedit$parleave_dt_09[soep.unedit$parleave_dt_09==x] <- y
+soep.unedit$parleave_dt_10[soep.unedit$parleave_dt_10==x] <- y
+soep.unedit$parleave_dt_11[soep.unedit$parleave_dt_11==x] <- y
+soep.unedit$parleave_dt_12[soep.unedit$parleave_dt_12==x] <- y
+soep.unedit$parleave_dt_13[soep.unedit$parleave_dt_13==x] <- y
+soep.unedit$parleave_dt_14[soep.unedit$parleave_dt_14==x] <- y
+soep.unedit$parleave_dt_15[soep.unedit$parleave_dt_15==x] <- y
+soep.unedit$parleave_dt_16[soep.unedit$parleave_dt_16==x] <- y
+soep.unedit$parleave_dt_17[soep.unedit$parleave_dt_17==x] <- y
+soep.unedit$parleave_dt_18[soep.unedit$parleave_dt_18==x] <- y
+}
+
+soep.unedit
+
+soep.unedit[soep.unedit=="NA"]<-NA
+```
+
 
 ```{r editing sex, echo=FALSE}
 
@@ -189,58 +296,1403 @@ soep.unedit
 
 ```
 
+```{r editing partner - dummy-taken, echo=FALSE}
+
+soep.unedit$partner_96 <- gsub("\\[", "", soep.unedit$partner_96, ignore.case=T)
+soep.unedit$partner_96 <- gsub("\\]", "", soep.unedit$partner_96, ignore.case=T)
+soep.unedit$partner_96 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_96, ignore.case=T)
+soep.unedit$partner_96 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_96, ignore.case=T)
+soep.unedit$partner_96 <- gsub("Lebenspartner", "", soep.unedit$partner_96, ignore.case=T)
+soep.unedit$partner_96 <- gsub("2", "1", soep.unedit$partner_96, ignore.case=T)
+
+soep.unedit$partner_97 <- gsub("\\[", "", soep.unedit$partner_97, ignore.case=T)
+soep.unedit$partner_97 <- gsub("\\]", "", soep.unedit$partner_97, ignore.case=T)
+soep.unedit$partner_97 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_97, ignore.case=T)
+soep.unedit$partner_97 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_97, ignore.case=T)
+soep.unedit$partner_97 <- gsub("Lebenspartner", "", soep.unedit$partner_97, ignore.case=T)
+soep.unedit$partner_97 <- gsub("2", "1", soep.unedit$partner_97, ignore.case=T)
+
+soep.unedit$partner_98 <- gsub("\\[", "", soep.unedit$partner_98, ignore.case=T)
+soep.unedit$partner_98 <- gsub("\\]", "", soep.unedit$partner_98, ignore.case=T)
+soep.unedit$partner_98 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_98, ignore.case=T)
+soep.unedit$partner_98 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_98, ignore.case=T)
+soep.unedit$partner_98 <- gsub("Lebenspartner", "", soep.unedit$partner_98, ignore.case=T)
+soep.unedit$partner_98 <- gsub("2", "1", soep.unedit$partner_98, ignore.case=T)
+
+soep.unedit$partner_99 <- gsub("\\[", "", soep.unedit$partner_99, ignore.case=T)
+soep.unedit$partner_99 <- gsub("\\]", "", soep.unedit$partner_99, ignore.case=T)
+soep.unedit$partner_99 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_99, ignore.case=T)
+soep.unedit$partner_99 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_99, ignore.case=T)
+soep.unedit$partner_99 <- gsub("Lebenspartner", "", soep.unedit$partner_99, ignore.case=T)
+soep.unedit$partner_99 <- gsub("2", "1", soep.unedit$partner_99, ignore.case=T)
+
+soep.unedit$partner_00 <- gsub("\\[", "", soep.unedit$partner_00, ignore.case=T)
+soep.unedit$partner_00 <- gsub("\\]", "", soep.unedit$partner_00, ignore.case=T)
+soep.unedit$partner_00 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_00, ignore.case=T)
+soep.unedit$partner_00 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_00, ignore.case=T)
+soep.unedit$partner_00 <- gsub("Lebenspartner", "", soep.unedit$partner_00, ignore.case=T)
+soep.unedit$partner_00 <- gsub("2", "1", soep.unedit$partner_00, ignore.case=T)
+
+soep.unedit$partner_01 <- gsub("\\[", "", soep.unedit$partner_01, ignore.case=T)
+soep.unedit$partner_01 <- gsub("\\]", "", soep.unedit$partner_01, ignore.case=T)
+soep.unedit$partner_01 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_01, ignore.case=T)
+soep.unedit$partner_01 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_01, ignore.case=T)
+soep.unedit$partner_01 <- gsub("Lebenspartner", "", soep.unedit$partner_01, ignore.case=T)
+soep.unedit$partner_01 <- gsub("2", "1", soep.unedit$partner_01, ignore.case=T)
+
+soep.unedit$partner_02 <- gsub("\\[", "", soep.unedit$partner_02, ignore.case=T)
+soep.unedit$partner_02 <- gsub("\\]", "", soep.unedit$partner_02, ignore.case=T)
+soep.unedit$partner_02 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_02, ignore.case=T)
+soep.unedit$partner_02 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_02, ignore.case=T)
+soep.unedit$partner_02 <- gsub("Lebenspartner", "", soep.unedit$partner_02, ignore.case=T)
+soep.unedit$partner_02 <- gsub("2", "1", soep.unedit$partner_02, ignore.case=T)
+
+soep.unedit$partner_03 <- gsub("\\[", "", soep.unedit$partner_03, ignore.case=T)
+soep.unedit$partner_03 <- gsub("\\]", "", soep.unedit$partner_03, ignore.case=T)
+soep.unedit$partner_03 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_03, ignore.case=T)
+soep.unedit$partner_03 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_03, ignore.case=T)
+soep.unedit$partner_03 <- gsub("Lebenspartner", "", soep.unedit$partner_03, ignore.case=T)
+soep.unedit$partner_03 <- gsub("2", "1", soep.unedit$partner_03, ignore.case=T)
+
+soep.unedit$partner_04 <- gsub("\\[", "", soep.unedit$partner_04, ignore.case=T)
+soep.unedit$partner_04 <- gsub("\\]", "", soep.unedit$partner_04, ignore.case=T)
+soep.unedit$partner_04 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_04, ignore.case=T)
+soep.unedit$partner_04 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_04, ignore.case=T)
+soep.unedit$partner_04 <- gsub("Lebenspartner", "", soep.unedit$partner_04, ignore.case=T)
+soep.unedit$partner_04 <- gsub("2", "1", soep.unedit$partner_04, ignore.case=T)
+
+soep.unedit$partner_05 <- gsub("\\[", "", soep.unedit$partner_05, ignore.case=T)
+soep.unedit$partner_05 <- gsub("\\]", "", soep.unedit$partner_05, ignore.case=T)
+soep.unedit$partner_05 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_05, ignore.case=T)
+soep.unedit$partner_05 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_05, ignore.case=T)
+soep.unedit$partner_05 <- gsub("Lebenspartner", "", soep.unedit$partner_05, ignore.case=T)
+soep.unedit$partner_05 <- gsub("2", "1", soep.unedit$partner_05, ignore.case=T)
+
+soep.unedit$partner_06 <- gsub("\\[", "", soep.unedit$partner_06, ignore.case=T)
+soep.unedit$partner_06 <- gsub("\\]", "", soep.unedit$partner_06, ignore.case=T)
+soep.unedit$partner_06 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_06, ignore.case=T)
+soep.unedit$partner_06 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_06, ignore.case=T)
+soep.unedit$partner_06 <- gsub("Lebenspartner", "", soep.unedit$partner_06, ignore.case=T)
+soep.unedit$partner_06 <- gsub("2", "1", soep.unedit$partner_06, ignore.case=T)
+
+soep.unedit$partner_07 <- gsub("\\[", "", soep.unedit$partner_07, ignore.case=T)
+soep.unedit$partner_07 <- gsub("\\]", "", soep.unedit$partner_07, ignore.case=T)
+soep.unedit$partner_07 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_07, ignore.case=T)
+soep.unedit$partner_07 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_07, ignore.case=T)
+soep.unedit$partner_07 <- gsub("Lebenspartner", "", soep.unedit$partner_07, ignore.case=T)
+soep.unedit$partner_07 <- gsub("2", "1", soep.unedit$partner_07, ignore.case=T)
+
+soep.unedit$partner_08 <- gsub("\\[", "", soep.unedit$partner_08, ignore.case=T)
+soep.unedit$partner_08 <- gsub("\\]", "", soep.unedit$partner_08, ignore.case=T)
+soep.unedit$partner_08 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_08, ignore.case=T)
+soep.unedit$partner_08 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_08, ignore.case=T)
+soep.unedit$partner_08 <- gsub("Lebenspartner", "", soep.unedit$partner_08, ignore.case=T)
+soep.unedit$partner_08 <- gsub("2", "1", soep.unedit$partner_08, ignore.case=T)
+
+soep.unedit$partner_09 <- gsub("\\[", "", soep.unedit$partner_09, ignore.case=T)
+soep.unedit$partner_09 <- gsub("\\]", "", soep.unedit$partner_09, ignore.case=T)
+soep.unedit$partner_09 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_09, ignore.case=T)
+soep.unedit$partner_09 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_09, ignore.case=T)
+soep.unedit$partner_09 <- gsub("Lebenspartner", "", soep.unedit$partner_09, ignore.case=T)
+soep.unedit$partner_09 <- gsub("2", "1", soep.unedit$partner_09, ignore.case=T)
+
+
+soep.unedit$partner_10 <- gsub("\\[", "", soep.unedit$partner_10, ignore.case=T)
+soep.unedit$partner_10 <- gsub("\\]", "", soep.unedit$partner_10, ignore.case=T)
+soep.unedit$partner_10 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_10, ignore.case=T)
+soep.unedit$partner_10 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_10, ignore.case=T)
+soep.unedit$partner_10 <- gsub("Lebenspartner", "", soep.unedit$partner_10, ignore.case=T)
+soep.unedit$partner_10 <- gsub("2", "1", soep.unedit$partner_10, ignore.case=T)
+
+soep.unedit$partner_11 <- gsub("\\[", "", soep.unedit$partner_11, ignore.case=T)
+soep.unedit$partner_11 <- gsub("\\]", "", soep.unedit$partner_11, ignore.case=T)
+soep.unedit$partner_11 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_11, ignore.case=T)
+soep.unedit$partner_11 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_11, ignore.case=T)
+soep.unedit$partner_11 <- gsub("Lebenspartner", "", soep.unedit$partner_11, ignore.case=T)
+soep.unedit$partner_11 <- gsub("2", "1", soep.unedit$partner_11, ignore.case=T)
+
+soep.unedit$partner_12 <- gsub("\\[", "", soep.unedit$partner_12, ignore.case=T)
+soep.unedit$partner_12 <- gsub("\\]", "", soep.unedit$partner_12, ignore.case=T)
+soep.unedit$partner_12 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_12, ignore.case=T)
+soep.unedit$partner_12 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_12, ignore.case=T)
+soep.unedit$partner_12 <- gsub("Lebenspartner", "", soep.unedit$partner_12, ignore.case=T)
+soep.unedit$partner_12 <- gsub("2", "1", soep.unedit$partner_12, ignore.case=T)
+
+soep.unedit$partner_13 <- gsub("\\[", "", soep.unedit$partner_13, ignore.case=T)
+soep.unedit$partner_13 <- gsub("\\]", "", soep.unedit$partner_13, ignore.case=T)
+soep.unedit$partner_13 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_13, ignore.case=T)
+soep.unedit$partner_13 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_13, ignore.case=T)
+soep.unedit$partner_13 <- gsub("Lebenspartner", "", soep.unedit$partner_13, ignore.case=T)
+soep.unedit$partner_13 <- gsub("2", "1", soep.unedit$partner_13, ignore.case=T)
+
+soep.unedit$partner_14 <- gsub("\\[", "", soep.unedit$partner_14, ignore.case=T)
+soep.unedit$partner_14 <- gsub("\\]", "", soep.unedit$partner_14, ignore.case=T)
+soep.unedit$partner_14 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_14, ignore.case=T)
+soep.unedit$partner_14 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_14, ignore.case=T)
+soep.unedit$partner_14 <- gsub("Lebenspartner", "", soep.unedit$partner_14, ignore.case=T)
+soep.unedit$partner_14 <- gsub("2", "1", soep.unedit$partner_14, ignore.case=T)
+
+soep.unedit$partner_15 <- gsub("\\[", "", soep.unedit$partner_15, ignore.case=T)
+soep.unedit$partner_15 <- gsub("\\]", "", soep.unedit$partner_15, ignore.case=T)
+soep.unedit$partner_15 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_15, ignore.case=T)
+soep.unedit$partner_15 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_15, ignore.case=T)
+soep.unedit$partner_15 <- gsub("Lebenspartner", "", soep.unedit$partner_15, ignore.case=T)
+soep.unedit$partner_15 <- gsub("2", "1", soep.unedit$partner_15, ignore.case=T)
+
+soep.unedit$partner_16 <- gsub("\\[", "", soep.unedit$partner_16, ignore.case=T)
+soep.unedit$partner_16 <- gsub("\\]", "", soep.unedit$partner_16, ignore.case=T)
+soep.unedit$partner_16 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_16, ignore.case=T)
+soep.unedit$partner_16 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_16, ignore.case=T)
+soep.unedit$partner_16 <- gsub("Lebenspartner", "", soep.unedit$partner_16, ignore.case=T)
+soep.unedit$partner_16 <- gsub("2", "1", soep.unedit$partner_16, ignore.case=T)
+
+soep.unedit$partner_17 <- gsub("\\[", "", soep.unedit$partner_17, ignore.case=T)
+soep.unedit$partner_17 <- gsub("\\]", "", soep.unedit$partner_17, ignore.case=T)
+soep.unedit$partner_17 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_17, ignore.case=T)
+soep.unedit$partner_17 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_17, ignore.case=T)
+soep.unedit$partner_17 <- gsub("Lebenspartner", "", soep.unedit$partner_17, ignore.case=T)
+soep.unedit$partner_17 <- gsub("2", "1", soep.unedit$partner_17, ignore.case=T)
+
+soep.unedit$partner_18 <- gsub("\\[", "", soep.unedit$partner_18, ignore.case=T)
+soep.unedit$partner_18 <- gsub("\\]", "", soep.unedit$partner_18, ignore.case=T)
+soep.unedit$partner_18 <- gsub("kein Partner im Haushalt", "", soep.unedit$partner_18, ignore.case=T)
+soep.unedit$partner_18 <- gsub("Ehepartner \\/ eingetragener Partner", "", soep.unedit$partner_18, ignore.case=T)
+soep.unedit$partner_18 <- gsub("Lebenspartner", "", soep.unedit$partner_18, ignore.case=T)
+soep.unedit$partner_18 <- gsub("2", "1", soep.unedit$partner_18, ignore.case=T)
+soep.unedit
+
+#wahrscheinlich Ehepartner / eingetragen
+
+```
+
+
+
 ```{r editing parental leave, echo=FALSE}
 
-soep.unedit$parleave_97[is.na(soep.unedit$parleave_97)] <- 0
-soep.unedit$parleave_98[is.na(soep.unedit$parleave_98)] <- 0
-soep.unedit$parleave_99[is.na(soep.unedit$parleave_99)] <- 0
-soep.unedit$parleave_00[is.na(soep.unedit$parleave_00)] <- 0
-soep.unedit$parleave_01[is.na(soep.unedit$parleave_01)] <- 0
-soep.unedit$parleave_02[is.na(soep.unedit$parleave_02)] <- 0
-soep.unedit$parleave_03[is.na(soep.unedit$parleave_03)] <- 0
-soep.unedit$parleave_04[is.na(soep.unedit$parleave_04)] <- 0
-soep.unedit$parleave_05[is.na(soep.unedit$parleave_05)] <- 0
-soep.unedit$parleave_06[is.na(soep.unedit$parleave_06)] <- 0
-soep.unedit$parleave_07[is.na(soep.unedit$parleave_07)] <- 0
-soep.unedit$parleave_08[is.na(soep.unedit$parleave_08)] <- 0
-soep.unedit$parleave_09[is.na(soep.unedit$parleave_09)] <- 0
-soep.unedit$parleave_10[is.na(soep.unedit$parleave_10)] <- 0
-soep.unedit$parleave_11[is.na(soep.unedit$parleave_11)] <- 0
-soep.unedit$parleave_12[is.na(soep.unedit$parleave_12)] <- 0
-soep.unedit$parleave_13[is.na(soep.unedit$parleave_13)] <- 0
-soep.unedit$parleave_14[is.na(soep.unedit$parleave_14)] <- 0
-soep.unedit$parleave_15[is.na(soep.unedit$parleave_15)] <- 0
-soep.unedit$parleave_16[is.na(soep.unedit$parleave_16)] <- 0
-soep.unedit$parleave_17[is.na(soep.unedit$parleave_17)] <- 0
-soep.unedit$parleave_18[is.na(soep.unedit$parleave_18)] <- 0
+soep.unedit$kindbd_96 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("\\[", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("\\]", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("-2", "NA", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Jan", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Feb", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Mar", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Apr", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Mai", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Jun", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Jul", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Aug", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Sep", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Okt", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Nov", "", soep.unedit$kindbd_96, ignore.case=T)
+soep.unedit$kindbd_96 <- gsub("Dez", "", soep.unedit$kindbd_96, ignore.case=T)
+
+soep.unedit$kindbd_97 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("\\[", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("\\]", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("-2", "NA", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Jan", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Feb", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Mar", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Apr", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Mai", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Jun", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Jul", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Aug", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Sep", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Okt", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Nov", "", soep.unedit$kindbd_97, ignore.case=T)
+soep.unedit$kindbd_97 <- gsub("Dez", "", soep.unedit$kindbd_97, ignore.case=T)
+
+soep.unedit$kindbd_98 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("\\[", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("\\]", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("-2", "NA", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Jan", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Feb", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Mar", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Apr", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Mai", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Jun", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Jul", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Aug", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Sep", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Okt", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Nov", "", soep.unedit$kindbd_98, ignore.case=T)
+soep.unedit$kindbd_98 <- gsub("Dez", "", soep.unedit$kindbd_98, ignore.case=T)
+
+soep.unedit$kindbd_99 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("\\[", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("\\]", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("-2", "NA", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Jan", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Feb", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Mar", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Apr", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Mai", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Jun", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Jul", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Aug", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Sep", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Okt", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Nov", "", soep.unedit$kindbd_99, ignore.case=T)
+soep.unedit$kindbd_99 <- gsub("Dez", "", soep.unedit$kindbd_99, ignore.case=T)
+
+soep.unedit$kindbd_00 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("\\[", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("\\]", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("-2", "NA", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Jan", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Feb", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Mar", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Apr", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Mai", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Jun", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Jul", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Aug", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Sep", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Okt", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Nov", "", soep.unedit$kindbd_00, ignore.case=T)
+soep.unedit$kindbd_00 <- gsub("Dez", "", soep.unedit$kindbd_00, ignore.case=T)
+
+soep.unedit$kindbd_01 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("\\[", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("\\]", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("-2", "NA", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Jan", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Feb", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Mar", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Apr", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Mai", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Jun", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Jul", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Aug", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Sep", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Okt", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Nov", "", soep.unedit$kindbd_01, ignore.case=T)
+soep.unedit$kindbd_01 <- gsub("Dez", "", soep.unedit$kindbd_01, ignore.case=T)
+
+soep.unedit$kindbd_02 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("\\[", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("\\]", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("-2", "NA", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Jan", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Feb", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Mar", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Apr", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Mai", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Jun", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Jul", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Aug", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Sep", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Okt", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Nov", "", soep.unedit$kindbd_02, ignore.case=T)
+soep.unedit$kindbd_02 <- gsub("Dez", "", soep.unedit$kindbd_02, ignore.case=T)
+
+soep.unedit$kindbd_03 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("\\[", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("\\]", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("-2", "NA", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Jan", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Feb", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Mar", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Apr", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Mai", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Jun", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Jul", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Aug", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Sep", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Okt", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Nov", "", soep.unedit$kindbd_03, ignore.case=T)
+soep.unedit$kindbd_03 <- gsub("Dez", "", soep.unedit$kindbd_03, ignore.case=T)
+
+soep.unedit$kindbd_04 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("\\[", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("\\]", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("-2", "NA", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Jan", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Feb", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Mar", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Apr", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Mai", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Jun", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Jul", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Aug", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Sep", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Okt", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Nov", "", soep.unedit$kindbd_04, ignore.case=T)
+soep.unedit$kindbd_04 <- gsub("Dez", "", soep.unedit$kindbd_04, ignore.case=T)
+
+soep.unedit$kindbd_05 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("\\[", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("\\]", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("-2", "NA", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Jan", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Feb", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Mar", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Apr", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Mai", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Jun", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Jul", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Aug", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Sep", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Okt", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Nov", "", soep.unedit$kindbd_05, ignore.case=T)
+soep.unedit$kindbd_05 <- gsub("Dez", "", soep.unedit$kindbd_05, ignore.case=T)
+
+soep.unedit$kindbd_06 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("\\[", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("\\]", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("-2", "NA", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Jan", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Feb", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Mar", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Apr", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Mai", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Jun", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Jul", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Aug", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Sep", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Okt", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Nov", "", soep.unedit$kindbd_06, ignore.case=T)
+soep.unedit$kindbd_06 <- gsub("Dez", "", soep.unedit$kindbd_06, ignore.case=T)
+
+soep.unedit$kindbd_07 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("\\[", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("\\]", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("-2", "NA", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Jan", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Feb", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Mar", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Apr", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Mai", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Jun", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Jul", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Aug", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Sep", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Okt", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Nov", "", soep.unedit$kindbd_07, ignore.case=T)
+soep.unedit$kindbd_07 <- gsub("Dez", "", soep.unedit$kindbd_07, ignore.case=T)
+
+soep.unedit$kindbd_08 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("\\[", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("\\]", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("-2", "NA", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Jan", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Feb", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Mar", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Apr", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Mai", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Jun", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Jul", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Aug", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Sep", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Okt", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Nov", "", soep.unedit$kindbd_08, ignore.case=T)
+soep.unedit$kindbd_08 <- gsub("Dez", "", soep.unedit$kindbd_08, ignore.case=T)
+
+soep.unedit$kindbd_09 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("\\[", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("\\]", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("-2", "NA", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Jan", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Feb", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Mar", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Apr", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Mai", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Jun", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Jul", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Aug", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Sep", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Okt", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Nov", "", soep.unedit$kindbd_09, ignore.case=T)
+soep.unedit$kindbd_09 <- gsub("Dez", "", soep.unedit$kindbd_09, ignore.case=T)
+
+soep.unedit$kindbd_10 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("\\[", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("\\]", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("-2", "NA", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Jan", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Feb", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Mar", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Apr", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Mai", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Jun", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Jul", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Aug", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Sep", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Okt", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Nov", "", soep.unedit$kindbd_10, ignore.case=T)
+soep.unedit$kindbd_10 <- gsub("Dez", "", soep.unedit$kindbd_10, ignore.case=T)
+
+soep.unedit$kindbd_11 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("\\[", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("\\]", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("-2", "NA", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Jan", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Feb", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Mar", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Apr", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Mai", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Jun", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Jul", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Aug", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Sep", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Okt", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Nov", "", soep.unedit$kindbd_11, ignore.case=T)
+soep.unedit$kindbd_11 <- gsub("Dez", "", soep.unedit$kindbd_11, ignore.case=T)
+
+soep.unedit$kindbd_12 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("\\[", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("\\]", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("-2", "NA", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Jan", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Feb", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Mar", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Apr", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Mai", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Jun", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Jul", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Aug", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Sep", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Okt", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Nov", "", soep.unedit$kindbd_12, ignore.case=T)
+soep.unedit$kindbd_12 <- gsub("Dez", "", soep.unedit$kindbd_12, ignore.case=T)
+
+soep.unedit$kindbd_13 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("\\[", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("\\]", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("-2", "NA", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Jan", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Feb", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Mar", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Apr", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Mai", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Jun", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Jul", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Aug", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Sep", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Okt", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Nov", "", soep.unedit$kindbd_13, ignore.case=T)
+soep.unedit$kindbd_13 <- gsub("Dez", "", soep.unedit$kindbd_13, ignore.case=T)
+
+soep.unedit$kindbd_14 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("\\[", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("\\]", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("-2", "NA", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Jan", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Feb", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Mar", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Apr", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Mai", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Jun", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Jul", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Aug", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Sep", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Okt", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Nov", "", soep.unedit$kindbd_14, ignore.case=T)
+soep.unedit$kindbd_14 <- gsub("Dez", "", soep.unedit$kindbd_14, ignore.case=T)
+
+soep.unedit$kindbd_15 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("\\[", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("\\]", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("-2", "NA", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Jan", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Feb", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Mar", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Apr", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Mai", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Jun", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Jul", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Aug", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Sep", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Okt", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Nov", "", soep.unedit$kindbd_15, ignore.case=T)
+soep.unedit$kindbd_15 <- gsub("Dez", "", soep.unedit$kindbd_15, ignore.case=T)
+
+soep.unedit$kindbd_16 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("\\[", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("\\]", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("-2", "NA", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Jan", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Feb", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Mar", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Apr", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Mai", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Jun", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Jul", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Aug", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Sep", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Okt", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Nov", "", soep.unedit$kindbd_16, ignore.case=T)
+soep.unedit$kindbd_16 <- gsub("Dez", "", soep.unedit$kindbd_16, ignore.case=T)
+
+soep.unedit$kindbd_17 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("\\[", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("\\]", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("-2", "NA", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Jan", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Feb", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Mar", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Apr", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Mai", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Jun", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Jul", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Aug", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Sep", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Okt", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Nov", "", soep.unedit$kindbd_17, ignore.case=T)
+soep.unedit$kindbd_17 <- gsub("Dez", "", soep.unedit$kindbd_17, ignore.case=T)
+
+soep.unedit$kindbd_18 <- gsub("trifft nicht zu", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("\\[", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("\\]", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("-2", "NA", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Jan", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Feb", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Mar", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Apr", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Mai", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Jun", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Jul", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Aug", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Sep", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Okt", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Nov", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit$kindbd_18 <- gsub("Dez", "", soep.unedit$kindbd_18, ignore.case=T)
+soep.unedit
 
 ```
 
-```{r long to wide format, echo=FALSE}
 
-for (i in 1:14){
-   x <- l[i]
+```{r editing Kind Birthday - dummy-taken, echo=FALSE}
+
+soep.unedit$kindbd_d_96 <- soep.unedit$kindbd_96
+soep.unedit$kindbd_d_97 <- soep.unedit$kindbd_97
+soep.unedit$kindbd_d_98 <- soep.unedit$kindbd_98
+soep.unedit$kindbd_d_99 <- soep.unedit$kindbd_99
+soep.unedit$kindbd_d_00 <- soep.unedit$kindbd_00
+soep.unedit$kindbd_d_01 <- soep.unedit$kindbd_01
+soep.unedit$kindbd_d_02 <- soep.unedit$kindbd_02
+soep.unedit$kindbd_d_03 <- soep.unedit$kindbd_03
+soep.unedit$kindbd_d_04 <- soep.unedit$kindbd_04
+soep.unedit$kindbd_d_05 <- soep.unedit$kindbd_05
+soep.unedit$kindbd_d_06 <- soep.unedit$kindbd_06
+soep.unedit$kindbd_d_07 <- soep.unedit$kindbd_07
+soep.unedit$kindbd_d_08 <- soep.unedit$kindbd_08
+soep.unedit$kindbd_d_09 <- soep.unedit$kindbd_09
+soep.unedit$kindbd_d_10 <- soep.unedit$kindbd_10
+soep.unedit$kindbd_d_11 <- soep.unedit$kindbd_11
+soep.unedit$kindbd_d_12 <- soep.unedit$kindbd_12
+soep.unedit$kindbd_d_13 <- soep.unedit$kindbd_13
+soep.unedit$kindbd_d_14 <- soep.unedit$kindbd_14
+soep.unedit$kindbd_d_15 <- soep.unedit$kindbd_15
+soep.unedit$kindbd_d_16 <- soep.unedit$kindbd_16
+soep.unedit$kindbd_d_17 <- soep.unedit$kindbd_17
+soep.unedit$kindbd_d_18 <- soep.unedit$kindbd_18
+
+```
+
+
+```{r editing parental leave, echo=FALSE}
+
+s <- c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
+n <- c("1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1", "1")
+
+for (i in 1:12){
+   x <- s[i]
    y <- n[i]
-   soep.unedit$parleave_96 <- gsub(x, y, soep.unedit$parleave_96)
+   soep.unedit$kindbd_d_96 <- gsub(x, y, soep.unedit$kindbd_d_96)
 }
 
-n <- c("12", "11", "10", "9", "8", "7", "6", "5", "4", "3", "2", "1", "0", "0")
-l <- c("010101010101010101010101", "0101010101010101010101", "01010101010101010101", "010101010101010101", "0101010101010101", "01010101010101", "010101010101", "0101010101", "01010101", "010101", "0101", "01", "-2", "-1")
 
+```
+
+```{r editing parental leave, echo=FALSE}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_97 <- gsub(x, y, soep.unedit$kindbd_d_97)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_98 <- gsub(x, y, soep.unedit$kindbd_d_98)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_99 <- gsub(x, y, soep.unedit$kindbd_d_99)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_00 <- gsub(x, y, soep.unedit$kindbd_d_00)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_01 <- gsub(x, y, soep.unedit$kindbd_d_01)
+}
+
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_02 <- gsub(x, y, soep.unedit$kindbd_d_02)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_03 <- gsub(x, y, soep.unedit$kindbd_d_03)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_04 <- gsub(x, y, soep.unedit$kindbd_d_04)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_05 <- gsub(x, y, soep.unedit$kindbd_d_05)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_06 <- gsub(x, y, soep.unedit$kindbd_d_06)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_07 <- gsub(x, y, soep.unedit$kindbd_d_07)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_08 <- gsub(x, y, soep.unedit$kindbd_d_08)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_09 <- gsub(x, y, soep.unedit$kindbd_d_09)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_10 <- gsub(x, y, soep.unedit$kindbd_d_10)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_11 <- gsub(x, y, soep.unedit$kindbd_d_11)
+}
+
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_12 <- gsub(x, y, soep.unedit$kindbd_d_12)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_13 <- gsub(x, y, soep.unedit$kindbd_d_13)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_14 <- gsub(x, y, soep.unedit$kindbd_d_14)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_15 <- gsub(x, y, soep.unedit$kindbd_d_15)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_16 <- gsub(x, y, soep.unedit$kindbd_d_16)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_17 <- gsub(x, y, soep.unedit$kindbd_d_17)
+}
+
+for (i in 1:12){
+   x <- s[i]
+   y <- n[i]
+   soep.unedit$kindbd_d_18 <- gsub(x, y, soep.unedit$kindbd_d_18)
+}
+
+soep.unedit
+```
+
+```{r employment grob, echo=FALSE}
+
+d <- c("\\[", "\\]","Non-working", "NW-age 65 and older", "Working", "NW-maternity leave", "NW-in education-training", "NW-but sometimes sec. job", "NW-but reg. sec. job", "NW-unemployed", "NW-military-community service", "NW-work but past 7 days", "Working but NW past 7 days")
+
+n <- 
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_96 <- gsub(x, "", soep.unedit$employ_96)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_97 <- gsub(x, "", soep.unedit$employ_97)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_98 <- gsub(x, "", soep.unedit$employ_98)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_99 <- gsub(x, "", soep.unedit$employ_99)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_00 <- gsub(x, "", soep.unedit$employ_00)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_01 <- gsub(x, "", soep.unedit$employ_01)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_02 <- gsub(x, "", soep.unedit$employ_02)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_03 <- gsub(x, "", soep.unedit$employ_03)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_04 <- gsub(x, "", soep.unedit$employ_04)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_05 <- gsub(x, "", soep.unedit$employ_05)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_06 <- gsub(x, "", soep.unedit$employ_06)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_07 <- gsub(x, "", soep.unedit$employ_07)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_08 <- gsub(x, "", soep.unedit$employ_08)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_09 <- gsub(x, "", soep.unedit$employ_09)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_10 <- gsub(x, "", soep.unedit$employ_10)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_11 <- gsub(x, "", soep.unedit$employ_11)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_12 <- gsub(x, "", soep.unedit$employ_12)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_13 <- gsub(x, "", soep.unedit$employ_13)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_14 <- gsub(x, "", soep.unedit$employ_14)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_15 <- gsub(x, "", soep.unedit$employ_15)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_16 <- gsub(x, "", soep.unedit$employ_16)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_17 <- gsub(x, "", soep.unedit$employ_17)
+}
+
+for (i in 1:13){
+   x <- d[i]
+   soep.unedit$employ_18 <- gsub(x, "", soep.unedit$employ_18)
+}
+
+soep.unedit
+
+```
+
+```{r editing employment - dummy, echo=FALSE}
+
+soep.unedit$employ_d_96 <- soep.unedit$employ_96
+soep.unedit$employ_d_97 <- soep.unedit$employ_97
+soep.unedit$employ_d_98 <- soep.unedit$employ_98
+soep.unedit$employ_d_99 <- soep.unedit$employ_99
+soep.unedit$employ_d_00 <- soep.unedit$employ_00
+soep.unedit$employ_d_01 <- soep.unedit$employ_01
+soep.unedit$employ_d_02 <- soep.unedit$employ_02
+soep.unedit$employ_d_03 <- soep.unedit$employ_03
+soep.unedit$employ_d_04 <- soep.unedit$employ_04
+soep.unedit$employ_d_05 <- soep.unedit$employ_05
+soep.unedit$employ_d_06 <- soep.unedit$employ_06
+soep.unedit$employ_d_07 <- soep.unedit$employ_07
+soep.unedit$employ_d_08 <- soep.unedit$employ_08
+soep.unedit$employ_d_09 <- soep.unedit$employ_09
+soep.unedit$employ_d_10 <- soep.unedit$employ_10
+soep.unedit$employ_d_11 <- soep.unedit$employ_11
+soep.unedit$employ_d_12 <- soep.unedit$employ_12
+soep.unedit$employ_d_13 <- soep.unedit$employ_13
+soep.unedit$employ_d_14 <- soep.unedit$employ_14
+soep.unedit$employ_d_15 <- soep.unedit$employ_15
+soep.unedit$employ_d_16 <- soep.unedit$employ_16
+soep.unedit$employ_d_17 <- soep.unedit$employ_17
+soep.unedit$employ_d_18 <- soep.unedit$employ_18
+```
+
+
+```{r employment grob, echo=FALSE}
+
+d <- c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
+n <- c("0", "0", "0", "0", "0", "0", "0", "1", "1", "1", "1", "1")
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_96 <- gsub(x, "", soep.unedit$employ_d_96)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_97 <- gsub(x, "", soep.unedit$employ_d_97)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_98 <- gsub(x, "", soep.unedit$employ_d_98)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_99 <- gsub(x, "", soep.unedit$employ_d_99)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_00 <- gsub(x, "", soep.unedit$employ_d_00)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_01 <- gsub(x, "", soep.unedit$employ_d_01)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_02 <- gsub(x, "", soep.unedit$employ_d_02)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_03 <- gsub(x, "", soep.unedit$employ_d_03)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_04 <- gsub(x, "", soep.unedit$employ_d_04)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_05 <- gsub(x, "", soep.unedit$employ_d_05)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_06 <- gsub(x, "", soep.unedit$employ_d_06)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_07 <- gsub(x, "", soep.unedit$employ_d_07)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_08 <- gsub(x, "", soep.unedit$employ_d_08)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_09 <- gsub(x, "", soep.unedit$employ_d_09)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_10 <- gsub(x, "", soep.unedit$employ_d_10)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_11 <- gsub(x, "", soep.unedit$employ_d_11)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_12 <- gsub(x, "", soep.unedit$employ_d_12)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_13 <- gsub(x, "", soep.unedit$employ_d_13)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_14 <- gsub(x, "", soep.unedit$employ_d_14)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_15 <- gsub(x, "", soep.unedit$employ_d_15)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_16 <- gsub(x, "", soep.unedit$employ_d_16)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_17 <- gsub(x, "", soep.unedit$employ_d_17)
+}
+
+for (i in 1:11){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$employ_d_18 <- gsub(x, "", soep.unedit$employ_d_18)
+}
+
+soep.unedit
+
+```
+
+```{r occupation grob, echo=FALSE}
+
+soep.unedit$occup_96 <- str_replace_all(soep.unedit$occup_96, "\\s", "")
+soep.unedit$occup_97 <- str_replace_all(soep.unedit$occup_97, "\\s", "")
+soep.unedit$occup_98 <- str_replace_all(soep.unedit$occup_98, "\\s", "")
+soep.unedit$occup_99 <- str_replace_all(soep.unedit$occup_99, "\\s", "")
+soep.unedit$occup_00 <- str_replace_all(soep.unedit$occup_00, "\\s", "")
+soep.unedit$occup_01 <- str_replace_all(soep.unedit$occup_01, "\\s", "")
+soep.unedit$occup_02 <- str_replace_all(soep.unedit$occup_02, "\\s", "")
+soep.unedit$occup_03 <- str_replace_all(soep.unedit$occup_03, "\\s", "")
+soep.unedit$occup_04 <- str_replace_all(soep.unedit$occup_04, "\\s", "")
+soep.unedit$occup_05 <- str_replace_all(soep.unedit$occup_05, "\\s", "")
+soep.unedit$occup_06 <- str_replace_all(soep.unedit$occup_06, "\\s", "")
+soep.unedit$occup_07 <- str_replace_all(soep.unedit$occup_07, "\\s", "")
+soep.unedit$occup_08 <- str_replace_all(soep.unedit$occup_08, "\\s", "")
+soep.unedit$occup_09 <- str_replace_all(soep.unedit$occup_09, "\\s", "")
+soep.unedit$occup_10 <- str_replace_all(soep.unedit$occup_10, "\\s", "")
+soep.unedit$occup_11 <- str_replace_all(soep.unedit$occup_11, "\\s", "")
+soep.unedit$occup_12 <- str_replace_all(soep.unedit$occup_12, "\\s", "")
+soep.unedit$occup_13 <- str_replace_all(soep.unedit$occup_13, "\\s", "")
+soep.unedit$occup_14 <- str_replace_all(soep.unedit$occup_14, "\\s", "")
+soep.unedit$occup_15 <- str_replace_all(soep.unedit$occup_15, "\\s", "")
+soep.unedit$occup_16 <- str_replace_all(soep.unedit$occup_16, "\\s", "")
+soep.unedit$occup_17 <- str_replace_all(soep.unedit$occup_17, "\\s", "")
+soep.unedit$occup_18 <- str_replace_all(soep.unedit$occup_18, "\\s", "")
+```
+```{r occupation grob, echo=FALSE}
+
+
+d <- c("Other10", "Services9", "Bank,Insurance8", "Transport7", "Trade6", "Construction5", "Manufacturing4", "Energy2", "Mining3", "Agriculture1", "NotApplicable0", "keineAngabe", "trifftnichtzu", "nichtvalide", "UnzulaessigeMehrfachantwort", "InFragebogenversionnichtenthalten", "FragebogenversionmitgeaenderterFilterfuehrung", "\\[", "\\]")
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_96 <- gsub(x, "", soep.unedit$occup_96, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_97 <- gsub(x, "", soep.unedit$occup_97, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_98 <- gsub(x, "", soep.unedit$occup_98, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_99 <- gsub(x, "", soep.unedit$occup_99, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_00 <- gsub(x, "", soep.unedit$occup_00, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_01 <- gsub(x, "", soep.unedit$occup_01, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_02 <- gsub(x, "", soep.unedit$occup_02, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_03 <- gsub(x, "", soep.unedit$occup_03, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_04 <- gsub(x, "", soep.unedit$occup_04, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_05 <- gsub(x, "", soep.unedit$occup_05, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_06 <- gsub(x, "", soep.unedit$occup_06, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_07 <- gsub(x, "", soep.unedit$occup_07, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_08 <- gsub(x, "", soep.unedit$occup_08, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_09 <- gsub(x, "", soep.unedit$occup_09, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_10 <- gsub(x, "", soep.unedit$occup_10, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_11 <- gsub(x, "", soep.unedit$occup_11, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_12 <- gsub(x, "", soep.unedit$occup_12, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_13 <- gsub(x, "", soep.unedit$occup_13, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_14 <- gsub(x, "", soep.unedit$occup_14, ignore.case=T)
+}
+
+ 
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_15 <- gsub(x, "", soep.unedit$occup_15, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_16 <- gsub(x, "", soep.unedit$occup_16, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_17 <- gsub(x, "", soep.unedit$occup_17, ignore.case=T)
+}
+
+
+for (i in 1:19){
+   x <- d[i]
+   soep.unedit$occup_18 <- gsub(x, "", soep.unedit$occup_18,ignore.case=T)
+}
+
+soep.unedit
 ```
 
 
 
+```{r occupation grob, echo=FALSE}
+
+d <- c("-1", "-2", "-3", "-4", "-5", "-6")
+n <- c(NA, NA, NA, NA, NA, NA)
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_96 <- gsub(x, n, soep.unedit$occup_96, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_97 <- gsub(x, n, soep.unedit$occup_97, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_98 <- gsub(x, n, soep.unedit$occup_98, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_99 <- gsub(x, n, soep.unedit$occup_99, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_00 <- gsub(x, n, soep.unedit$occup_00, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_01 <- gsub(x,n, soep.unedit$occup_01, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_02 <- gsub(x, n, soep.unedit$occup_02, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_03 <- gsub(x, n, soep.unedit$occup_03, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_04 <- gsub(x, n, soep.unedit$occup_04, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_05 <- gsub(x, n, soep.unedit$occup_05, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_06 <- gsub(x, n, soep.unedit$occup_06, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_07 <- gsub(x, n, soep.unedit$occup_07, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_08 <- gsub(x, n, soep.unedit$occup_08, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_09 <- gsub(x, n, soep.unedit$occup_09, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_10 <- gsub(x, n, soep.unedit$occup_10, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_11 <- gsub(x, n, soep.unedit$occup_11, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_12 <- gsub(x, n, soep.unedit$occup_12, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_13 <- gsub(x, n, soep.unedit$occup_13, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_14 <- gsub(x, n, soep.unedit$occup_14, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_15 <- gsub(x, n, soep.unedit$occup_15, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_16 <- gsub(x, n, soep.unedit$occup_16, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_17 <- gsub(x, n, soep.unedit$occup_17, ignore.case=T)
+}
+
+
+for (i in 1:6){
+   x <- d[i]
+   y <- n[i]
+   soep.unedit$occup_18 <- gsub(x, n, soep.unedit$occup_18,ignore.case=T)
+}
+
+soep.unedit
+```
 
 
 
+```{r occupation grob, echo=FALSE}
 
-
-
-
-
-
-
+```
 
 
 
