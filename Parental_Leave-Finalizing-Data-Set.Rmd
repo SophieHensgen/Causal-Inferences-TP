@@ -1,0 +1,42 @@
+---
+title: "Finalize Data Set & Analyses"
+author: "Sophie Hensgen"
+date: "7/8/2020"
+output: pdf_document
+---
+
+```{r Packages, include=FALSE}
+library(tidyverse)
+library(dplyr)
+library(foreign)
+library(panelr)
+```
+
+
+```{r save Data Set , echo=FALSE}
+
+# Restore the object
+soep.edit <- readRDS(file = "soep_wide_edit.rds")
+soep.edit
+
+```
+
+```{r subset df, echo=FALSE}
+
+
+cols.num <- c("parleave_96","sex", "income_96", "income_11", "kindbd_d_97", "parleave_97", "parleave_98", "age_97", "region", "education", "parleave_do_97", "parleave_dt_97", "employ_d_97", "workhpw_97", "partner_97", "kinderzahl_97", "kindbd_d_98", "kindbd_d_99")
+soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
+sapply(soep.edit, class)
+
+
+# Important!!! get rid of any values we don't need
+soep.97 <- soep.edit %>%
+  select(persnr, income_96, income_11, parleave_96, kindbd_d_97, parleave_97, parleave_98, parleave_99, kindbd_d_98, kindbd_d_99,  sex, age_97, region, education, parleave_do_97, parleave_dt_97, employ_d_97, workhpw_97,  partner_97, kinderzahl_97) %>%
+  filter(kindbd_d_97 > 0 | parleave_97 > 0) %>%
+  filter(age_97 > 21 | age_97 < 65) %>%
+  filter(!is.na(income_11))
+soep.97
+
+
+```
+
