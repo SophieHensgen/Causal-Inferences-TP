@@ -21,22 +21,220 @@ soep.edit
 
 ```
 
-```{r subset df, echo=FALSE}
+```{r subset df for the time period 1995 - 2010, echo=FALSE}
 
-
-cols.num <- c("parleave_96","sex", "income_96", "income_11", "kindbd_d_97", "parleave_97", "parleave_98", "age_97", "region", "education", "parleave_do_97", "parleave_dt_97", "employ_d_97", "workhpw_97", "partner_97", "kinderzahl_97", "kindbd_d_98", "kindbd_d_99")
+# has to be numeric in order to use dplyr!
+cols.num <- c("sex", "income_96", "income_11", "kindbd_d_97", "parleave_97", "parleave_98", "age_96", "region", "education", "employ_d_96", "workhpw_96", "partner_96", "kinderzahl_96", "occup_96")
 soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
 sapply(soep.edit, class)
 
 
 # Important!!! get rid of any values we don't need
-soep.97 <- soep.edit %>%
-  select(persnr, income_96, income_11, parleave_96, kindbd_d_97, parleave_97, parleave_98, parleave_99, kindbd_d_98, kindbd_d_99,  sex, age_97, region, education, parleave_do_97, parleave_dt_97, employ_d_97, workhpw_97,  partner_97, kinderzahl_97) %>%
-  filter(kindbd_d_97 > 0 | parleave_97 > 0) %>%
-  filter(age_97 > 21 | age_97 < 65) %>%
-  filter(!is.na(income_11))
-soep.97
+soep.9510 <- soep.edit %>%
+  select(persnr, income_96, income_11, kindbd_d_97, parleave_97, parleave_98, sex, age_96, region, education, employ_d_96, workhpw_96,  partner_96, kinderzahl_96, occup_96) %>%
+  filter(kindbd_d_97 > 0 ) %>%           #| parleave_97 > 0) %>%
+  filter(age_96 > 21 | age_96 < 65) %>%
+  filter(!is.na(income_11)) %>%
+  mutate(d_parleave = parleave_97 + parleave_98) %>%
+  mutate(d_parleave_per = case_when(d_parleave == 0 ~ NA_real_ ,                   # Create new Dummy Variable about the length
+                                  d_parleave > 6 ~ 1,
+                                  d_parleave <= 6 & d_parleave > 0 ~ 0)) %>%
+  mutate(d_parleave_did = case_when(d_parleave == 0 ~ 0,                           # Create new dummy Variable about taking parental leave
+                                  d_parleave > 0 ~ 1)) %>%
+  rename(y_income_before = income_96, y_income_after = income_11, dh_kindbd = kindbd_d_97, x_sex = sex, x_age = age_96, x_region = region, x_education = education, x_employ = employ_d_96, x_workhpw = workhpw_96, x_partner = partner_96, x_childcount = kinderzahl_96, x_occup = occup_96) # rename var, so we can latter use rbind()
 
+
+soep.9510$letter <- "a"
+soep.9510 <- unite(soep.9510, ID, persnr, letter, sep = "_")                                # Create new ID Variable, so they dont overlap latter on
+
+
+soep.9510 <- soep.9510 %>%
+  select(ID, y_income_before, y_income_after, d_parleave, d_parleave_did, d_parleave_per, dh_kindbd, x_sex, x_age, x_partner, x_childcount, x_region, x_education, x_occup, x_workhpw)
+
+soep.9510
+```
+
+```{r subset df for the time period 1996 - 2011, echo=FALSE}
+
+# has to be numeric in order to use dplyr!
+cols.num <- c("sex", "income_97", "income_12", "kindbd_d_98", "parleave_98", "parleave_99", "age_97", "region", "education", "employ_d_97", "workhpw_97", "partner_97", "kinderzahl_97", "occup_97")
+soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
+sapply(soep.edit, class)
+
+
+# Important!!! get rid of any values we don't need
+soep.9611 <- soep.edit %>%
+  select(persnr, income_97, income_12, kindbd_d_98, parleave_98, parleave_99, sex, age_97, region, education, employ_d_97, workhpw_97,  partner_97, kinderzahl_97, occup_97) %>%
+  filter(kindbd_d_98 > 0 ) %>%           #| parleave_97 > 0) %>%
+  filter(age_97 > 21 | age_97 < 65) %>%
+  filter(!is.na(income_12)) %>%
+  mutate(d_parleave = parleave_98 + parleave_99) %>%
+  mutate(d_parleave_per = case_when(d_parleave == 0 ~ NA_real_ ,                   # Create new Dummy Variable about the length
+                                  d_parleave > 6 ~ 1,
+                                  d_parleave <= 6 & d_parleave > 0 ~ 0)) %>%
+  mutate(d_parleave_did = case_when(d_parleave == 0 ~ 0,                           # Create new dummy Variable about taking parental leave
+                                  d_parleave > 0 ~ 1)) %>%
+  rename(y_income_before = income_97, y_income_after = income_12, dh_kindbd = kindbd_d_98, x_sex = sex, x_age = age_97, x_region = region, x_education = education, x_employ = employ_d_97, x_workhpw = workhpw_97, x_partner = partner_97, x_childcount = kinderzahl_97, x_occup = occup_97) # rename var, so we can latter use rbind()
+
+
+soep.9611$letter <- "b"
+soep.9611 <- unite(soep.9611, ID, persnr, letter, sep = "_")                                # Create new ID Variable, so they dont overlap latter on
+
+
+soep.9611 <- soep.9611 %>%
+  select(ID, y_income_before, y_income_after, d_parleave, d_parleave_did, d_parleave_per, dh_kindbd, x_sex, x_age, x_partner, x_childcount, x_region, x_education, x_occup, x_workhpw)
+
+soep.9611
+```
+
+```{r subset df for the time period 1997 - 2012, echo=FALSE}
+
+# has to be numeric in order to use dplyr!
+cols.num <- c("sex", "income_98", "income_13", "kindbd_d_99", "parleave_99", "parleave_00", "age_98", "region", "education", "employ_d_98", "workhpw_98", "partner_98", "kinderzahl_98", "occup_98")
+soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
+sapply(soep.edit, class)
+
+
+# Important!!! get rid of any values we don't need
+soep.9712 <- soep.edit %>%
+  select(persnr, income_98, income_13, kindbd_d_99, parleave_99, parleave_00, sex, age_98, region, education, employ_d_98, workhpw_98,  partner_98, kinderzahl_98, occup_98) %>%
+  filter(kindbd_d_99 > 0 ) %>%           #| parleave_97 > 0) %>%
+  filter(age_98 > 21 | age_98 < 65) %>%
+  filter(!is.na(income_13)) %>%
+  mutate(d_parleave = parleave_99 + parleave_00) %>%
+  mutate(d_parleave_per = case_when(d_parleave == 0 ~ NA_real_ ,                   # Create new Dummy Variable about the length
+                                  d_parleave > 6 ~ 1,
+                                  d_parleave <= 6 & d_parleave > 0 ~ 0)) %>%
+  mutate(d_parleave_did = case_when(d_parleave == 0 ~ 0,                           # Create new dummy Variable about taking parental leave
+                                  d_parleave > 0 ~ 1)) %>%
+  rename(y_income_before = income_98, y_income_after = income_13, dh_kindbd = kindbd_d_99, x_sex = sex, x_age = age_98, x_region = region, x_education = education, x_employ = employ_d_98, x_workhpw = workhpw_98, x_partner = partner_98, x_childcount = kinderzahl_98, x_occup = occup_98) # rename var, so we can latter use rbind()
+
+
+soep.9712$letter <- "c"
+soep.9712 <- unite(soep.9712, ID, persnr, letter, sep = "_")                                # Create new ID Variable, so they dont overlap latter on
+
+
+soep.9712 <- soep.9712 %>%
+  select(ID, y_income_before, y_income_after, d_parleave, d_parleave_did, d_parleave_per, dh_kindbd, x_sex, x_age, x_partner, x_childcount, x_region, x_education, x_occup, x_workhpw)
+
+soep.9712
+```
+
+```{r subset df for the time period 1998 - 2013, echo=FALSE}
+
+# has to be numeric in order to use dplyr!
+cols.num <- c("sex", "income_99", "income_14", "kindbd_d_00", "parleave_00", "parleave_01", "age_99", "region", "education", "employ_d_99", "workhpw_99", "partner_99", "kinderzahl_99", "occup_99")
+soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
+sapply(soep.edit, class)
+
+
+# Important!!! get rid of any values we don't need
+soep.9813 <- soep.edit %>%
+  select(persnr, income_99, income_14, kindbd_d_00, parleave_00, parleave_01, sex, age_99, region, education, employ_d_99, workhpw_99,  partner_99, kinderzahl_99, occup_99) %>%
+  filter(kindbd_d_00 > 0 ) %>%           #| parleave_97 > 0) %>%
+  filter(age_99 > 21 | age_99 < 65) %>%
+  filter(!is.na(income_14)) %>%
+  mutate(d_parleave = parleave_00 + parleave_01) %>%
+  mutate(d_parleave_per = case_when(d_parleave == 0 ~ NA_real_ ,                   # Create new Dummy Variable about the length
+                                  d_parleave > 6 ~ 1,
+                                  d_parleave <= 6 & d_parleave > 0 ~ 0)) %>%
+  mutate(d_parleave_did = case_when(d_parleave == 0 ~ 0,                           # Create new dummy Variable about taking parental leave
+                                  d_parleave > 0 ~ 1)) %>%
+  rename(y_income_before = income_99, y_income_after = income_14, dh_kindbd = kindbd_d_00, x_sex = sex, x_age = age_99, x_region = region, x_education = education, x_employ = employ_d_99, x_workhpw = workhpw_99, x_partner = partner_99, x_childcount = kinderzahl_99, x_occup = occup_99) # rename var, so we can latter use rbind()
+
+
+soep.9813$letter <- "d"
+soep.9813 <- unite(soep.9813, ID, persnr, letter, sep = "_")                                # Create new ID Variable, so they dont overlap latter on
+
+
+soep.9813 <- soep.9813 %>%
+  select(ID, y_income_before, y_income_after, d_parleave, d_parleave_did, d_parleave_per, dh_kindbd, x_sex, x_age, x_partner, x_childcount, x_region, x_education, x_occup, x_workhpw)
+
+soep.9813
+```
+
+```{r subset df for the time period 1999 - 2014, echo=FALSE}
+
+# has to be numeric in order to use dplyr!
+cols.num <- c("sex", "income_00", "income_15", "kindbd_d_01", "parleave_01", "parleave_02", "age_00", "region", "education", "employ_d_00", "workhpw_00", "partner_00", "kinderzahl_00", "occup_00")
+soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
+sapply(soep.edit, class)
+
+
+# Important!!! get rid of any values we don't need
+soep.9914 <- soep.edit %>%
+  select(persnr, income_00, income_15, kindbd_d_01, parleave_01, parleave_02, sex, age_00, region, education, employ_d_00, workhpw_00,  partner_00, kinderzahl_00, occup_00) %>%
+  filter(kindbd_d_01 > 0 ) %>%           #| parleave_97 > 0) %>%
+  filter(age_00 > 21 | age_00 < 65) %>%
+  filter(!is.na(income_15)) %>%
+  mutate(d_parleave = parleave_01 + parleave_02) %>%
+  mutate(d_parleave_per = case_when(d_parleave == 0 ~ NA_real_ ,                   # Create new Dummy Variable about the length
+                                  d_parleave > 6 ~ 1,
+                                  d_parleave <= 6 & d_parleave > 0 ~ 0)) %>%
+  mutate(d_parleave_did = case_when(d_parleave == 0 ~ 0,                           # Create new dummy Variable about taking parental leave
+                                  d_parleave > 0 ~ 1)) %>%
+  rename(y_income_before = income_00, y_income_after = income_15, dh_kindbd = kindbd_d_01, x_sex = sex, x_age = age_00, x_region = region, x_education = education, x_employ = employ_d_00, x_workhpw = workhpw_00, x_partner = partner_00, x_childcount = kinderzahl_00, x_occup = occup_00) # rename var, so we can latter use rbind()
+
+
+soep.9914$letter <- "e"
+soep.9914 <- unite(soep.9914, ID, persnr, letter, sep = "_")                                # Create new ID Variable, so they dont overlap latter on
+
+
+soep.9914 <- soep.9914 %>%
+  select(ID, y_income_before, y_income_after, d_parleave, d_parleave_did, d_parleave_per, dh_kindbd, x_sex, x_age, x_partner, x_childcount, x_region, x_education, x_occup, x_workhpw)
+
+soep.9914
+```
+
+
+```{r subset df for the time period 2000 - 2015, echo=FALSE}
+
+# has to be numeric in order to use dplyr!
+cols.num <- c("sex", "income_01", "income_16", "kindbd_d_02", "parleave_02", "parleave_03", "age_01", "region", "education", "employ_d_01", "workhpw_01", "partner_01", "kinderzahl_01", "occup_01")
+soep.edit[cols.num] <- sapply(soep.edit[cols.num],as.numeric)
+sapply(soep.edit, class)
+
+
+# Important!!! get rid of any values we don't need
+soep.0015 <- soep.edit %>%
+  select(persnr, income_01, income_16, kindbd_d_02, parleave_02, parleave_03, sex, age_01, region, education, employ_d_01, workhpw_01,  partner_01, kinderzahl_01, occup_01) %>%
+  filter(kindbd_d_02 > 0 ) %>%           #| parleave_97 > 0) %>%
+  filter(age_01 > 21 | age_01 < 65) %>%
+  filter(!is.na(income_16)) %>%
+  mutate(d_parleave = parleave_02 + parleave_03) %>%
+  mutate(d_parleave_per = case_when(d_parleave == 0 ~ NA_real_ ,                   # Create new Dummy Variable about the length
+                                  d_parleave > 6 ~ 1,
+                                  d_parleave <= 6 & d_parleave > 0 ~ 0)) %>%
+  mutate(d_parleave_did = case_when(d_parleave == 0 ~ 0,                           # Create new dummy Variable about taking parental leave
+                                  d_parleave > 0 ~ 1)) %>%
+  rename(y_income_before = income_01, y_income_after = income_16, dh_kindbd = kindbd_d_02, x_sex = sex, x_age = age_01, x_region = region, x_education = education, x_employ = employ_d_01, x_workhpw = workhpw_01, x_partner = partner_01, x_childcount = kinderzahl_01, x_occup = occup_01) # rename var, so we can latter use rbind()
+
+
+soep.0015$letter <- "f"
+soep.0015 <- unite(soep.0015, ID, persnr, letter, sep = "_")                                # Create new ID Variable, so they dont overlap latter on
+
+
+soep.0015 <- soep.0015 %>%
+  select(ID, y_income_before, y_income_after, d_parleave, d_parleave_did, d_parleave_per, dh_kindbd, x_sex, x_age, x_partner, x_childcount, x_region, x_education, x_occup, x_workhpw)
+
+soep.0015
+```
+
+```{r combine the indiicudal dfs, echo=FALSE}
+
+soep.full <- rbind(soep.9510, soep.9611, soep.9712, soep.9813, soep.9914, soep.0015)
+soep.full
 
 ```
 
+
+
+
+
+
+```{r, echo=FALSE}
+
+
+
+
+```
