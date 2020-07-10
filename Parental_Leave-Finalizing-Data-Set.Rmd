@@ -341,7 +341,7 @@ stargazer(data.frame(soep.full), summary = TRUE, out = "/Users/sophiehensgen/Web
 
 ```{r}
 
-lm <- lm((y_income_after - y_income_before) ~ d_parleave_did + x_sex + x_age + I(x_age^2) + x_region + x_childcount, data = soep.full)
+lm <- lm((y_income_after - y_income_before) ~ d_parleave_did + x_sex + x_age + I(x_age^2) + x_region + x_childcount + x_education + x_occup, data = soep.full)
 lm_small <- lm((y_income_after - y_income_before) ~ d_parleave_did, data = soep.full)
 summary(lm)
 summary(lm_small)
