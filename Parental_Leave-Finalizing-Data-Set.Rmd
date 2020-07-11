@@ -12,10 +12,15 @@ date: "`r Sys.Date()`"
 output:
   pdf_document:
     toc: yes
-    df_print: kable
+    #df_print: kable
     number_sections: true
 always_allow_html: true
+bibliography: biblio.bib
 ---
+
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```
 
 ```{r Packages, include=FALSE}
 library(tidyverse)
@@ -29,9 +34,53 @@ library(cobalt)
 library(PanelMatch)
 library(stargazer)
 library(plotly)
+library(knitr)
+library(ggplot2)
+library(broom)
+library(devtools)
 ```
 
 
+
+# Introduction 
+
+
+
+
+
+# Literature Review
+
+### History of Parental Leave {-}
+
+In order to fully understand the impact maternity, paternity and parental leave can have on an individual, it is necessary to look into the reform itself and how it changed over the years, to become more inclusive. Maternity leave itself did not changed as much, women were guaranteed 14 weeks of leave (6 weeks pre birth and 8 post birth) with full payment of their salary [13]. In the 1980s in Germany, mothers were offered 6 months of paid and job guaranteed leave. This reform has been amended several times. Especially in the 1990s they started to change the status quo quite a bit. Not only changed the period of time during which a safe return to work was guaranteed to 36 months in 1992. But also they adjusted the financial support in the same year so that it could be paid for 18 months. This financial support consisted of a mixture of flat-rate and means-tested payments [13]. Another rather big change was the possibility that both parents could simultaneously go into parental leave [2 - Bundesministerium].
+The next big reform change took place in 2007. The paid leave was at least 12 months and 14 if both parents at least took two weeks parental leave.  These additional 2 months should act like an incentive for fathers to take part in parental leave [13, 1a, 11]. Also the financial support system changed. If someone was employed to the time of the birth they would get paid 67 % of their pre-birth net salary. But if you were not employed you get 300 Euro per month as financial support [12]. 
+These reform changes have a strong influence on the likelihood of fathers taking parental leave. Before 2007, only 3% of fathers took parental leave. After 2007, the figure had already risen to 15%, increasing over the years to 34% (2014) [10]. 
+Mari & Cutuliy examined the impact the 2007 reform had on the income of parents and they found out that indeed, more fathers engaged in parental leave and also that it was easier to return to the job market for women. 
+For the rest of the paper, I am going to focus on the reforms of 1992 & 1993, cohabiting was not allowed, as well as no additional 2 months of parental leave for the father.
+
+### Impact of Parental Leave {-}
+
+According to multiple scholars, there seems to be a significant influence of parental leave on income in varing degrees. 
+However it is important to note that there are two aspects that are decisive for this research field. First, there are aspects which influence the decision to go into parental leave, which can lead to the overrepresentation of women staying home for the newborn. And second, parental leave in general will have an influence, which can be harder on one parent, but other parts should not be affected by the gender. In the following section I will first concentrate on what is going into the deciding process on how should go into parenta leave and for how long. And then, I will explore the different reasons for the disadvantages which come with parental leave.
+
+Taking time to nurture your new born child is an important point in the relationship between parents and their child. For a lot of people it is without question that they will partake in parental leave, even for a longer period of time. However, when it comes to any kind of parental leave, there are several things to consider before deciding who is going to take it and also how long. In general people are quite rational about it, they weigh their costs according to the economic theory [11], so their outcome will be the best way possible in regards to finances, reentry in work force etc.. For example, parents look into the labor market and their own company to find out, if the situation is stable and which is best to leave for a period of time [5]. However, some decisions which are made during this time can lead to disadvantages, for one party. However, there are also  
+
+
+When the decision is made who is going to stay home, this is the time where the real impact will surface. 
+One of the disadvantages which come with staying home is the missed opportunities. One will miss out on new skills and general developments in the company, which will them give a disadvantage when coming back to work. 
+
+
+Human capital refers to the knowledge and professional skills that individuals acquire through education, on-the-job training, and the practical performance of the job (Becker, 1993). 
+According to human capital theory, a mother will work outside the home when the value of her market time (her wage rate) exceeds the value of her home time in terms of producing a healthy child (Desai & Waite, 1991; Joesch, 1994; Leibowitz, Klerman, & Waite, 1992).
+
+
+# Theory & Hypotheses
+
+
+
+
+
+# Methods & Data 
 ```{r save Data Set , include=FALSE}
 
 # Restore the object
@@ -239,7 +288,7 @@ soep.0015 <- soep.0015 %>%
 soep.0015
 ```
 
-```{r combine the indiicudal dfs, include=FALSE}
+```{r combine the individual dfs, include=FALSE}
 
 soep.full <- rbind(soep.9510, soep.9611, soep.9712, soep.9813, soep.9914, soep.0015)
 soep.full
@@ -262,12 +311,12 @@ a <- table(soep.full$y_income_before) # check of distribution
 a
 ```
 
-```{r table, echo=FALSE}
+```{r table, include=FALSE}
 
 stargazer(data.frame(soep.full), summary = TRUE, out = "/Users/sophiehensgen/Webscraping-LS-Methode/Causal-Inferences-TP/Summary-TP.html")
 
 ```
-```{r Figure before preggo, echo=FALSE}
+```{r Figure before preggo,  include=FALSE}
 
 #FIGURE 1
   y_income_before_preggo <- 
@@ -303,7 +352,7 @@ stargazer(data.frame(soep.full), summary = TRUE, out = "/Users/sophiehensgen/Web
   p
 ```
 
-```{r Figure after preggo, echo=FALSE}
+```{r Figure after preggo, include=FALSE}
 
 #FIGURE 2
   y_income_after_preggo <- 
@@ -339,7 +388,7 @@ stargazer(data.frame(soep.full), summary = TRUE, out = "/Users/sophiehensgen/Web
   p
 ```
 
-```{r}
+```{r, include = FALSE}
 
 lm <- lm((y_income_after - y_income_before) ~ d_parleave_did + x_sex + x_age + I(x_age^2) + x_region + x_childcount + x_education + x_occup, data = soep.full)
 lm_small <- lm((y_income_after - y_income_before) ~ d_parleave_did, data = soep.full)
@@ -348,7 +397,7 @@ summary(lm_small)
 ```
 
 
-```{r Figure before preggo - hypothesis 2, echo=FALSE}
+```{r Figure before preggo - hypothesis 2,  include=FALSE}
 
 #FIGURE 1
   y_income_before_preggo_high <- 
@@ -384,12 +433,9 @@ summary(lm_small)
   p
 ```
 
+```{r Figure after preggo - hypothesis 2,  include=FALSE}
 
-
-
-```{r Figure after preggo - hypothesis 2, echo=FALSE}
-
-#FIGURE 1
+#FIGURE 2b
   y_income_after_preggo_high <- 
   soep.full$y_income_after[soep.full$d_parleave_per == 1]
   y_income_after_preggo_low <- 
@@ -424,7 +470,7 @@ summary(lm_small)
 ```
 
 
-```{r}
+```{r, include = FALSE}
 
 lm_full <- lm((y_income_after - y_income_before) ~ d_parleave_per + x_sex + x_age + I(x_age^2) + x_region, data = soep.full)
 lm_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = soep.full)
