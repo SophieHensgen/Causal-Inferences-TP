@@ -19,7 +19,12 @@ bibliography: biblio.bib
 ---
 
 ```{r, include=FALSE}
-options(tinytex.verbose = TRUE)
+install.packages('tinytex')
+tinytex::install_tinytex()
+install.packages('rmarkdown')
+install.packages(c("rmarkdown", "knitr", "kableExtra",
+"stargazer", "plotly", "knitr",
+"bookdown"))
 ```
 
 ```{r Packages, include=FALSE}
