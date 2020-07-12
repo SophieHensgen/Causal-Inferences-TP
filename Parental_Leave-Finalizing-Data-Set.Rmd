@@ -1,30 +1,42 @@
 ---
-title: "Does Spending time with your child decreases your income?"
-author: "Sophie Hensgen (1560750)"
-header-includes:
-    - \usepackage{setspace}\doublespacing
-    - \usepackage{booktabs}
-    - \usepackage{capt-of}
-    - \usepackage{floatrow}
-    - \floatsetup[figure]{capposition=top}
-    - \floatsetup[table]{capposition=top}
-date: "`r Sys.Date()`"
+title: |
+  |
+  | 
+  | \vspace{1cm}Does Spending time with your child decreases your income?\vspace{0.5cm}
+  |
+author: |
+  | Sophie Hensgen
+  | University of Mannheim 
+  | Matricle number: 1560750
+date: |
+  |       
+  | `r Sys.Date()`
+  |
+linestretch: 1.2
+colorlinks: true
+abstract: \noindent\setstretch{1}Here Abstract...\vspace{.8cm}
+bibliography: Biblio.bib
+csl: american-sociological-association.csl
 output:
-  pdf_document:
-    toc: yes
-    #df_print: kable
-    number_sections: true
-always_allow_html: true
-bibliography: biblio.bib
+  bookdown::pdf_document2:
+    toc: no
+    keep_tex: true
+mainfont: Times New Roman
+sansfont: Times New Roman
+fontsize: 12pt
+link-citations: true
+documentclass: article
+geometry: margin=1in
+always_allow_html: yes
 ---
 
 ```{r, include=FALSE}
-install.packages('tinytex')
-tinytex::install_tinytex()
-install.packages('rmarkdown')
-install.packages(c("rmarkdown", "knitr", "kableExtra",
-"stargazer", "plotly", "knitr",
-"bookdown"))
+#install.packages('tinytex')
+#tinytex::install_tinytex()
+#install.packages('rmarkdown')
+#install.packages(c("rmarkdown", "knitr", "kableExtra",
+#"stargazer", "plotly", "knitr",
+#"bookdown"))
 ```
 
 ```{r Packages, include=FALSE}
@@ -49,7 +61,7 @@ library(devtools)
 
 # Introduction 
 
-
+[@evertsson_parental_2016]
 
 
 
@@ -57,26 +69,50 @@ library(devtools)
 
 ### History of Parental Leave {-}
 
-In order to fully understand the impact maternity, paternity and parental leave can have on an individual, it is necessary to look into the reform itself and how it changed over the years, to become more inclusive. Maternity leave itself did not changed as much, women were guaranteed 14 weeks of leave (6 weeks pre birth and 8 post birth) with full payment of their salary [13]. In the 1980s in Germany, mothers were offered 6 months of paid and job guaranteed leave. This reform has been amended several times. Especially in the 1990s they started to change the status quo quite a bit. Not only changed the period of time during which a safe return to work was guaranteed to 36 months in 1992. But also they adjusted the financial support in the same year so that it could be paid for 18 months. This financial support consisted of a mixture of flat-rate and means-tested payments [13]. Another rather big change was the possibility that both parents could simultaneously go into parental leave [2 - Bundesministerium].
-The next big reform change took place in 2007. The paid leave was at least 12 months and 14 if both parents at least took two weeks parental leave.  These additional 2 months should act like an incentive for fathers to take part in parental leave [13, 1a, 11]. Also the financial support system changed. If someone was employed to the time of the birth they would get paid 67 % of their pre-birth net salary. But if you were not employed you get 300 Euro per month as financial support [12]. 
-These reform changes have a strong influence on the likelihood of fathers taking parental leave. Before 2007, only 3% of fathers took parental leave. After 2007, the figure had already risen to 15%, increasing over the years to 34% (2014) [10]. 
+In order to fully understand the impact maternity, paternity and parental leave might have on an individual, it is necessary to look into the reform itself and how it changed over the years to become more inclusive. Maternity leave itself did not changed as much, women were guaranteed 14 weeks of leave (6 weeks pre birth and 8 post birth) with full payment of their salary [@gabriele_mari_parental_2019]. In the 1980s in Germany, mothers were offered 6 months of paid and job guaranteed leave. This reform has been amended several times. Especially in the 1990s they started to change the status quo quite a bit. Not only changed the period of time during which a safe return to work was guaranteed to 36 months in 1992. But also they adjusted the financial support in the same year so that it could be paid for 18 months. This financial support consisted of a mixture of flat-rate and means-tested payments [@gabriele_mari_parental_2019]. Another rather big change was the possibility that both parents could simultaneously go into parental leave [geisler_against_2011; Bundesministerium].
+The next big reform change took place in 2007. The paid leave was at least 12 months and 14 if both parents at least took two weeks parental leave.  These additional 2 months should act like an incentive for fathers to take part in parental leave [@gabriele_mari_parental_2019; @marshall_fathers_2008; @lapuerta_individual_2011]. Also the financial support system changed. If someone was employed to the time of the birth they would get paid 67 % of their pre-birth net salary. But if you were not employed you get 300 Euro per month as financial support [@hofferth_parental_2006]. 
+These reform changes have a strong influence on the likelihood of fathers taking parental leave. Before 2007, only 3% of fathers took parental leave. After 2007, the figure had already risen to 15%, increasing over the years to 34% (2014) [@tamm_fathers_2018]. 
 Mari & Cutuliy examined the impact the 2007 reform had on the income of parents and they found out that indeed, more fathers engaged in parental leave and also that it was easier to return to the job market for women. 
 For the rest of the paper, I am going to focus on the reforms of 1992 & 1993, cohabiting was not allowed, as well as no additional 2 months of parental leave for the father.
 
-### Impact of Parental Leave {-}
+### *Impact of Parental Leave* {-}
 
 According to multiple scholars, there seems to be a significant influence of parental leave on income in varing degrees. 
-However it is important to note that there are two aspects that are decisive for this research field. First, there are aspects which influence the decision to go into parental leave, which can lead to the overrepresentation of women staying home for the newborn. And second, parental leave in general will have an influence, which can be harder on one parent, but other parts should not be affected by the gender. In the following section I will first concentrate on what is going into the deciding process on how should go into parenta leave and for how long. And then, I will explore the different reasons for the disadvantages which come with parental leave.
+However it is important to note that there are two aspects that are decisive for this research field. First, there are aspects which influence the decision to go into parental leave, which can lead to the overrepresentation of women staying home for their newborn. And second, parental leave in general will have an influence, which can be harder on one parent, but other parts should not be affected by the gender. In the following section I will first concentrate on what is going into the deciding process on who should go into parenta leave of the two of them and for how long. And then, I will explore the different reasons for the disadvantages which come with parental leave.
 
-Taking time to nurture your new born child is an important point in the relationship between parents and their child. For a lot of people it is without question that they will partake in parental leave, even for a longer period of time. However, when it comes to any kind of parental leave, there are several things to consider before deciding who is going to take it and also how long. In general people are quite rational about it, they weigh their costs according to the economic theory [11], so their outcome will be the best way possible in regards to finances, reentry in work force etc.. For example, parents look into the labor market and their own company to find out, if the situation is stable and which is best to leave for a period of time [5]. However, some decisions which are made during this time can lead to disadvantages, for one party. However, there are also  
+Taking time to nurture your new born child is an important aspect in the relationship between parents and their child. For a lot of people it is without question that they will partake in parental leave, even for a longer period of time. However, when it comes to any kind of parental leave, there are several things to consider before deciding who is going to take it and also for how long. In general people are quite rational about it, they weigh their costs according to the economic theory [@lapuerta_individual_2011], so their outcome will be the best way possible in regards to finances, reentry in work force etc.. For example, parents look into the labor market and their own company to find out, if the situation is stable and which is best to leave for a period of time [@sundstrom_gender_2002]. However, some decisions which are made during this time even if chosen rationally can lead to disadvantages, for one party. In particular women, research shows that first time parents tend to engage in a more traditional constellation [Dribe; geisler_against_2011]. 
+
+However these decisions are made on basis of multiple criteria, not only because of stereotypes. 6 of them seem to be especially prominent during the decision process. 
+To begin with the perhaps least crucial criteria is the lifestyle preferences of each individual. For some, work is more important, for some it is the family, for others it is a matter of adapting to the situation.  Depending on which side one is on, this can influence the willingness to take parental leave and also the extent to which it is taken [@hofferth_parental_2006; Hakim].  
+Another aspect I mentioned shortly before is the situation of the labor market. Some parents are worried, that if they take parental leave, they could have disadvantages compared to other workers in this field. Additionally, some markets are more stable than other, so if someone has a secure job, they might want to stay working to show their commitment [@sundstrom_gender_2002]. 
+However, this might not be the most influential part, as these concerns are closely linked with the reform which is in action. Parental leave programs are different in each country, some are more flexible (Finland, Germany), some are not (Spain, Italy, Greece) [@pronzato_return_2009; @gabriele_mari_parental_2019; @tamm_fathers_2018]. And if they are more flexible, the probability that fathers will take parental leave will increase. [@gabriele_mari_parental_2019]
+Still, the rate of father who partake in parental leave is still small, as the society still expect women to at least stay home at the beginning [Cite; @katherine_marshall_fathers_2008]. This does not necessarily have to have anything to do with sexism and stereotypes, although they do have an impact [@evertsson_parental_2016] (read again), but there are practical reasons as well. The woman carries the child, gives birth and would probably also breastfeed it in the first couple of months, if she decide to do so. Therefore it makes sense that the mother stays at home with the child at the beginning. However, this does not explain, why women stay even longer even though both parents could technically care for the child. 
+We can see a trend away from the traditional route, especially for higher educated parents. Even though high educated people have higher opportunity cost as they could potentially improve their career easier and thus partake less in parental leave and if so for a shorter amount of time [@lapuerta_individual_2011; @rostgaard_parental_2020; @helen_dearing_does_2015]. They are more willing to give up hetero-normative standards and adopting more egalitarian gender roles. Which means, that they do not have a problem to partake in parental leave [@geisler_against_2011]. 
+With that said, there is one important aspect to note. Even though highly educated men are open to the idea of taking parental leave, it is important, that it is conform with the economic theory. Which means that they are more likely to go into parental leave, if their significant other has a higher education or higher income than themselves [@geisler_against_2011; @lapuerta_individual_2011; @tamm_fathers_2018]. 
+Income seems to be the most important criterion in relation to parental leave. It not only determines who takes it. but also how long the parental leave will last. High-income families can afford to take more time off for parental leave because they do not need a full additional income [@geisler_against_2011].
 
 
-When the decision is made who is going to stay home, this is the time where the real impact will surface. 
-One of the disadvantages which come with staying home is the missed opportunities. One will miss out on new skills and general developments in the company, which will them give a disadvantage when coming back to work. 
+When the decision is made on who is going to stay home, other additional factors will potentially influence the income as well.  
+One of these disadvantages which come with staying home is the missed opportunities at work. Companys are fast changing mechanisms, new structures, workflows and task are added constantly. So missing out on these, even for a small period of time, could be harmful for one's career [@evertsson_parental_2016]. These findings are in line with the human capital theory which states that an individual will increase its knowledge and skills through education and working in a specific field. The longer someone has been working and the more supplementary training and task he completed the higher his or hers human capital will be [@evertsson_parental_2016; @becker_human_1993]. A high human capital is especially important to receive great job offerings, a high salary and promotions. Thus a break in work life can act like a bump on the career and put someone behind compared to those who did work constantly. Furthermore, the human capital is not only not increasing while staying home, in fact it is decreasing because of the lack of practice [@evertsson_parental_2016]. This assumption is supported by the study by Hofferth and Curtin [@hofferth_parental_2006]. In their results, they found evidence that the salary already decreases 2 years after birth when the employer is changed. Although they have only focused on the impact on women, there are studies like Evertson's [@evertsson_parental_2016] which show that both women and men suffer a loss of pay after parental leave.
+However, the well being of the child is most important for the parents, and they will only return to work, if it is more valuable for the family when him or her spends time working (especially regarding the salary) instead of carrying for the child [@hofferth_parental_2006; (Desai & Waite, 1991; Joesch, 1994; Leibowitz, Klerman, & Waite, 1992)]. 
+How great the impact of parental leave has on the human capital and therefore on the income depends heavily on the reforms stated in each country. For example Pronzato [@pronzato_return_2009] examined multiple European countries and observed that in countries with more generous parental leave arrangements, like Finland the impact the leave had on the human capital was less severe as in other countries (Italy or Spain). So even though there is so much research in this field, every country reacts differently to parental leave depending on the reform in action. And as mentioned before even within countries there are changes in reforms, which change how people react to parental leave all together (ELEFANT change sentence, not happy with it). 
+
+So far we explored the impact parental leave can have on human capital, however there is another important aspect which is effected by parental leave, and that is signalling. According to signal theory, any action we take send out a signal that allows others to build up certain beliefs about us [Hedström]. In line with previous research, this means that parental leave can be a signal of less commitment to the company and its work, at least employers will interpret it like that [@sundstrom_gender_2002]. However, this seems to be more a problem for men than for women. This is because the expectation that women will take more care of their newborn child than their husbands is still widespread in society. 25% of all couples do not even consider the possibility that the man could take parental leave [@rostgaard_parental_2020]. It is so normalized, that the signal a women gives with taking maternity leave is not that severe and should not influence her income as much [@evertsson_parental_2016]. However, if a man decides to take parental leave, it is still seen as an exception. Especially in the period before 2007 where additional incentives were included for men. So any time spend in parental leave will signal the employer less determination for the company and is also taken more seriously than if women took parental leave, which concludes in a greater impact on the men career and income [@evertsson_parental_2016, & Albrecht]. In a Swedish study by Stafford and Sundström's (1996) it was observed that men will experience an annual loss of 5.2% of pay, but women will lose only 1.7% of their income. Nevertheless, the salary also has an influence. The higher the income at the time of birth, the less the use of parental leave affects future income [@sundstrom_gender_2002]. However, in the long run, women will have had a greater decrease in their income, as their usually take more weeks of than men [@evertsson_parental_2016]. Which underlines the effect of human capital theory. 
 
 
-Human capital refers to the knowledge and professional skills that individuals acquire through education, on-the-job training, and the practical performance of the job (Becker, 1993). 
-According to human capital theory, a mother will work outside the home when the value of her market time (her wage rate) exceeds the value of her home time in terms of producing a healthy child (Desai & Waite, 1991; Joesch, 1994; Leibowitz, Klerman, & Waite, 1992).
+Taking both the human theory and the signaling theory and all the prior research into account, I believe, that taking parental leave in general will have an effect in your income, therefore I propose the following hypothesis:
+
+*H1: If a parent takes parental leave for any amount of time, their future income will be less than if they had not taken the parental leave.* 
+
+A often asked question for parents is, how long is to long regarding parental leave? Does a certain amount of time give less disadvantages as others or does the period not matter? And what is the best decision with regard to long term consequences. 
+Scholars are mostly on the same side as the majority state that the longer your absent from work the more damage is done to your human capital and therefore your later income will be much lower than if not taking the parental leave [@evertsson_parental_2016; @pronzato_return_2009, @rostgaard_parental_2020; @helen_dearing_does_2015]. Additionally, there seems to be a sweet spot where parental leave has a positive effect on mothers employment participation but not on wages [@pronzato_return_2009; Platenga etc.]. Platenga and other studies found a inverted u shape in benefit. Very short and very long leaves seem to have less of a positive effect than a moderate period of time. 
+However, they are indecisive about the definition of these periods, they vary across researches some say 6-8 monts (Platenga; @helen_dearing_does_2015) others go up to 18 months (Misra; @helen_dearing_does_2015). In this study a short leave will be seen as a period up to 6 months and everything more than that will be count as a long leave.
+
+Additionally, Rostgaard et al. [@rostgaard_parental_2020] even go so far to propose that a really short time of parental leave could have no long term effect on income, as long as the parental leave, does not change the basic family dynamic. With that said, human capital theory as well as the signalling theory propose that any income lead to a change. However, I suggest, that a long period of time will be more harmful, than a short leave. 
+
+*H2: If a parent takes a short parental leave (up to 6 months), their future income will be less effected as if they had stayed longer in parental leave.* 
+
+All the criteria involved in deciding who will take parental leave lead to women being forced into the role of the stay at home mother and even though governments try to counterbalance this effect with longer and higher financial support as well as incentives for men to take parental leave [@marshall_fathers_2008; @rostgaard_parental_2020; @helen_dearing_does_2015]. There is still a large gap between these genders, which ultimately leads to an even higher gender wage gap. And even though, the signalling theory suggests, that man suffer from more disadvantages because of the parental leave. I would argue, that women do as well. It starts with the fact that employer anticipate women to go into parental leave at least ones, solely on the base on their gender. They will believe that women as soon as they get pregnant will be less committed to the company. And if they really go into parental leave, these beliefs of the employer might reinforce even though the woman did nothing to give this particular signal. And in combination with the decrease in human capital women will have even less of a chance to compete with their male counterparts for certain positions. Especially with regard to long-term effects. The signal effect may be short-lived, but the loss of human capital will continue to affect the career. I therefore believe that women will be at a greater disadvantage than men when it comes to taking parental leave. 
 
 
 # Theory & Hypotheses
@@ -86,7 +122,7 @@ According to human capital theory, a mother will work outside the home when the 
 
 
 # Methods & Data 
-```{r save Data Set , include=FALSE}
+```{r load Data Set , include=FALSE}
 
 # Restore the object
 soep.edit <- readRDS(file = "soep_wide_edit.rds")
