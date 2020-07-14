@@ -434,19 +434,20 @@ header=FALSE)
 ### *Limitations* {-}
 
 Even though the basic data set provides a large variety of cases and a high number of observations overall, the data set is rather small in the end due to the limitations. This leads to a weakening of the informative value of the statistical means. Also there is a lack of males which take parental leave especially for a longer period of time. This might be due to the fact that the time frame I am looking at is set before the additional incentives for men were introduced as well as the stigma might be still quite high as we look at the late 90s. Thus there might  be an effect of statistical discrimination. 
-Due to the low number of observations, especially in some categories, it is not possible to match the treatement and control group resulting in a potential disadvantage. 
+Due to the low number of observations, especially in some categories, it is not possible to match the treatment and control group resulting in a potential disadvantage. 
 
 
 
 # Results
 
+### *Influence of parental leave* {-}
+The first hypothesis I proposed was referencing to the causal influence of parental leave on income. In order to visualize the distribution of income at each time point I created a barplot shown in \@ref(fig-1) & \@ref(fig-2). At time point 1, before the birth, both groups are centered around 20,000 to 30,000 thousand euros per year. However the treatment group has more observations in the lower half and the control group is more represented in the higher income categories, indicating that there is some prior self selection. I mentioned this in the beginning, there are lot of characteristics which goes into the decision making when it comes to taking parental leave, one of which is the income. Thus could explain why the treatment group has a overall smaller income than the control group. 
+However, the second barplot displaying time point 2 shows a distinct shift of both groups. The treatment group shifted towards the lower spectrum of income and the control group in the opposite direction, leaving a greater disparity of both groups. This implies that the treatment might have a influence on income. 
+
+To further examine this assumption I run a linear regression on basis of a difference in differences model shown in \@ref(tab2). Model 1 (M1) and Model 2 (M2) display the linear regression testing the first hypothesis. M1 only tests the influence of taking parental leave on income. The results show, that if one is taking parental leave there are likely to earn 12,399.040 Euros less after 15 years compared to someone who did not take parental leave. These results are significant within a 99% confidence interval. When introducing the control variables the results change. Taking parental leave is still significant, however the value of the coefficient decreased to -7,984.528 Euros. And even though there are less cases then before, caused by some missing values for the control variables, the adjusted r squared rose and can now can explain 20 % of the models variance.  Therefore hypothesis 1 is not rejected on a 90% confidence interval. 
 
 
-
-
-
-
-```{r fig-1, fig.align="center", fig.cap="Distribution of Income", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
+```{r fig-1, fig.align="center", fig.cap="Distribution of Income", fig.width = 8, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
 
 #FIGURE 1
   y_income_before_preggo <- 
@@ -482,7 +483,7 @@ Due to the low number of observations, especially in some categories, it is not 
   p
 ```
 
-```{r fig-2, fig.align="center", fig.cap="Distribution of Income", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
+```{r fig-2, fig.align="center", fig.cap="Distribution of Income", fig.width = 8, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
 #FIGURE 2
   y_income_after_preggo <- 
   soep.full$y_income_after[soep.full$d_parleave_did == 1]
@@ -539,6 +540,14 @@ lm_hyp3_small <- lm((y_income_after - y_income_before) ~ d_parleave_did * x_sex,
        keep.stat = c("adj.rsq", "n"))
  
 ```
+
+### *Length of Parental Leave* {-}
+
+\@ref(fig-3) & \@ref(fig-4) show the distribution of income in relation to the length of the leave. As stated in hypothesis 2, I argue that the longer someone is in parental leave the higher the damage to their income. Both groups are distributed similar, they are mostly represented in the lower income field and then again around 20,000 to 30,000. Indicating, that there is less prior selection happening for both groups as well that the probability that both groups would develop in the same way over the 15 year period is higher. 
+
+
+
+
 
 
 
@@ -632,11 +641,11 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
        keep.stat = c("adj.rsq", "n"))
 ```
 
+### *Interaction between Parental Leave and Gender* {-}
 
 
-
-```{r fig-7, fig.align="center", fig.cap="Distribution of Income", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
-#FIGURE 7
+```{r fig-5, fig.align="center", fig.cap="Distribution of Income", fig.width = 8, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
+#FIGURE 5
   y_income_before_preggo_ma <- 
   soep.full$y_income_before[soep.full$d_parleave_did == 1 & soep.full$x_sex == 1]
   y_income_before_not_preggo_ma <- 
@@ -655,19 +664,19 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
     add_histogram(x = y_income_before_preggo_ma, 
                   xbins = xbins,
                   histnorm = "percent", 
-                  name = "Income before Birth Male (Parental Leave)") %>%
+                  name = "Income before \nBirth Male \n(Parental Leave)") %>%
     add_histogram(x = y_income_before_not_preggo_ma, 
                   xbins = xbins,
                   histnorm = "percent",
-                  name = "Income before Birth Male (No Parental Leave)") %>%
+                  name = "Income before \nBirth Male \n(No Parental Leave)") %>%
     add_histogram(x = y_income_before_preggo_fe, 
                   xbins = xbins,
                   histnorm = "percent",
-                  name = "Income before Birth Female (Parental Leave)") %>%
+                  name = "Income before \nBirth Female \n(Parental Leave)") %>%
     add_histogram(x = y_income_before_not_preggo_fe, 
                   xbins = xbins,
                   histnorm = "percent",
-                  name = "Income after Birth Female (No Parental Leave)") %>%
+                  name = "Income after \nBirth Female \n(No Parental Leave)") %>%
     layout(barmode = "group", title = "Before Birth (Time Point 1)",
            xaxis = list(tickvals=seq(0, 150000, 10000),
                         title = "Income per Year"),
@@ -677,7 +686,8 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
                           r = 80, 
                           t = 80, 
                           pad = 0, 
-                          autoexpand = TRUE))
+                          autoexpand = TRUE),
+           showlegend = TRUE, legend = list(font = list(size = 7)))
 
   p
 ```
@@ -685,8 +695,8 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
 
 
 
-```{r fig-7, fig.align="center", fig.cap="Distribution of Income", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
-#FIGURE 7
+```{r fig-6, fig.align="center", fig.cap="Distribution of Income", fig.width = 8, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
+#FIGURE 6
   y_income_after_preggo_ma <- 
   soep.full$y_income_after[soep.full$d_parleave_did == 1 & soep.full$x_sex == 1]
   y_income_after_not_preggo_ma <- 
@@ -705,19 +715,19 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
     add_histogram(x = y_income_after_preggo_ma, 
                   xbins = xbins,
                   histnorm = "percent", 
-                  name = "Income after Birth Male (Parental Leave)") %>%
+                  name = "Income after \nBirth Male \n(Parental Leave)") %>%
     add_histogram(x = y_income_after_not_preggo_ma, 
                   xbins = xbins,
                   histnorm = "percent",
-                  name = "Income after Birth Male (No Parental Leave)") %>%
+                  name = "Income after \nBirth Male \n(No Parental Leave)") %>%
     add_histogram(x = y_income_after_preggo_fe, 
                   xbins = xbins,
                   histnorm = "percent",
-                  name = "Income after Birth Female (Parental Leave)") %>%
+                  name = "Income after \nBirth Female \n(Parental Leave)") %>%
     add_histogram(x = y_income_after_not_preggo_fe, 
                   xbins = xbins,
                   histnorm = "percent",
-                  name = "Income after Birth Female (No Parental Leave)") %>%
+                  name = "Income after \nBirth Female \n(No Parental Leave)") %>%
     layout(barmode = "group", title = "After Birth (Time Point 2)",
            xaxis = list(tickvals=seq(0, 150000, 10000),
                         title = "Income per Year"),
@@ -727,7 +737,8 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
                           r = 80, 
                           t = 80, 
                           pad = 0, 
-                          autoexpand = TRUE))
+                          autoexpand = TRUE), 
+           showlegend = TRUE, legend = list(font = list(size = 7))) 
 
   p
 ```
