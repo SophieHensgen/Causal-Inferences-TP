@@ -503,7 +503,7 @@ Due to the low number of observations, especially in some categories, it is not 
                   xbins = xbins,
                   histnorm = "percent",
                   name = "Income after Birth (No Parental Leave)") %>%
-    layout(barmode = "group", title = "After Birth (Time Point 1)",
+    layout(barmode = "group", title = "After Birth (Time Point 2)",
            xaxis = list(tickvals=seq(0, 150000, 10000),
                         title = "Income per Year"),
            yaxis = list(range = c(0, 20)),
@@ -635,11 +635,101 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
 
 
 
+```{r fig-7, fig.align="center", fig.cap="Distribution of Income", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
+#FIGURE 7
+  y_income_before_preggo_ma <- 
+  soep.full$y_income_before[soep.full$d_parleave_did == 1 & soep.full$x_sex == 1]
+  y_income_before_not_preggo_ma <- 
+  soep.full$y_income_before[soep.full$d_parleave_did == 0 & soep.full$x_sex == 1]
+  y_income_before_preggo_fe <- 
+  soep.full$y_income_before[soep.full$d_parleave_did == 1 & soep.full$x_sex == 0]
+  y_income_before_not_preggo_fe <- 
+  soep.full$y_income_before[soep.full$d_parleave_did == 0 & soep.full$x_sex == 0]
+
+# Make a stacked bar plot - Plotly
+# Set histogram bins
+  xbins <- list(start=0, end=250000, size=5000)
+  
+# Plotly histogram  
+  p <- plot_ly(alpha = 0.6) %>%
+    add_histogram(x = y_income_before_preggo_ma, 
+                  xbins = xbins,
+                  histnorm = "percent", 
+                  name = "Income before Birth Male (Parental Leave)") %>%
+    add_histogram(x = y_income_before_not_preggo_ma, 
+                  xbins = xbins,
+                  histnorm = "percent",
+                  name = "Income before Birth Male (No Parental Leave)") %>%
+    add_histogram(x = y_income_before_preggo_fe, 
+                  xbins = xbins,
+                  histnorm = "percent",
+                  name = "Income before Birth Female (Parental Leave)") %>%
+    add_histogram(x = y_income_before_not_preggo_fe, 
+                  xbins = xbins,
+                  histnorm = "percent",
+                  name = "Income after Birth Female (No Parental Leave)") %>%
+    layout(barmode = "group", title = "Before Birth (Time Point 1)",
+           xaxis = list(tickvals=seq(0, 150000, 10000),
+                        title = "Income per Year"),
+           yaxis = list(range = c(0, 20)),
+                      margin = list(b = 100, 
+                          l = 80, 
+                          r = 80, 
+                          t = 80, 
+                          pad = 0, 
+                          autoexpand = TRUE))
+
+  p
+```
 
 
 
 
+```{r fig-7, fig.align="center", fig.cap="Distribution of Income", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
+#FIGURE 7
+  y_income_after_preggo_ma <- 
+  soep.full$y_income_after[soep.full$d_parleave_did == 1 & soep.full$x_sex == 1]
+  y_income_after_not_preggo_ma <- 
+  soep.full$y_income_after[soep.full$d_parleave_did == 0 & soep.full$x_sex == 1]
+  y_income_after_preggo_fe <- 
+  soep.full$y_income_after[soep.full$d_parleave_did == 1 & soep.full$x_sex == 0]
+  y_income_after_not_preggo_fe <- 
+  soep.full$y_income_after[soep.full$d_parleave_did == 0 & soep.full$x_sex == 0]
 
+# Make a stacked bar plot - Plotly
+# Set histogram bins
+  xbins <- list(start=0, end=250000, size=5000)
+  
+# Plotly histogram  
+  p <- plot_ly(alpha = 0.6) %>%
+    add_histogram(x = y_income_after_preggo_ma, 
+                  xbins = xbins,
+                  histnorm = "percent", 
+                  name = "Income after Birth Male (Parental Leave)") %>%
+    add_histogram(x = y_income_after_not_preggo_ma, 
+                  xbins = xbins,
+                  histnorm = "percent",
+                  name = "Income after Birth Male (No Parental Leave)") %>%
+    add_histogram(x = y_income_after_preggo_fe, 
+                  xbins = xbins,
+                  histnorm = "percent",
+                  name = "Income after Birth Female (Parental Leave)") %>%
+    add_histogram(x = y_income_after_not_preggo_fe, 
+                  xbins = xbins,
+                  histnorm = "percent",
+                  name = "Income after Birth Female (No Parental Leave)") %>%
+    layout(barmode = "group", title = "After Birth (Time Point 2)",
+           xaxis = list(tickvals=seq(0, 150000, 10000),
+                        title = "Income per Year"),
+           yaxis = list(range = c(0, 20)),
+                      margin = list(b = 100, 
+                          l = 80, 
+                          r = 80, 
+                          t = 80, 
+                          pad = 0, 
+                          autoexpand = TRUE))
 
+  p
+```
 
 
