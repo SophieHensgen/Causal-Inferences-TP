@@ -261,7 +261,8 @@ soep.unedit$sex <- gsub("\\[2]", "", soep.unedit$sex, ignore.case=T)
 soep.unedit$sex <- gsub("Female", "", soep.unedit$sex, ignore.case=T)
 soep.unedit$sex <- gsub("\\[1]", "", soep.unedit$sex, ignore.case=T)
 soep.unedit$sex <- gsub("Male", "", soep.unedit$sex, ignore.case=T)
-soep.unedit$sex <- gsub("2", "0", soep.unedit$sex, ignore.case=T)
+soep.unedit$sex <- gsub("1", "0", soep.unedit$sex, ignore.case=T)
+soep.unedit$sex <- gsub("2", "1", soep.unedit$sex, ignore.case=T)
 
 ```
 
