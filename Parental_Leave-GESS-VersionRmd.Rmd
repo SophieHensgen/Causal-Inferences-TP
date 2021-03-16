@@ -12,8 +12,6 @@ author: |
   | Sophie Hensgen
   | University of Mannheim 
   | Matricle number: 1560750
-  | Course: Applied Causal Analysis
-  | Lecturer: Paul C. Bauer
 date: |
   |       
   | `r Sys.Date()`
@@ -30,7 +28,7 @@ output:
     keep_tex: true
 mainfont: Times New Roman
 sansfont: Times New Roman
-fontsize: 12pt
+fontsize: 11pt
 link-citations: true
 documentclass: article
 geometry: margin=1in
@@ -435,6 +433,9 @@ for (i in 1:11){
 ```
 
 
+
+
+
 # Introduction 
 
 In the past 5 years (2015 - 2019) the number of persons which received parental allowance in Germany increased about almost 20 % from 1,561,597 to 1,865,129. The proportion of men who have benefited from it increased by 3.5% and now accounts for almost a quarter of those receiving parental benefits. Although there is a continuing trend for more men to take parental leave (PL), there is still a high gender wage gap. Women stay longer in parental leave, in fact on average four times as long as men [@statistisches_bundesamt_zeitreihe_2020]. 
@@ -445,7 +446,7 @@ However, no clear results have been found yet.
 There is evidence that there is an effect of parental leave on income. That said, scholars are indecisive on why this is the case. Some argue, that the time spend in parental leave could lead to decreasing someones knowledge and skill level [@evertsson_parental_2016]. Especially compared to someone which had the same level to begin with. Thus, if they try to re-enter the workforce, they would have to start at a lower position or would be at a disadvantage in terms of promotions due to the missed practice [@hofferth_parental_2006; @gabriele_mari_parental_2019]. This theory is also known as the human capital theory. On the other hand, scholars present another explanation, the signal theory[@evertsson_parental_2016; @albrecht_career_1999]. 
 Not only should it explain the difference between persons who been on parental leave and the ones that weren't, but also the differences between genders. As the human capital theory should have the same consequences despite the gender [@evertsson_parental_2016], the signalling theory tries to explain why there is difference. In principle, the use of parental leave could be seen as less committed to the company. Thus, when it comes to promotions, employers might prefer someone who was not on parental leave to someone who was on parental leave. So some scholar claim, that this signal might be harder on men [@stafford_time_1996; @albrecht_career_1999; @evertsson_parental_2016], but at the same time other argue that it is more harmful to women [@ridgeway_unpacking_2004]. I will go into this in more detail later.
 
-To conclude, scholars are indecisive on what exactly causes the differences. Furthermore, it is not clear whether these factors have long-term effects or not. A number of studies only researches the time frame directly or couple of years after the parental leave and also focus on the employment rate or at how fast someone will find a job again [@pronzato_return_2009]. Which is an important factor to look at, however I am more interested in the differences in income. Despite that there are only few who looked at a rather large period of time. That said, the majority of such research is done primarily in countries other than Germany [@evertsson_parental_2016]. And as the reforms regarding parental leave are different in every country, there could be severe differences in the results [@pronzato_return_2009]. 
+** Parts excluded due to Word Limit **
 
 All in all, there is the possibility that the effect of human capital and signal theory might diminish over time. After many years, it might not matter if you missed a year, other aspects might become more important. Alternatively, it could be that one has gained such disadvantages from the parental leave that these could have far-reaching consequences. If the former is true, this could lead to more men taking parental leave because they are less concerned about their career. And this in turn could lead to a decrease in the gender wage gap. 
 So my question is, is there a long term effect of taking parental leave on income and does the length of the leave has a additional influence?
@@ -459,13 +460,7 @@ In the following I will discuss how the parental leave reform in Germany has cha
 
 In order to fully understand the impact maternity, paternity and parental leave might have on an individual in Germany, it is necessary to look into the reform itself and how it changed over the years to become more inclusive. 
 
-Maternity leave itself did not changed as much, women were guaranteed 14 weeks of leave (6 weeks pre birth and 8 post birth) with full payment of their salary [@gabriele_mari_parental_2019]. In the 1980s, mothers were offered 6 months of paid and job guaranteed leave. This reform has been amended several times. Especially in the 1990s they began to change the status quo substantially. Not only changed the period of time during which a safe return to work was guaranteed to 36 months in 1992. But also they adjusted the financial support in the same year so that it could be paid for up to 18 months. This financial support consisted of a mixture of flat-rate and means-tested payments [@gabriele_mari_parental_2019]. Another rather big change was the possibility that men could also go into parental leave [@ajdacic-gross_elterngeld_2020]. Being in parental leave simultaneously was introduced in 2001.
-
-The next substantial reform change took place in 2007. Paid leave was at least 12 months or 14 months if both parents took at least two months parental leave.  These additional 2 months should act like an incentive for fathers to take part in parental leave [@gabriele_mari_parental_2019; @marshall_fathers_2008; @lapuerta_individual_2011]. Also the financial support system changed. If someone was employed to the time of the birth they would get paid 67 % of their pre-birth net salary. But if they were not employed they would get 300 Euro per month as financial support [@hofferth_parental_2006]. 
-
-These reform changes have a strong influence on whether fathers take parental leave or not. Before 2007, only 3% of fathers took parental leave. After 2007, the figure had already risen to 15%, increasing over the years to 34% (2014) [@tamm_fathers_2018]. 
-@gabriele_mari_parental_2019 examined the impact the 2007 reform had on the income of parents and they found out that indeed, more fathers engaged in parental leave and also that it was easier to return to the job market for women. 
-
+** Parts excluded due to Word Limit **
 
 
 # Theory & Hypotheses
@@ -476,39 +471,27 @@ According to multiple scholars, there is a significant influence of parental lea
 However, it should be noted that there are two aspects to be considered. First, there are factors which influence the decision to go into parental leave, which can lead to the overrepresentation of women staying home for their newborn. And secondly, parental leave seems to have a different impact on the sexes [@evertsson_parental_2016]. In the following section, I will first focus on what is involved in the decision-making process about who goes on parental leave and for how long. And then, I will explore the different theories explaining the impact of parental leave and especially the discrepancy between genders.
 
 Taking time to nurture your new born child is an important aspect in the relationship between parents and their child. For a lot of people it is without question that they will take parental leave, even for a longer period of time. 
-However, the decision which partner takes it must be made with caution. In general, parents usually act rationally in this respect, they weigh their costs and benefits against each other.  As the economic theory says [@lapuerta_individual_2011]. Thus they achieve the best possible result in terms of finances, re-entry into the world of work, etc..
+However, the decision which partner takes it must be made with caution. In general, parents usually act rationally in this respect, they weigh their costs and benefits against each other, as the economic theory says [@lapuerta_individual_2011]. Thus they achieve the best possible result in terms of finances, re-entry into the world of work, etc..
 For example, parents look into the labor market and their own company to find out, if the situation is stable and and which partner is more suitable for leaving work for a period of time [@albrecht_career_1999]. However, some decisions which are made during this time even if chosen rationally can lead to disadvantages, for one party, often for women. Research shows that especially first time parents tend to engage in a more traditional constellation [@dribe_does_2009]. 
 
-These decisions are made on the basis of several criteria and are not only determined by stereotypes of a traditional family. I will go into detail about 6 of them, which seem to be especially prominent.
+These decisions are made on the basis of several criteria and are not only determined by stereotypes of a traditional family. The most prominent criteria are lifestyle preferences, labor market situation, parental leave reforms, the physical engagement of the mother,  education and financial situation. The latter might be the most important aspects, when it comes to determine which parent will take parental leave. 
 
-To begin with the perhaps least crucial criteria is the lifestyle preferences of each individual. For some, work is more important, for some it is the family, for others it is a matter of adapting to the situation. Depending on which side one is on, this can influence the willingness to take parental leave and also the extent to which it is taken [@hakim_lifestyle_2002].  
+The person with the higher salary is most likely to not go into parental leave. Additionally, income can determine how long a family will go into parental leave. For example, high-income families can afford to take more time off for parental leave because they do not need a full additional income [@geisler_against_2011].
 
-Another aspect I mentioned before is the situation of the labor market. Some parents are worried, that if they take parental leave, they could have disadvantages compared to other workers in this field. Additionally, some markets are more stable than other, so if someone has a secure job, they might feel more confident in leaving for a period of time [@lapuerta_individual_2011]. 
-However, this might not be the most influential part, as these concerns are closely linked with the reform which is in action. As for Germany, there is a guaranteed reentry at the company you work at. 
-
-Which brings us to the next criteria, parental leave reforms. These are very different in every country, some are more flexible (Finland, Germany), some are not (Spain, Italy, Greece) [@pronzato_return_2009; @gabriele_mari_parental_2019; @tamm_fathers_2018]. More flexible reforms increase the probability that fathers will take parental leave [@gabriele_mari_parental_2019].
-Nevertheless, the rate of fathers taking parental leave is still low, as society still expects women to stay at home at least initially [@katherine_marshall_fathers_2008]. 
-
-This does not necessarily have to have anything to do with sexism and stereotypes, although they do have an impact, but there are practical reasons as well. The woman carries the child, gives birth and would probably also breastfeed it in the first couple of months, if she decide to do so. Therefore it makes sense that the mother stays at home with the child at the beginning [@albrecht_career_1999]. However, this does not explain, why women stay even longer even though both parents could technically care for the child after the two month maternity leave. 
-
-However, the tendency is away from the traditional path, especially among parents with higher education. Although people with a high level of education would have higher opportunity costs if they took parental leave because it is easier for them to improve their career and therefore more likely to refrain from taking parental leave, and if for a shorter period, they are more likely to abandon heteronormative standards and adopt more egalitarian gender roles. [@lapuerta_individual_2011; @rostgaard_parental_2020; @helen_dearing_does_2015; @geisler_against_2011]. 
-With that said, there is one important aspect to note. Even though highly educated men are open to the idea of taking parental leave, it is important, that it is conform with the economic theory. Which means that they are more likely to go into parental leave, if their significant other has a higher education or higher income than themselves [@geisler_against_2011; @lapuerta_individual_2011; @tamm_fathers_2018; @sundstrom_gender_2002]. 
-
-In general, income seems to be the most important criteria in relation to parental leave. The person with the higher salary is most likely to not go into parental leave. Additionally, income can determine how long a family will go into parental leave. For example, high-income families can afford to take more time off for parental leave because they do not need a full additional income [@geisler_against_2011].
-
+** Parts excluded due to Word Limit **
 
 Once the decision has been made who will take parental leave, that person will most likely bear some disadvantages [@evertsson_parental_2016]. 
-One of these disadvantages are the missed opportunities at work. Companys are fast changing mechanisms. New structures, workflows and task are added constantly. So missing out on these, even for a small period of time, could be harmful for one's career [@evertsson_parental_2016]. These findings are in line with the human capital theory which states that an individual will increase its knowledge and skills through education and working in a specific field. The longer someone has been working and the more supplementary training and task he completed the higher his or hers human capital will be [@evertsson_parental_2016; @becker_human_1993]. A high human capital is especially important to receive great job offerings, a high salary or promotions. Thus, a break in working life can act as a career impediment. Moreover, not only does human capital not increase if people stay at home, but it actually decreases due to lack of practice [@evertsson_parental_2016]. This assumption is supported by the study by @hofferth_parental_2006. In their results, they found evidence that the salary already decreases 2 years after birth when the employer is changed. Although they have only focused on the impact on women, there are studies like @evertsson_parental_2016 which show that both women and men suffer a loss of pay after parental leave.
+One of these disadvantages are the missed opportunities at work. Companys are fast changing mechanisms. New structures, workflows and task are added constantly. So missing out on these, even for a small period of time, could be harmful for one's career [@evertsson_parental_2016]. These findings are in line with the human capital theory which states that an individual will increase its knowledge and skills through education and working in a specific field. The longer someone has been working and the more supplementary training and task he completed the higher his or hers human capital will be [@evertsson_parental_2016; @becker_human_1993]. A high human capital is especially important to receive great job offerings, a high salary or promotions. Thus, a break in working life can act as a career impediment. Moreover, not only does human capital not increase if people stay at home, but it actually decreases due to lack of practice [@evertsson_parental_2016]. This assumption is supported by the study by @hofferth_parental_2006. They found evidence that the salary decreases 2 years after birth when the employer is changed. Similar results were found for both men and women [evertsson_parental_2016].
 
-Despite that, the well being of the child is most important for the parents, and they will only return to work, if it is more valuable for the family when him or her spends time working instead of carrying for the child [@hofferth_parental_2006; @desai_womens_1991; @leibowitz_employment_1992]. 
+** Parts excluded due to Word Limit **
 
 So far we explored the impact parental leave can have on human capital, however there is another important theory which might explain the impact parental leave has the signalling theory.
 
-According to signal theory, any action we take send out a signal that allows others to build up certain beliefs about us [@mignot_peter_2011]. This means that parental leave can be a signal of less commitment to the company and its work, according to the researchers [@stafford_time_1996]. It is not clear which gender is more affected by it. According to @albrecht_career_1999 this seems to be more a problem for men than for women. Caused by the expectation that women will take more care of their newborn child than their husbands is still widespread in society. 25% of all couples do not even consider the possibility that the man could take parental leave [@rostgaard_parental_2020]. It is so normalized, that the signal a women gives with taking maternity leave is not that severe and should not influence her income as much [@ridgeway_unpacking_2004]. However, if a man decides to take parental leave, this is still considered an exception. Especially in the period before 2007, when there were no additional incentives for men. So any time spend in parental leave will signal the employer that the father has even less determination for the company [@evertsson_parental_2016; @albrecht_career_1999]. 
+According to signal theory, any action we take send out a signal that allows others to build up certain beliefs about us [@mignot_peter_2011]. This means that parental leave can be a signal of less commitment to the company and its work [@stafford_time_1996]. Which gender is more affected by it is not clear. According to @albrecht_career_1999 this seems to be more a problem for men than for women. Caused by the expectation that women will take more care of their newborn child than their husbands is still widespread in society. 25% of all couples do not even consider the possibility that the man could take parental leave [@rostgaard_parental_2020]. It is so normalized, that the signal a women gives with taking maternity leave is not that severe and should not influence her income as much [@ridgeway_unpacking_2004]. However, if a man decides to take parental leave, this is still considered an exception. Especially in the period before 2007, when there were no additional incentives for men. So any time spend in parental leave will signal the employer that the father has even less determination for the company [@evertsson_parental_2016; @albrecht_career_1999]. 
 
-This is supported by the Swedish study by @stafford_time_1996 where it was observed that men will experience an annual loss of 5.2% of pay, but women will lose only 1.7% of their income. Also, the salary has a great influence how impactful parental leave can be. The higher the income at the time of birth, the less the use of parental leave affects future income [@stafford_time_1996]. Those results were examined for a shorter time period.  
+** Parts excluded due to Word Limit **
 
-So taking both theories as well as the prior research into account, I believe, that taking parental leave in general will have a long-term effect in your income. The reason being that due to the short-term effects of missed opportunities and the resulting reduction in pay, missed promotion or a generally lower position than before, the career could be dramatically affected. 
+Taking both theories as well as the prior research into account, I argue that taking parental leave in general will have a long-term effect on your income. The reason being that due to the short-term effects of missed opportunities and the resulting reduction in pay, missed promotion or a generally lower position than before, the career could be dramatically affected. 
 Therefore I propose the following hypothesis:
 
 *H1: Parental leave has a long-term negative effect on income* 
@@ -517,13 +500,10 @@ Taking no parental leave should have no effect on the future income, only having
 
 
 Another important question for parents is how long they decide to stay in parental leave, as it has such an impact financially and career wise. 
-Most scientists are largely of the same opinion, namely that the longer a parent is absent from work, the stronger are the negative effects [@evertsson_parental_2016; @pronzato_return_2009; @rostgaard_parental_2020; @helen_dearing_does_2015]. Additionally, there seems to be a sweet spot where parental leave has a positive effect on mothers later employment participation, but does not have a positive effect on the income [@pronzato_return_2009; @plantenga_reconciliation_2005]. Platenga found that the effect behaved in an inverted U shape. Very short and very long leaves seem to have less of a positive effect than a moderate period of time. 
-However, it is not clear what  what concludes a moderate length, they vary across researches. Some say 6-8 months [@plantenga_reconciliation_2005] others go up to 18 months [@misra_work-family_2011]. 
+Research shows that the longer a parent is absent from work, the stronger are the negative effects on income [@evertsson_parental_2016; @pronzato_return_2009; @rostgaard_parental_2020; @helen_dearing_does_2015]. @plantenga_reconciliation_2005 found that very short and very long leaves  have less of a positive effect than a moderate period of time. 
+However, it is not clear what concludes a moderate length. They vary across researches. Some say 6-8 months [@plantenga_reconciliation_2005] others go up to 18 months [@misra_work-family_2011]. Additionally, @evertsson_parental_2016 also found a long term effect on income on women as they take longer time off than men. Suggesting, that it matters how long one is staying in parental leave regarding long term effects.
 
-Additionally, @rostgaard_parental_2020 even go so far as to propose that a really short time of parental leave could have no long term effect on income, as long as the parental leave, does not change the basic family dynamic. With that said, human capital theory as well as the signalling theory propose that any length lead to a change in income. Additionally, @evertsson_parental_2016 also found a long term effect on the income on women as they take longer time of than men. Suggesting, that it really does care how long one is staying in parental leave regarding long term effects. 
-
-
-Consequently, I suggest, that a long leave period will have a long term negative effect on income. And subsequently a short leave should have no or positive effects. The reason being, that although the parents want to care for their child, they also want to work. This shows a degree of commitment and flexibility as they adapt quickly to a new situation. 
+Consequently, I suggest, that a long leave period will have a long term negative effect on income. And subsequently a short leave should have no or positive effects. 
 
 Thus the following hypothesis: 
 
@@ -532,7 +512,7 @@ Thus the following hypothesis:
 All the aspects considered on who will take parental leave lead to women being forced into the traditional role of a mother. 
 And even though governments try to counterbalance this effect with longer and higher financial support during the parental leave as well as incentives for men to take it, there is still a large gender gap [@marshall_fathers_2008; @rostgaard_parental_2020; @helen_dearing_does_2015]. 
 This gap will ultimately lead to an even higher gender wage gap. 
-Contrary to the research done on signalling theory, which suggests that man suffer from more disadvantages because of the parental leave [@albrecht_career_1999], I would argue, that women do suffer from disadvantages as well. It starts with the fact that employer anticipate women to go into parental leave at least ones, solely because they are women. They will believe that women as soon as they get pregnant will be less committed to the company. And if they really go into parental leave, these beliefs of the employer might reinforce even though the woman did nothing to give this particular signal [@ridgeway_unpacking_2004]. And in combination with the decrease in human capital women will have even less of a chance to compete with their male counterparts for certain positions. Especially with regard to long-term effects. The signal effect may be short-lived, but on the one side could the short term effects have long term consequences. And on the other side the loss of human capital will continue to affect the career and especially as men have better chances to start with. I therefore believe that women will be at a greater disadvantage than men when it comes to taking parental leave. Men will be affected by the parental leave, however the effect will be not as strong as for women.
+Contrary to the research done on signalling theory, which suggests that man suffer from more disadvantages because of the parental leave [@albrecht_career_1999], I would argue, that women do suffer from disadvantages as well. It starts with the fact that employer anticipate women to go into parental leave at least ones, solely because they are women. They will believe that women as soon as they get pregnant will be less committed to the company. And if they really go into parental leave, these beliefs of the employer might reinforce even though the woman did nothing to give this particular signal [@ridgeway_unpacking_2004]. And in combination with the decrease in human capital women will have even less of a chance to compete with their male counterparts. The signal effect may be short-lived, but on the one side could the short term effects have long term consequences. And on the other side the loss of human capital will continue to affect the career and especially as men have better chances to start with. I therefore believe that women will be at a greater disadvantage than men when it comes to taking parental leave. Men will be affected by the parental leave, however the effect will be not as strong as for women.
 Therefore I propose the following hypothesis:
 
 *H3: Being a mother and taking parental leave will have additional negative effect on their income.*
@@ -542,57 +522,39 @@ Therefore I propose the following hypothesis:
 
 ## *Ideal Study* {-} 
 
-There are several ways to investigate the long-term effects of parental leave on income. One of them would be conducting a difference in differences model. Where we compare the treatment group, in this case parents which take parental leave with the control group parents which did not take parental leave. 
-
-In an ideal scenario there would be complete randomness when assigning one to the treatment or control group. But because getting pregnant and ultimately choosing whether to go into parental leave or not is a heavily self selected process it would need correction. One possible way to do so would be to randomly manipulate peoples' contraception. Thus, couples would not be able to control whether they get pregnant or not, so children would be randomly assigned.  
-
-To counter balance the criteria which will be considered during the decision process, we would need to perfectly match both groups on gender, age, educational level, work field, income, working hours, relationship status, year of birth, number if children, number of previous parental leaves and their length and region of living. 
-In regards to the study design, it would be the best if the variables which are used to match the groups and the outcome variable would be examined prior to the pregnancy (t1), therefore the income should not be affected. However, t1 should not be to far in advance, so it would be best, when they would become pregnant right after the first observation. After 30 years I would look at the income from both the control and treatment group and look at the difference in income, given, that they still able to work. If they went early in pension, the last income before that would be considered. I believe that after 30 years the children are grown up and do not need any further support, thus the parents had the opportunity to work again for a longer period of time. Moreover, the possibility to observe a very long period of time gives a better indication on long-term effects.
+** Parts excluded due to Word Limit **
 
 ## *Method* {-}
 
-Unfortunately, it is not possible nor ethical correct to conduct the study in the extent I proposed earlier, thus I choose a more simple approach to explore the effects of parental leave. 
-
 I use a natural experiment in order to test whether there is a causal effect of parental leave on income or not. Hereby I rely on the parallel trend assumption, as I would argue that people who are going into parental leave would have the same development in their careers if they had chosen not to partake in parental leave.   
 To examine this assumption I will use a difference in differences model, where the treatment is whether someone is taking parental leave (*first hypothesis*), is staying for a long period of time (*second hypothesis*) or taking parental leave as a woman (*third hypothesis*).
-The outcome variable, income, is measured at two different points in time, 15 years apart. 15 years represents a reasonably long period of time providing for a higher sample size compared to 30 years. Choosing such a long time period ensure that a long-term effect can be examined. The control variables are also measured at the first time point (t1). The treatment variable is measured the following year. 
-To estimate the causal inference a linear regression is used based on the following equation. 
-
-$$y_t - y_{t-1} = \beta_0 + \beta_{treatment} D + \beta_{control} X + \epsilon $$
-
+The outcome variable, income, is measured at two different points in time, 15 years apart. The control variables are measured at the first time point (t1). The treatment variable is measured the following year. 
 
 ## *Data* {-}
 
-In regards to the data, I will use the German Socio-Economic Panel (SOEP) data set. This is a panel data set, which was conducted every year between 1984 to 2018 by the DIW Berlin ^[Deutsches Institut für Wirtschaftsforschung][@liebig_socio-economic_2019]. The sample was collected via a random route procedure in German households and combines annually 30,000 individuals in 15,000 households. 
+In regards to the data, I will use the German Socio-Economic Panel (SOEP) data set. This is a panel data set, which was conducted every year between 1984 to 2018 by the DIW Berlin ^[Deutsches Institut für Wirtschaftsforschung][@liebig_socio-economic_2019]. 
 
-I will only use a subset of this data set which includes participants that had a child between 1995 to 2000. The reason why I limit myself to these years is that on the one side the parental leave variable was firstly introduced in 1996 referencing to 1995. 
-On the other hand, I would not have been able to study the long-term effects of parental leave. The reason for this is that people who took part in the survey at t1 were often no longer represented at t2.
-This is especially true for the years after 2000. Furthermore, some variables were changed or omitted from the survey after 2000. 
-I also excluded participants which were younger than 21 or older than 50 years. This ensures that they had the opportunity to work, both before the pregnancy and 15 years later. I also deleted parents (10 particpants) which had more then one child born in the years between 1995 and 2000 in order to prevent any bias caused by this. 
+I will only use a subset of this data set which includes participants that had a child between 1995 to 2000. 
+I also excluded participants which were younger than 21 or older than 50 years. This ensures that they had the opportunity to work, both before the pregnancy and 15 years later. I also deleted parents (10 particpants) which had more then one child born in the years between 1995 and 2000.
 
 
 ### *Dependent Variable* {-}
 
-The dependent variable for this study is income and to examine it I use the generated annual income variable by the SOEP team. The variable consists off of all annual labor earnings including "wages and salary from all employment including training, primary and secondary jobs, and self-employment, plus income from bonuses, overtime, and profit-sharing" on a continuous level [@grabka_soep_2017 p. 9]. I include all labor earnings as I believe that the impact of parental leave is not limited to the salary. However, I deleted extreme outliers, as they could bias the whole outcome especially with such a small sample. Now the range for the income at t1 is between 0 and 75,000, the mean hereby is by ca. 21,000 Euros (shown in Table \@ref(tab1)). The income at t2 is higher overall, with a range between 0 and ca. 130,000 euros. This is due to the fact, that income will naturally increase with age. 
+The dependent variable for this study is income. To examine it I use the generated annual income variable by the SOEP team. The variable consists off of all annual labor earnings ^[including "wages and salary from all employment including training, primary and secondary jobs, and self-employment, plus income from bonuses, overtime, and profit-sharing"] on a continuous level [@grabka_soep_2017 p. 9]. However, I deleted extreme outliers, as hey may contribute to biases. The range for the income at t1 is between 0 and 75,000, the mean is at ca. 21,000 Euros (shown in Table \@ref(tab1)). The income at t2 is higher overall, with a range between 0 and ca. 130,000 euros. This is due to the fact, that income will naturally increase with age. 
 
 
 ### *Independent Variables* {-}
 
  
-The variable which displays the participation in parental leave was constructed off of multiple variables. First, to know how long parents took parental leave i used  the question in the survey about their last year and how their employment status were at that time. Note that this variable was performed one year after the dependent variable and the control variables. The question was answered in style of a calender, one should tick the most fitting employment status (e.g. employed, mini-job, parental leave) for each month. In the data set, each category had their own variable and for each tick someone made for a month a 01  was coded. I created a new variable which count the 01 to receive the total amount of time spend in parental leave in that year. Then I dropped all cases which did not have a child in that year, using the variable which asked after particular events which occurred in the prior year (refers to the same year as the parental leave variable). Hereafter I added the values of two years together, to make sure that there would be enough data and I did not code parents in wrong categories. For example, if someone had his baby in November and therefore only had the chance to be on parental leave for 1-2 months. I would have accidentally coded him in the category short leave, although he might have stayed longer. 
+The variable which displays the participation in parental leave was constructed off of multiple variables. First, to know how long parents took parental leave i used  the question in the survey about their last year and how their employment status were at that time. Note that this variable was performed one year after the dependent variable and the control variables. The question was answered in style of a calender, one should tick the most fitting employment status (e.g. employed, mini-job, parental leave) for each month. In the data set, each category had their own variable and for each tick someone made for a month a 01  was coded. I created a new variable which count the 01 to receive the total amount of time spend in parental leave in that year. Then I dropped all cases with no child in that year, using the variable which asked after particular events which occurred in the prior year[refers to the same year as the parental leave variable]. Hereafter I added the values of two years together, to make sure that there would be enough data and I did not code parents in wrong categories. 
 
-Then I went on and created two binary variables. The first one to test the first and third hypothesis, where the treatment group would be parents which partake in parental leave and the control group would not. Regarding this variable, it did not matter how long someone stayed on parental leave, but whether they did so in general. It was coded as follows: 1 if someone took parental leave and 0 if not. The mean (displayed in Table \@ref(tab1)) shows that around half of the sample did parental leave.
+Then I went on and created two binary variables. The first one to test the first and third hypothesis, where the treatment group would be parents which partake in parental leave and the control group would not. Here the length of the leave did not matter. It was coded as follows: 1 if someone took parental leave and 0 if not. The mean (displayed in Table \@ref(tab1)) shows that around half of the sample did parental leave.
 
-The second variable is to test hypothesis 2, whether a long or short leave does more harm. For this I coded all leaves which where 6 months or less as short leave (0). The reason being that the study of @plantenga_reconciliation_2005 defines a moderate leave with 6-8 months, so up to 6 months should be seen as short. The majority of the sample took a long leave (1) as we can see from the summary table (table \@ref(tab1)).
-
-As the third hypothesis is tested with a interaction, a gender variable has to be conducted in addition to the first dummy variable. I used the generated variable by the SOEP team. The questionnaire contains only the cis sex, so for my analysis I consider only male (0) and female (1) persons, who are almost equally represented in the sample (Table \@ref(tab1)).
+To test hypothesis 2 I created a second parental leave variable, which focused on the length of the leave. All leaves which where 6 months or less were coded as short leave (0). The reason being that the study of @plantenga_reconciliation_2005 defines a moderate leave with 6-8 months, so up to 6 months should be seen as short. The majority of the sample took a long leave (1) as we can see from the summary table (table \@ref(tab1)).
 
 ### *Control Variables* {-}
 
-In the ideal study I mentioned multiple characteristics I would match on as they might effect both the income and the decision to take parental leave. Unfortunately I am not able to match but will control for the majority of the variables I proposed in the ideal study, as long as I have enough information on it. 
-
-The variables I will control for are age, education, occupation, number of previous children, region and relationship status. All control variables are conducted at time point 1. 
-So, for age I used the pre generated variable by the SOEP team, which shows the age of each participant in a continuous way.
+The variables I control for are age, education, occupation, number of previous children, region and relationship status. All control variables are conducted at time point 1. 
 
 The education variable is based on the pre generated variable which stated education on the ISCED spectrum. In order to generate a binary variable I summarized "inadequately", "general elementary" & "middle vocational" to 0 as low education and "Vocational plus Abitur", "higher vocational" and "higher education" as high education (1). 
 
@@ -602,7 +564,9 @@ In order to control for the number of children the parents have at the time of t
 
 The region variable has two values, 1 stands for living in West-Germany and 0 for East-Germany. 
 
-And lastly, the variable which shows the relationship status was pre-generated by the SOEP team. However I recoded it to be a binary variable where 1 stands for being in a relationship and 0 for not. Someone belongig to category one means that they are in any type of relationship whether it was an official marriage or not. 
+And lastly, the variable which shows the relationship status was pre-generated by the SOEP team. However I recoded it to be a binary variable where 1 stands for being in a relationship of any sortand 0 for not. 
+
+
 
 
 ```{r include = FALSE}
@@ -708,13 +672,11 @@ header=FALSE)
 
 ### *Influence of parental leave* {-}
 
-The first hypothesis I proposed was referencing to the causal influence of taking parental leave on income, especially in a long-term effect. In order to visualize the distribution of income at each time point I created a barplot shown in Figure \@ref(fig:fig-1) & \@ref(fig:fig-2). The x-axis describes the annual income for each individual and the y-axis shows the percentage ^[Applies to all other graphs.]. The color of the bars stand for the Individuals which took parental leave (blue) and for those who did not (orange). At time point 1, before the birth, both groups are centered around 20,000 to 30,000 euros per year. However the treatment group has more observations in the lower half and the control group is more represented in the higher income categories, indicating that there is some prior self selection, mostly due to self selection. 
+The first hypothesis I proposed was referencing to the causal influence of taking parental leave on income in a long-term effect. In order to visualize the distribution of income at each time point I created a barplot shown in Figure \@ref(fig:fig-1) & \@ref(fig:fig-2). The x-axis describes the annual income for each individual and the y-axis shows the percentage ^[Applies to all other graphs.]. The color of the bars stand for the Individuals which took parental leave (blue) and for those who did not (orange). At time point 1, before the birth, both groups are centered around 20,000 to 30,000 euros per year. However the treatment group has more observations in the lower half and the control group is more represented in the higher income categories, indicating that there is some prior self selection. 
 
-However, the second barplot (figure \@ref(fig:fig-2)) displaying time point 2 (after birth) shows a distinct shift of both groups. The treatment group shifted towards the lower spectrum of income and the control group in the opposite direction, leaving a greater disparity between both groups. This implies that the treatment might have an impact on income. 
+The second barplot (figure \@ref(fig:fig-2)) displays time point 2 (after birth) shows a distinct shift of both groups. The treatment group shifted towards the lower spectrum of income and the control group in the opposite direction, leaving a greater disparity between both groups. This implies that the parental leave might have an impact on income. 
 
-To further examine this assumption I run a linear regression on basis of a difference in differences model shown in table \@ref(tab2). Model 1 (M1) and Model 2 (M2) display the linear regression testing the first hypothesis. M1 only tests the influence of taking parental leave on income. The results show, that if one is taking parental leave there are likely to earn 12,399.040 Euros less after 15 years compared to someone who did not take parental leave. These results are significant within a 99% confidence interval. When introducing the control variables the results change. Taking parental leave is still significant, however the value of the coefficient decreased to -7,984.528 Euros. Comparing both models, M2 can explain 20 % of the models variance. Therefore hypothesis 1 is not accepted within a 90% confidence interval. 
-
-
+To further examine this assumption I run a linear regression on basis of a difference in differences model shown in table \@ref(tab2). M1 only tests the influence of taking parental leave on income. The results show, that if one is taking parental leave they are likely to earn 12,399.040 Euros less after 15 years compared to someone who did not take parental leave. These results are significant within a 99% confidence interval. When introducing the control variables the coefficient of parental leave decreases and is now only significant within a 90% confidence interval. Therefore, the hypothesis has to be rejected for a 0.05 alpha level.
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, paged.print=FALSE, results="asis"}
@@ -742,10 +704,10 @@ lm_hyp3_small <- lm((y_income_after - y_income_before) ~ d_parleave_did * x_sex,
 
 ### *Length of Parental Leave* {-}
 
-Figure \@ref(fig:fig-3) & \@ref(fig:fig-4) show the distribution of income in relation to the length of the leave. Blue shows the treatment group (long leave) and orange the control group (short leave). As stated in hypothesis 2, I argue that the longer someone is in parental leave the higher the damage to their income. Both groups are distributed similar, they are mostly represented in the lower income field and then again around 20,000 to 30,000. This indicates that there is less pre-selection for both groups, so that the probability that both groups would develop in the same way over the 15-year period is higher.
+** Parts (Graph Hypothesis 2) excluded due to Word Limit **
 
-The second graph (Figure \@ref(fig:fig-4)) displays the second time point. The distribution of the treatment group generally flattened, with the majority of cases concentrated around 10,000 and 25,000. The control group, on the other hand, shows very strong variations. The percentage of those who earn up to 2500 euros per year has increased dramatically compared to time point 1, just as the percentage of those who earn around 20,000 - 25,000. There is no clear implication for whether short or long parental leaves have a stronger influence on income, however the treatment group seems to have a slightly higher income overall. 
-This assumption is verified by the first Model (M1) of Table \@ref(tab3) which displays only the influence of the length of the parental leave on the income difference. According to the results, by taking longer parental leave (more than 6 months), the income after 15 years will be about 6,486,803 higher than for a person who has taken up to 6 months of parental leave (short leave). This result is significant within a 90 % confidence interval. The effect stays the same after controlling.  However, as the the results are not conform with the hypothesis which were proposed, hypothesis 2 has to be rejected. 
+The second hypothesis proposed the idea, that the length of parental leave influences income. This assumption seems to hold true according to Model 1 (M1) of Table \@ref(tab3) which displays only the influence of the length of the parental leave on the income difference. By taking a longer parental leave, the income after 15 years will be about 6,486,803 higher than for a person who has taken only a short leave. This result is significant within a 90 % confidence interval. However, as the results are not conform with the hypothesis which were proposed, hypothesis 2 has to be rejected. 
+
 
 
 
@@ -786,7 +748,7 @@ This assumption is verified by the first Model (M1) of Table \@ref(tab3) which d
                           autoexpand = TRUE),
            showlegend = TRUE, legend = list(font = list(size = 7)))
 
-  p
+  #p
 ```
 
 ```{r fig-4, fig.align="center", fig.cap="Distribution of Income Between Persons Taking a Long or Short Parental Leave After the Birth of the Child (Time Point 2)", fig.width = 7, fig.height=6,  message=FALSE, warning=FALSE, paged.print=FALSE, echo = FALSE}
@@ -826,7 +788,7 @@ This assumption is verified by the first Model (M1) of Table \@ref(tab3) which d
                           autoexpand = TRUE),
            showlegend = TRUE, legend = list(font = list(size = 7)))
 
-  p
+  #p
 ```
 
 
@@ -851,14 +813,10 @@ lm_hyp2_small <- lm((y_income_after - y_income_before) ~ d_parleave_per, data = 
 
 ### *Interaction effect between Parental Leave and Gender* {-}
 
-Figure \@ref(fig:fig-5) & \@ref(fig:fig-6) show the distribution of income by gender and participation in parental leave. Blue shows males that did parental leave, orange males that did not. Green shows the percentage of women taking parental leave and red shows the ones that continue working.
-Important to note here is, that because of the general low number of observation, this is especially the case for certain subgroups in these graphs. Thus, the results might be biased. 
+** Parts (Graph Hypothesis 3) excluded due to Word Limit **
 
-With that said, there is a similar distribution throughout the categories for time point 1 (Figure \@ref(fig:fig-5)). Most of the observations group around the 20,000 to 30,000 euros per year. Especially men who take parental leave are solely represented in these categories. Possibly because of the small observation number. In contrast, men who do not take parental leave are more wide spread and have a slightly higher income over all. This is mostly due to the fact, that men who earn a high income are less likely to go into parental leave in the first place [@doge_manner_2004]. Also, there is a high number of women earning only up to 5,000 per year in this sample, especially for mothers continue to work. 
+To test the third hypothesis, which states that women who take parental leave have a larger decline in earnings, I run two regressions. First, only the interaction between gender and parental leave is displayed in Table \@ref(tab2) model 3 (M3). None of the coefficients in this model are significant. The same applies to model 4. This suggests that adding the interaction has an effect on the long term effect of parental leave. As there were no significant results found, the third hypothesis has to be rejected. 
 
-Looking at the second time point (Figure \@ref(fig:fig-6)), 15 years later, there are some severe changes. To start with, men which did not take parental leave had a large income increase, women who did not take parental leave on the other side did increase slightly in the higher range of income, but also increased in the lower range of income.  Women who took parental leave distributed quite evenly around the 0 to 30,000 euros per year with a slight decrease towards higher income. Their male counterparts increased their income about 10,000 to 15,000 euros per year. These results imply that women compared to men will earn less in the beginning, but also when taking parental leave. However, the number of observation for men taking parental leave is really small, so the drastic difference may be caused by that. 
-
-To test the assumption that women who took parental leave had a greater decline in income, I run two regressions. First, only the interaction between gender and parental leave is displayed in Table \@ref(tab2) model 3 (M3). None of the coefficients in this model are significant. The same for model 4. None of the coefficients are significant. This suggests that adding the interaction has an effect on the long term effect of parental leave. As there were no significant results found, the third hypothesis has to be rejected. 
 
 
 
@@ -911,7 +869,7 @@ To test the assumption that women who took parental leave had a greater decline 
                           autoexpand = TRUE),
            showlegend = TRUE, legend = list(font = list(size = 7)))
 
-    p.hyp3.t1
+  #  p.hyp3.t1
 ```
 
 
@@ -966,7 +924,7 @@ To test the assumption that women who took parental leave had a greater decline 
                           autoexpand = TRUE), 
            showlegend = TRUE, legend = list(font = list(size = 7))) 
 
-  p.hyp3.t2
+ # p.hyp3.t2
 ```
 
 
@@ -976,27 +934,23 @@ To test the assumption that women who took parental leave had a greater decline 
 
 ### *Conclusion* {-}
 
-The results give contradictory implications in regards to answering the research question whether parental leave has a negative impact on future income or not. On the one hand the results regarding hypothesis 1 are in line with prior research [@evertsson_parental_2016; @stafford_time_1996]. There is significant evidence that parental leave has a negative impact on future income, presumably due to missed opportunities at work and the resulting decline in human capital, leading to long lasting effects in the work field. 
+The results give contradictory implications in regard to answering the research question whether parental leave has a negative impact on future income or not. On the one hand the results regarding hypothesis 1 are in line with prior research [@evertsson_parental_2016; @stafford_time_1996]. There is (small) significant evidence that parental leave has a negative impact on future income. Presumably due to missed opportunities at work and the resulting decline in human capital, leading to long lasting effects in the work field. 
 
-On the other hand, contrary to the human capital theory, I found significant results showing that a long parental leave has positive effects on the future income compared to a short leave. 
-I argued, that long parental leave would have a larger negative impact on the future income compared to stay for a short period of time in parental leave. However this assumption is not supported. 
-These results might be explained by the signalling theory. Contrary to the belief of many scholars, that parental leave would signal less commitment to the company and might imply a low work ethic in general might be true for the general impact of parental leave, additionally to the decrease in human capital [@stafford_time_1996; @albrecht_career_1999; @evertsson_parental_2016]. However, a long parental leave could be also a signal for other characteristics which might be more positive. I would argue, that if someone stays longer in parental leave, that they show determination and dedication, as they leave their job to sacrifice their career to care for their child, and this especially counts when staying for a longer period of time. Additionally, it implies openness and adaptability as carrying for a new born child is a challenging task and demand constantly adaption to new situations and be open to new possibilities to do certain tasks. 
-Furthermore, I did not find significant results to substantiate my third and last hypothesis. I argued that women who take parental leave have a greater disadvantage regarding their future income compared to their male counterparts. These results are most likely due to the fact, that the number of observations is really small, especially in groups like males which take parental leave. Despite the fact that they are underrepresented in this sample, it was also just not common for men to take parental leave in the mid to end 1990s. 
-So it is hard to make a valid statement on basis of these results. 
+On the other hand, contrary to the human capital theory, there are significant results showing that a long parental leave has positive effects on the future income compared to a short leave, contrary to my former hypothesis. 
+These results might be explained by the signaling theory. Contrary to the belief of many scholars, that parental leave would signal less commitment to the company and might imply a low work ethic, this might only be true for the general impact of parental leave [@stafford_time_1996; @albrecht_career_1999; @evertsson_parental_2016]. However, a long parental leave could be also a signal for other characteristics which might be more important. When someone stays longer in parental leave, they show dedication, as they leave their job to sacrifice their career to care for their child, especially when staying for a longer period. Additionally, it implies openness and adaptability as carrying for a newborn is a challenging task and demand constant adaption to new situations.
+Furthermore, I did not find significant results to substantiate my third hypothesis. These results might be due to the small number of observations, especially in male parental leave groups. Additionally, in today’s time more men are taking parental leave, compared to the 1990s. So it is hard to make a valid statement on basis of these results. 
 
 
 ### *Limitations* {-}
 
 
-Despite everything, there are some major shortcomings to this study. First and foremost the number of observations is really small. 
-Even though the basic data set provides a large variety of cases and a high number of observations overall, the data set is rather small in the end due to the restrictions. This leads to a weakening of the informative value of the statistical means. 
-Which leads to a discrimination with respect to certain characteristics. Also because of this, I was not able to do a matching process which would may have helped to control for self selection. Especially in Figure \@ref(fig:fig-1) (t1), we can notice a severe difference between the control and treatment group, suggesting that there was happening some sort of self selection. This is especially noticable for males which took parental leave. There are only a few in this data set. This could be due to the fact that the time frame I am considering was set before the introduction of the additional incentives for men. Moreover, the stigma attached to parental leave may still be quite prominent at the end of the 1990s.
+Despite everything, there are some major shortcomings to this study. First and foremost, the number of observations is really small. 
+Which leads to a discrimination with respect to certain characteristics. Also because of this, I was not able to do a matching process which may have helped to control for self-selection. Especially in Figure \@ref(fig:fig-1) (t1), we can notice a severe difference between the control and treatment group, suggesting that there was happening some sort of self-selection. This is especially noticeable for males which took parental leave. There are only a few in this data set. 
 
-Despite that, it is hard to get rid of any self selection in a natural experiment, so sometimes it is just something researcher have to deal with. 
-And even though I suggested in my perfect model to control the perception of couples, which might help mimic a randomized experiment to a greater extent, it would be highly unethical to do.
+** Parts Excluded due to word limit **
 
-And lastly there is a large number of people who started with no income (Figure 1 - 3). Their difference which was calculated on behalf of their information might have led to a bias. For example a women who got pregnant during their studies would have had no income, however 15 years later she might have a job. 
-And due to the study design, her whole income is now be counted as an increase. However, I tried to counterbalance that as I only included persons which were 21 or older, so the probability that they have a job is much higher.  
+Another problem is the large number of people who started with no income. Due to the study design, if later a job is found, the income is counted as increase.  
+However, I tried to counterbalance this by only including 21 or older persons to increase the probability of having a job.
 
 And lastly, even though I dropped all cases where someone had more than one child during the observation time period. There might been women who did more than one parental leave, however, as the variable was not featured in every wave, I could not control for that either.
 
@@ -1004,25 +958,10 @@ And lastly, even though I dropped all cases where someone had more than one chil
 ### *Future Research* {-}
 
 
-In regards to future research, it would be good to look at these hypothesis with a larger data set, providing more suitable observations. Additionally, it would be interesting to take an even longer period of time to really examine the long term effects. For this it might be good to use more than two time points as income fluctuates. Therefore, the course of both groups can be observed.  
-
-Another interesting point would be to look, on the one hand, at what the long-term effects would be after the 2007 reform change.  But how it compares to the 1992/1993 reform.
-@gabriele_mari_parental_2019 already looked at the differences between these two groups in a difference in difference model. However, they could only look at a smaller period of time. 
-
-Furthermore, the second hypothesis brings up the questions where the breaking point is regarding the length of the leave. What is the best length of parental leave in terms of the impact on income? @plantenga_reconciliation_2005 belief it should be about 6-8 months. Other scholars belief that taking about longer periods than that would be better [@misra_work-family_2011]. 
-
-And lastly, I was wondering if there might be different results if someone adopts a child. In this case parents are allowed to take parental leave as well. The decrease in human capital would be the same, however adaption itself might send a different signal, which could be a benefit after all. 
-\newpage
-
-# Statutory Declaration {-}
+** Parts Excluded due to word limit **
 
 
-I hereby declare that the paper presented is my own work and that I have not called upon the help of a third party. In addition, I affirm that neither I nor anybody else has submitted this paper or parts of it to obtain credits elsewhere before. I have clearly marked and acknowledged all quotations or references that have been taken from the works of other. All secondary literature and other sources are marked and listed in the bibliography. The same applies to all charts, diagrams and illustrations as well as to all Internet sources. Moreover, I consent to my paper being electronically stores and sent anonymously in order to be checked for plagiarism. I am aware that the paper cannot be evaluated and may be graded “failed” (“nicht ausreichend”) if the declaration is not made.
 
-Place, Date: Mannheim, 15.07.2020
-
-Signature:
-(Sophie Hensgen)
 
 \newpage
 
